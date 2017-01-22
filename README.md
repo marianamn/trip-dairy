@@ -1,2 +1,2 @@
-# trip-dairy
+# trip-diary
 Web frond-end course project
