@@ -16,7 +16,7 @@ module.exports = function(models, validator) {
                         email: user.email,
                         hashPass: user.hashPass,
                         salt: user.salt,
-                        recipes: user.recipes,
+                        places: user.places,
                         forumPoints: user.forumPoints,
                         isAdmin: user.isAdmin
                     });

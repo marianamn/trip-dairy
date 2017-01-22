@@ -6,7 +6,7 @@ let secret = "Secret unicorns";
 const passport = require('passport'),
     DEFAULT_IMAGE = 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqhN3-lNH2F8f_eCb0wBD650zauwEIBNsIyzgVHa1kJh72dGGjRw';
 
-module.exports = function ({ data, validator }) {
+module.exports = function({ data, validator }) {
     return {
         login(req, res) {
             //console.log(req.body);
@@ -43,7 +43,7 @@ module.exports = function ({ data, validator }) {
         },
         register(req, res) {
             let newUser = {};
-            let propoerties = ['username', 'password', 'firstName', 'lastName', 'email', 'recipes', 'forumPoints'];
+            let propoerties = ['username', 'password', 'firstName', 'lastName', 'email', 'places', 'forumPoints'];
 
             let postData = req.body['body'];
             let postDataObj = JSON.parse(postData);

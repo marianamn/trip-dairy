@@ -21,10 +21,6 @@ module.exports = modelRegistrator.register('User', {
     email: {
         type: String
     },
-    recipes: [],
-    forumPoints: {
-        type: Number,
-        default: 0
-    },
+    places: [],
     isAdmin: Boolean
 })
