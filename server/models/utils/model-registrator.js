@@ -1,10 +1,10 @@
 /* globals require module*/
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 let Schema = mongoose.Schema;
 
-module.exports.register = function (name, schemaProperties) {
+module.exports.register = function(name, schemaProperties) {
     let schema = new Schema(schemaProperties, {
         timestamps: true
     });

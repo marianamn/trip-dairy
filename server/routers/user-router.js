@@ -3,13 +3,15 @@
 const express = require("express");
 let Router = express.Router;
 
-module.exports = function({ app, controllers }) {
+module.exports = function({ app, controllers, middlewares }) {
     let router = new Router();
 
     router
-        .post('/register', controllers.register)
-        .post('/login', controllers.login)
-        .get('/user', controllers.getLoggedUser);
+        .get("/users", controllers.getAllUsernames);
+    // .get("/:username", middlewares.isAuthenticated, controllers.getUserProfile)
+    // .put("/profile", middlewares.isAuthenticated, controllers.updateProfile)
+    // .put("/users/:username", middlewares.isAuthenticated, middlewares.isAdmin, controllers.updateUserRole)
+    // .get("/:userId", controllers.getUserByUserId);
 
     app.use("/api", router);
 

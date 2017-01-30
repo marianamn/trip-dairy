@@ -7,10 +7,10 @@ module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
-    //.get("/home", controllers.home)
-        .get("/", controllers.home);
+        .get("/diaries", controllers.getAllDiaries)
+        .get("/diaries/:id", controllers.getDiaryById);
 
-    app.use("/", router);
+    app.use("/api", router);
 
     return router;
 };

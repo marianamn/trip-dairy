@@ -1,8 +1,10 @@
 /* globals require module */
 
-const modelRegistrator = require('./utils/model-registrator');
+const modelRegistrator = require("./utils/model-registrator");
 
-module.exports = modelRegistrator.register('User', {
+let requiredMessage = "{PATH} is required";
+
+module.exports = modelRegistrator.register("User", {
     username: {
         type: String,
         unique: true
@@ -10,17 +12,19 @@ module.exports = modelRegistrator.register('User', {
     salt: String,
     hashPass: String,
     firstName: {
-        type: String
+        type: String,
+        required: requiredMessage
     },
     lastName: {
-        type: String
-    },
-    profileImgURL: {
         type: String
     },
     email: {
         type: String
     },
-    places: [],
-    isAdmin: Boolean
-})
+    profileImgURL: {
+        type: String
+    },
+    diaries: [],
+    isAdmin: Boolean,
+    facebookId: String
+});

@@ -1,9 +1,9 @@
 /* globals module require global __dirname process */
-'use strict';
+"use strict";
 
-const mongoose = require('mongoose');
-const fs = require('fs');
-const path = require('path');
+const mongoose = require("mongoose");
+const fs = require("fs");
+const path = require("path");
 
 mongoose.Promise = global.Promise;
 
@@ -12,8 +12,9 @@ module.exports = function(connectionString) {
 
     // register all models
     let User = require("../models/user-model");
+    let Diary = require("../models/diary-model");
 
-    let models = { User };
+    let models = { User, Diary };
 
     let data = {};
     fs.readdirSync(__dirname)

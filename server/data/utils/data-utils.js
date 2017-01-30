@@ -1,5 +1,5 @@
 /* globals module */
-'use strict';
+"use strict";
 
 module.exports = {
     update(model) {
@@ -26,36 +26,36 @@ module.exports = {
     },
     getAll(model) {
         return new Promise((resolve, reject) => {
-                model.find({}, (err, records) => {
-                    if (err) {
-                        return reject(err);
-                    }
+            model.find({}, (err, records) => {
+                if (err) {
+                    return reject(err);
+                }
 
-                    return resolve(records);
-                });
+                return resolve(records);
             });
+        });
     },
     getAllByStatus(model, status) {
         return new Promise((resolve, reject) => {
-                model.find({ status: status }, (err, records) => {
-                    if (err) {
-                        return reject(err);
-                    }
+            model.find({ status: status }, (err, records) => {
+                if (err) {
+                    return reject(err);
+                }
 
-                    return resolve(records);
-                });
+                return resolve(records);
             });
+        });
     },
     getOneById(model, id) {
         return new Promise((resolve, reject) => {
-                model.findOne({ _id: id }, (err, singleRecord) => {
-                    if (err) {
-                        return reject(err);
-                    }
+            model.findOne({ _id: id }, (err, singleRecord) => {
+                if (err) {
+                    return reject(err);
+                }
 
-                    return resolve(singleRecord);
-                });
+                return resolve(singleRecord);
             });
+        });
     }
 
 };

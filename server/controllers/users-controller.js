@@ -1,105 +1,86 @@
 /* globals module */
 
-let jwt = require('jwt-simple');
-const encrypt = require("../utils/encryption");
-let secret = "Secret unicorns";
-const passport = require('passport'),
-    DEFAULT_IMAGE = 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqhN3-lNH2F8f_eCb0wBD650zauwEIBNsIyzgVHa1kJh72dGGjRw';
-
-module.exports = function({ data, validator }) {
+module.exports = function(params) {
+    let { data } = params;
     return {
-        login(req, res) {
-            //console.log(req.body);
-            let postData = req.body['body'];
-            let postDataObj = JSON.parse(postData);
-            let username = postDataObj.username;
-            let password = postDataObj.password;
+        getUserProfile(req, res) {
+            let username = req.params.username;
 
             data.getUserByUsername(username)
-                .then((user) => {
-                    if (user) {
-                        let hashPass = encrypt.generateHashedPassword(user.salt, password);
-                        if (hashPass === user.hashPass) {
-                            let token = jwt.encode(user, secret);
-
-                            return res.status(200).json({
-                                success: true,
-                                body: {
-                                    token: token,
-                                    username: user.username,
-                                    isAdmin: user.isAdmin
-                                }
-                            });
-                        } else {
-                            return res.status(400).json({ success: false, msg: 'Грешна парола!' });
-                        }
-                    } else {
-                        return res.status(400).json({ success: false, msg: 'Грешно потребителско име!' });
+                .then(foundUser => {
+                    if (!foundUser) {
+                        return res.redirect("/");
                     }
+
+                    let user = req.user;
+                    let ownProfile = foundUser.username === user.username;
+                    let isAdmin = user.isAdmin;
+
+                    res.json({ data: user });
+                    // res.render("users/profile", {
+                    //     ownProfile,
+                    //     isAdmin,
+                    //     foundUser,
+                    //     user
+                    // });
+                });
+        },
+        getAllUsernames(req, res) {
+            return data.getAllUsernames()
+                .then(usernames => {
+                    let responseUsernames = usernames.map(u => u.username);
+                    res.json(responseUsernames);
+                });
+        },
+        updateUserRole(req, res) {
+            let username = req.params.username;
+            let isAdmin = req.body.isAdmin;
+
+            data.updateUserRole(username, isAdmin)
+                .then(user => {
+                    let role = "normal user";
+                    if (user.isAdmin) {
+                        role = "admin";
+                    }
+
+                    res.json({
+                        message: `${user.username} is now ${role}`
+                    });
                 })
                 .catch(error => {
-                    return res.send(error);
+                    res.json({ error }); // log this
                 });
         },
-        register(req, res) {
-            let newUser = {};
-            let propoerties = ['username', 'password', 'firstName', 'lastName', 'email', 'places', 'forumPoints'];
-
-            let postData = req.body['body'];
-            let postDataObj = JSON.parse(postData);
-
-            propoerties.forEach(property => {
-                if (!property || property.length < 0) {
-                    res.status(411).json(`Missing ${property}`);
-                }
-
-                newUser[property] = postDataObj[property];
-            });
-
-            // console.log(req.body);
-
-            //for safety
-            newUser.isAdmin = false;
-
-            let pass = postDataObj.password;
-            let salt = encrypt.generateSalt();
-            newUser.salt = salt;
-            let hashPass = encrypt.generateHashedPassword(salt, pass);
-            newUser.hashPass = hashPass;
-
-            newUser.profileImgURL = DEFAULT_IMAGE;
-            // console.log(newUser);
-
-            data.getUserByUsername(newUser.username).then((user) => {
-                if (user) {
-                    return res.status(400).send({ success: false, msg: 'Потребител с това потребителско име вече съществува!' });
-                }
-            });
-
-            data.createUser(newUser)
-                .then((data) => {
-                    res.status(200).send({ success: true, data })
-                })
-                .catch(err => {
-                    return res.status(400).send({ success: false, msg: 'Не е създаден потребител!' });
-                });
-        },
-        getLoggedUser(req, res) {
-            const token = req.headers.authorization;
-
-            if (token) {
-                let userInfo = jwt.decode(token.split(' ')[1], secret);
-                let user = {
-                    username: userInfo.username
-                };
-
-                res.status(200).json(user);
+        updateProfile(req, res) {
+            if (req.body.password) {
+                data.updateUserAndPassword(req.body)
+                    .then(res.json({ "message": "Your password is updated " }));
             } else {
-                res.status(401).json({
-                    success: false,
-                    message: 'Please provide token'
-                });
+                data.updateUser(req.body)
+                    .then(res.json({ "message": "Profile updated successfully." }));
             }
+        },
+        getUserByUserId(req, res) {
+            let userId = req.params.userId;
+
+            data.getUserById(userId)
+                .then(foundUser => {
+                    if (!foundUser) {
+                        return res.redirect("/");
+                    }
+
+                    let user = req.user;
+                    let ownProfile = foundUser.username === user.username;
+                    let isAdmin = user.isAdmin;
+                    res.json({ data: user });
+
+                    // res.render("users/profile", {
+                    //     ownProfile,
+                    //     isAdmin,
+                    //     foundUser,
+                    //     user
+                    // });
+                });
         }
     };
 };
