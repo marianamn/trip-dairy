@@ -84,7 +84,7 @@ module.exports = function(params) {
                     salt,
                     hashPass)
                 .then(() => {
-                    res.status(201).json({ "message": "You have been registered successfully" });
+                    res.status(201).json({ "message": "You have been registered successfully", data });
                 })
                 .catch(err => {
                     res.json(err);

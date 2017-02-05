@@ -4,10 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Trip diary</title>
+    <base href="./" />
+
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-ico">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>Home</h1>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid text-center">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">        </span></button>
+            </div>
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="navbar-brand">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">User<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/auth/register">Sign up</a></li>
+                            <li><a href="/auth/login">Sign in</a></li>
+                            <li><a href="/auth/facebook">Sign in with facebook</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="template-holder"></div>
+
+    <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/scripts/helpers/templateLoader.js"></script>
+
 </body>
 
 </html>

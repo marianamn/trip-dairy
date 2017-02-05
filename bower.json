@@ -1,7 +1,6 @@
 {
     "name": "tripdiary",
     "description": "",
-    "main": "app.js",
     "authors": [
         "Mariana"
     ],
@@ -11,7 +10,6 @@
         "**/.*",
         "node_modules",
         "bower_components",
-        "./client/libs/bower_components",
         "test",
         "tests"
     ],

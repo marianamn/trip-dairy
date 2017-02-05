@@ -2,15 +2,16 @@
 "use strict";
 
 let requester = (function() {
+
     function get(url) {
         let promise = new Promise((resolve, reject) => {
             $.ajax({
                 url,
                 method: "GET",
-                success(response) {
+                success: function(response) {
                     resolve(response);
                 },
-                error(err) {
+                error: function(err) {
                     reject(err);
                 }
             });
@@ -27,10 +28,10 @@ let requester = (function() {
                 method: "PUT",
                 contentType: "application/json",
                 data: JSON.stringify(body),
-                success(response) {
+                success: function(response) {
                     resolve(response);
                 },
-                error(err) {
+                error: function(err) {
                     reject(err);
                 }
             });
@@ -48,10 +49,10 @@ let requester = (function() {
                 method: "POST",
                 contentType: "application/json",
                 data: JSON.stringify(body),
-                success(response) {
+                success: function(response) {
                     resolve(response);
                 },
-                error(err) {
+                error: function(err) {
                     reject(err);
                 }
             });
@@ -68,12 +69,12 @@ let requester = (function() {
                 headers,
                 method: "GET",
                 contentType: "application/json",
-                success(response) {
+                success: function(response) {
                     resolve(response);
                 },
-                error(err) {
+                error: function(err) {
                     if (err.status === 401) {
-                        // toastr.error("You have to be logged-in!");
+                        //toastr.error("You have to be logged-in!");
                     }
 
                     reject(err);
@@ -93,10 +94,10 @@ let requester = (function() {
                 headers,
                 method: "DELETE",
                 contentType: "application/json",
-                success(response) {
+                success: function(response) {
                     resolve(response);
                 },
-                error(err) {
+                error: function(err) {
                     reject(err);
                 }
             });
@@ -106,10 +107,10 @@ let requester = (function() {
     }
 
     return {
-        get,
-        putJSON,
-        postJSON,
-        getJSON,
-        deleteJSON
+        get: get,
+        putJSON: putJSON,
+        postJSON: postJSON,
+        getJSON: getJSON,
+        deleteJSON: deleteJSON
     };
 }());

@@ -7,8 +7,8 @@ module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
-        .get("/diaries", controllers.getAllDiaries)
-        .get("/diaries/:id", controllers.getDiaryById);
+        .get("/trip-diaries", controllers.getAllDiaries)
+        .get("/trip-diaries/:id", controllers.getDiaryById);
 
     app.use("/api", router);
 
