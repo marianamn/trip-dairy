@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { Handlebars } from "handlebars";
+import Handlebars from "handlebars";
 import { templatesLoader } from "templates";
 import toastr from "toastr";
 
@@ -15,12 +15,11 @@ class TripsDiariesConroller {
             .then((response) => {
                 tripsData = response;
 
-                // console.log(tripsData);
+                console.log(tripsData);
                 return templatesLoader.get("home");
             })
             .then((html) => {
                 let compiledTemplate = Handlebars.compile(html);
-                console.log(compiledTemplate);
                 $("#content").html(compiledTemplate(tripsData));
             });
     }
