@@ -22,7 +22,9 @@
         "passport": "^0.3.2",
         "passport-facebook": "^2.1.1",
         "passport-local": "^1.0.0",
-        "pug": "^2.0.0-beta6"
+        "sinon": "^1.17.6",
+        "systemjs": "^0.19.38",
+        "systemjs-plugin-babel": "0.0.15"
     },
     "repository": {}
 }

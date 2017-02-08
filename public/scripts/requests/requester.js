@@ -1,25 +1,25 @@
-/* globals $ */
-"use strict";
+import $ from "jquery";
 
-let requester = (function() {
+class Requester {
 
-    function get(url) {
+    get(url) {
         let promise = new Promise((resolve, reject) => {
             $.ajax({
                 url,
                 method: "GET",
-                success: function(response) {
+                success(response) {
                     resolve(response);
                 },
-                error: function(err) {
+                error(err) {
                     reject(err);
                 }
             });
         });
+
         return promise;
     }
 
-    function putJSON(url, body, options = {}) {
+    putJSON(url, body, options = {}) {
         let promise = new Promise((resolve, reject) => {
             let headers = options.headers || {};
             $.ajax({
@@ -28,55 +28,51 @@ let requester = (function() {
                 method: "PUT",
                 contentType: "application/json",
                 data: JSON.stringify(body),
-                success: function(response) {
+                success(response) {
                     resolve(response);
                 },
-                error: function(err) {
+                error(err) {
                     reject(err);
                 }
             });
         });
+
         return promise;
     }
 
-    function postJSON(url, body, options = {}) {
+    postJSON(url, body, options = {}) {
         let promise = new Promise((resolve, reject) => {
             let headers = options.headers || {};
-
             $.ajax({
                 url,
                 headers,
                 method: "POST",
                 contentType: "application/json",
                 data: JSON.stringify(body),
-                success: function(response) {
+                success(response) {
                     resolve(response);
                 },
-                error: function(err) {
+                error(err) {
                     reject(err);
                 }
             });
         });
+
         return promise;
     }
 
-    function getJSON(url, options = {}) {
+    getJSON(url, options) {
         let promise = new Promise((resolve, reject) => {
             let headers = options.headers || {};
-
             $.ajax({
                 url,
-                headers,
                 method: "GET",
+                headers: headers,
                 contentType: "application/json",
-                success: function(response) {
+                success(response) {
                     resolve(response);
                 },
-                error: function(err) {
-                    if (err.status === 401) {
-                        //toastr.error("You have to be logged-in!");
-                    }
-
+                error(err) {
                     reject(err);
                 }
             });
@@ -84,33 +80,7 @@ let requester = (function() {
 
         return promise;
     }
+}
 
-    function deleteJSON(url, options = {}) {
-        let promise = new Promise((resolve, reject) => {
-            let headers = options.headers || {};
-
-            $.ajax({
-                url,
-                headers,
-                method: "DELETE",
-                contentType: "application/json",
-                success: function(response) {
-                    resolve(response);
-                },
-                error: function(err) {
-                    reject(err);
-                }
-            });
-        });
-
-        return promise;
-    }
-
-    return {
-        get: get,
-        putJSON: putJSON,
-        postJSON: postJSON,
-        getJSON: getJSON,
-        deleteJSON: deleteJSON
-    };
-}());
+let requester = new Requester();
+export { requester };

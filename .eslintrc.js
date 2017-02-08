@@ -8,7 +8,8 @@ module.exports = {
         "ecmaFeatures": {
             "jsx": true,
             "spread": true
-        }
+        },
+        "sourceType": "module",
     },
     "extends": "eslint:recommended",
     "rules": {

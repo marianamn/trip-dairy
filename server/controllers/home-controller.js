@@ -5,8 +5,7 @@ module.exports = function() {
         home(req, res) {
             // let user = req.user;
 
-            return res.sendFile("index.html", { root: "./client/" });
-            // return res.render("index");
+            return res.sendFile("index.html", { root: "./public/" });
         }
     };
 };
