@@ -1,12 +1,15 @@
 <section>
     <div>Trips</div>
-    
-         {{#each this}}
+         {{#each data}}
          <div>
             <p>{{author}}</p>
             <p>{{category}}</p>
             <p>{{content}}</p>
-            <p>{{images}}</p>
+            <p>
+                 {{#each images}}
+                 <img src="{{this}}" alt="">
+                 {{/each}}
+            </p>
             <p>{{place}}</p>
             <p>{{title}}</p>
             <p>{{likes}}</p>

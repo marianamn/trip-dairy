@@ -15,7 +15,7 @@ class TripsDiariesConroller {
             .then((response) => {
                 tripsData = response;
 
-                console.log(tripsData);
+                // console.log(tripsData.data);
                 return templatesLoader.get("home");
             })
             .then((html) => {
