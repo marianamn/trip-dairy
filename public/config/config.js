@@ -1,4 +1,4 @@
-// import SystemJS from "systemjs";
+/* globals SystemJS*/
 
 SystemJS.config({
     "transpiler": "plugin-babel",
@@ -14,14 +14,14 @@ SystemJS.config({
         // helpers
         "templates": "/static/scripts/helpers/template-loader.js",
 
-        // controllers
-        "diariesController": "/static/scripts/controllers/diaries-controller.js",
+        // requester
+        "requester": "/static/scripts/requests/requester.js",
 
         // data
         "diariesData": "/static/scripts/data/diaries-data.js",
 
-        // requester
-        "requester": "/static/scripts/requests/requester.js",
+        // controllers
+        "diariesController": "/static/scripts/controllers/diaries-controller.js",
 
         // main
         "main": "/static/scripts/main.js"

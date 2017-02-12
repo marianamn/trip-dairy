@@ -4,4 +4,8 @@ import { diariesController } from "diariesController";
 const router = new Navigo(null, true);
 
 router
-    .on("home", diariesController.allTripsDiaries);
+    .on("home", diariesController.home)
+    .on(() => {
+        router.navigate("/home");
+    })
+    .resolve();
