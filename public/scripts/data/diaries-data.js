@@ -5,10 +5,11 @@ const allTripsUrl = "/api/trip-diaries";
 class TripsDiariesData {
     constructor(url) {
         this.url = url;
+        this.requester = requester;
     }
 
     getAllTripsDiaries() {
-        return requester.getJSON(this.url, {});
+        return this.requester.getJSON(this.url, {});
     }
 }
 

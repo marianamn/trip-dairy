@@ -13,15 +13,18 @@ SystemJS.config({
 
         // helpers
         "templates": "/static/scripts/helpers/template-loader.js",
+        "constants": "/static/scripts/helpers/constants.js",
 
         // requester
         "requester": "/static/scripts/requests/requester.js",
 
         // data
+        "usersData": "/static/scripts/data/users-data.js",
         "diariesData": "/static/scripts/data/diaries-data.js",
 
         // controllers
         "diariesController": "/static/scripts/controllers/diaries-controller.js",
+        "usersController": "/static/scripts/controllers/users-controller.js",
 
         // main
         "main": "/static/scripts/main.js"

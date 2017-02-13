@@ -1,30 +1,31 @@
 {
-    "name": "tripdiary",
-    "version": "1.0.0",
-    "description": "Trips ideas and personal diary",
-    "scripts": {
-        "start": "node ./server/app.js",
-        "development": "nodemon ./server/app.js",
-        "postinstall": "./node_modules/.bin/bower install"
-    },
-    "keywords": [],
-    "author": "Mariana",
-    "license": "MIT",
-    "dependencies": {
-        "body-parser": "^1.15.2",
-        "bower": "^1.8.0",
-        "cookie-parser": "^1.4.3",
-        "crypto-js": "^3.1.8",
-        "express": "^4.14.0",
-        "express-session": "^1.14.2",
-        "mongoose": "^4.7.0",
-        "morgan": "^1.7.0",
-        "passport": "^0.3.2",
-        "passport-facebook": "^2.1.1",
-        "passport-local": "^1.0.0",
-        "sinon": "^1.17.6",
-        "systemjs": "^0.19.38",
-        "systemjs-plugin-babel": "0.0.15"
-    },
-    "repository": {}
+  "name": "tripdiary",
+  "version": "1.0.0",
+  "description": "Trips ideas and personal diary",
+  "scripts": {
+    "start": "node ./server/app.js",
+    "development": "nodemon ./server/app.js",
+    "postinstall": "./node_modules/.bin/bower install"
+  },
+  "keywords": [],
+  "author": "Mariana",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.8.0",
+    "cookie-parser": "^1.4.3",
+    "crypto-js": "^3.1.8",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^4.7.0",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "sinon": "^1.17.6",
+    "systemjs": "^0.19.38",
+    "systemjs-plugin-babel": "0.0.15"
+  },
+  "repository": {}
 }

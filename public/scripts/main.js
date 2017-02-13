@@ -1,10 +1,12 @@
 import Navigo from "navigo";
 import { diariesController } from "diariesController";
+import { usersController } from "usersController";
 
 const router = new Navigo(null, true);
 
 router
     .on("home", diariesController.home)
+    .on("register", usersController.register)
     .on(() => {
         router.navigate("/home");
     })

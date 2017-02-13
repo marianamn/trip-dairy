@@ -60,7 +60,7 @@ module.exports = {
             "property"
         ],
         "dot-notation": [
-            "error",
+            "off",
             {
                 "allowKeywords": true
             }
@@ -98,7 +98,7 @@ module.exports = {
         "max-len": "off",
         "max-lines": "error",
         "max-nested-callbacks": "error",
-        "max-params": "error",
+        "max-params": "off",
         "max-statements": "off",
         "max-statements-per-line": "error",
         "multiline-ternary": "error",

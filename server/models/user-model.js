@@ -2,29 +2,29 @@
 
 const modelRegistrator = require("./utils/model-registrator");
 
-let requiredMessage = "{PATH} is required";
-
 module.exports = modelRegistrator.register("User", {
-    username: {
+    firstName: {
         type: String,
-        unique: true
+        required: true,
+        min: 3,
+        max: 50
+    },
+    lastName: {
+        type: String,
+        required: true,
+        min: 3,
+        max: 50
+    },
+    profileImgURL: {
+        type: String,
+        required: true
     },
     salt: String,
     hashPass: String,
-    firstName: {
-        type: String,
-        required: requiredMessage
-    },
-    lastName: {
-        type: String
-    },
-    email: {
-        type: String
-    },
-    profileImgURL: {
-        type: String
-    },
-    diaries: [],
-    isAdmin: Boolean,
-    facebookId: String
+    facebookContact: String,
+    youTubeContact: String,
+    twitterContact: String,
+    googlePlusContact: String,
+    instagramContact: String,
+    rssContact: String
 });
