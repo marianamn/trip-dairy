@@ -14,6 +14,7 @@ SystemJS.config({
         // helpers
         "templates": "/static/scripts/helpers/template-loader.js",
         "constants": "/static/scripts/helpers/constants.js",
+        "utils": "/static/scripts/helpers/utils.js",
 
         // requester
         "requester": "/static/scripts/requests/requester.js",

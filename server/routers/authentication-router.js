@@ -8,9 +8,9 @@ module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
-        .post("/register", controllers.register);
-    //.post("/login", controllers.login)
-    //.get("/user", controllers.getLoggedUser);
+        .post("/register", controllers.register)
+        .post("/login", controllers.login)
+        .get("/user", controllers.getLoggedUser);
 
     app.use("/auth", router);
 

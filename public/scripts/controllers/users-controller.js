@@ -1,4 +1,4 @@
-/* globals window */
+/* globals window localStorage*/
 
 import $ from "jquery";
 import { CONSTANTS } from "constants";
@@ -22,8 +22,7 @@ let usersController = (function() {
                     // console.log(response);
 
                     toastr.success("Successfully signed up. Please login!");
-                    window.location = "#/home";
-                    //  window.location = "#/login";
+                    window.location = "#/login";
                 })
                 .catch((error) => {
                     toastr.error("Sign up was unsuccessfull, please try again!");
@@ -32,7 +31,6 @@ let usersController = (function() {
         }
 
         loadRegisterForm() {
-
             this.templates.get("register")
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
@@ -77,11 +75,49 @@ let usersController = (function() {
                     });
                 });
         }
+
+        loginUser(user) {
+            this.data.login(user)
+                .then((response) => {
+                    //  $("#nav-btn-logout").removeClass("hidden");
+                    // $("#nav-btn-register").addClass("hidden");
+                    // $("#nav-btn-login").addClass("hidden");
+
+                    localStorage.setItem("auth_key", response.body.token);
+                    localStorage.setItem("auth_email", response.body.email);
+
+                    toastr.success("Login successful!");
+                    window.location = "#/home";
+                }, (error) => {
+                    toastr.error("Invalid email or password!");
+                    window.location = "#/login";
+                });
+        }
+
+        loadLoginForm() {
+            this.templates.get("login")
+                .then((html) => {
+                    let compiledTemplate = Handlebars.compile(html);
+                    $("#content").html(compiledTemplate());
+
+                    $("#btn-login").on("click", () => {
+                        let user = {
+                            email: $("#tb-email").val(),
+                            password: $("#tb-password").val()
+                        };
+
+                        this.loginUser(user);
+                    });
+                });
+        }
     }
 
     return {
         register: function() {
             return new UsersController(usersData, templatesLoader).loadRegisterForm();
+        },
+        login: function() {
+            return new UsersController(usersData, templatesLoader).loadLoginForm();
         }
     };
 }());

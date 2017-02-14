@@ -1,18 +1,20 @@
+import { UTILS } from "utils";
 import { requester } from "requester";
-const allTripsUrl = "/api/trip-diaries";
 
-// TODO: constructor(url, options, requester)
+
 class TripsDiariesData {
-    constructor(url) {
-        this.url = url;
+    constructor(urls) {
+        this.urls = urls;
         this.requester = requester;
     }
 
     getAllTripsDiaries() {
-        return this.requester.getJSON(this.url, {});
+        let url = this.urls.getAllTripsUrl();
+
+        return this.requester.getJSON(url, {});
     }
 }
 
-let tripsDiariesData = new TripsDiariesData(allTripsUrl);
+let tripsDiariesData = new TripsDiariesData(UTILS.URLS);
 
 export { tripsDiariesData };

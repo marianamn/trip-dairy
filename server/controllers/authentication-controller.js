@@ -46,60 +46,62 @@ module.exports = function(params) {
                 .catch(err => {
                     return res.status(400).send({ success: false, msg: "User not created!", err });
                 });
+        },
+        login(req, res) {
+            // console.log(req.body);
+
+            let postData = req.body["body"];
+            let postDataObj = JSON.parse(postData);
+            let password = postDataObj.password;
+
+            // console.log(postDataObj.email);
+
+            data.getUserByEmail(postDataObj.email)
+                .then((user) => {
+                    if (user) {
+                        let hashPass = encrypt.generateHashedPassword(user.salt, password);
+                        if (hashPass === user.hashPass) {
+                            let token = jwt.encode(user, secret);
+
+                            return res.status(200).json({
+                                success: true,
+                                body: {
+                                    token: token,
+                                    email: user.email
+                                }
+                            });
+                        } else {
+                            return res.status(400).json({ success: false, msg: "Wrong password!" });
+                        }
+                    } else {
+                        return res.status(400).json({ success: false, msg: "Wrong email!" });
+                    }
+                })
+                .catch(error => {
+                    return res.send(error);
+                });
+        },
+        getLoggedUser(req, res) {
+            const token = req.headers.authorization;
+
+            if (token) {
+                let userInfo = jwt.decode(token.split(" ")[1], secret);
+                let user = {
+                    email: userInfo.email
+                };
+
+                res.status(200).json(user);
+            } else {
+                res.status(401).json({
+                    success: false,
+                    message: "Please provide token"
+                });
+            }
+        },
+        logout(req, res) {
+            req.session.destroy();
+            req.logout();
+            return res.status(200).redirect("/");
         }
-        // login(req, res) {
-        //     // console.log(req.body);
-
-        //     let postData = req.body["body"];
-        //     let postDataObj = JSON.parse(postData);
-        //     let password = postDataObj.password;
-
-        //     data.getUserByEmail(postDataObj.email)
-        //         .then((user) => {
-        //             if (user) {
-        //                 let hashPass = encrypt.generateHashedPassword(user.salt, password);
-        //                 if (hashPass === user.hashPass) {
-        //                     let token = jwt.encode(user, secret);
-
-        //                     return res.status(200).json({
-        //                         success: true,
-        //                         body: {
-        //                             token: token,
-        //                             email: user.email
-        //                         }
-        //                     });
-        //                 } else {
-        //                     return res.status(400).json({ success: false, msg: "Wrong password!" });
-        //                 }
-        //             } else {
-        //                 return res.status(400).json({ success: false, msg: "Грешно потребителско име!" });
-        //             }
-        //         })
-        //         .catch(error => {
-        //             return res.send(error);
-        //         });
-        // },
-        // getLoggedUser(req, res) {
-        //     const token = req.headers.authorization;
-
-        //     if (token) {
-        //         let userInfo = jwt.decode(token.split(" ")[1], secret);
-        //         let user = {
-        //             username: userInfo.username
-        //         };
-
-        //         res.status(200).json(user);
-        //     } else {
-        //         res.status(401).json({
-        //             success: false,
-        //             message: "Please provide token"
-        //         });
-        //     }
-        // },
-        // logout(req, res) {
-        //     req.session.destroy();
-        //     req.logout();
-        //     return res.status(200).redirect("/");
-        // }
     };
 };
