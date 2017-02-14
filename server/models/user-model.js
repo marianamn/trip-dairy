@@ -3,22 +3,13 @@
 const modelRegistrator = require("./utils/model-registrator");
 
 module.exports = modelRegistrator.register("User", {
-    firstName: {
+    email: {
         type: String,
-        required: true,
-        min: 3,
-        max: 50
+        unique: true
     },
-    lastName: {
-        type: String,
-        required: true,
-        min: 3,
-        max: 50
-    },
-    profileImgURL: {
-        type: String,
-        required: true
-    },
+    firstName: String,
+    lastName: String,
+    profileImgURL: String,
     salt: String,
     hashPass: String,
     facebookContact: String,

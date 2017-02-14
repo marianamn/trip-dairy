@@ -19,12 +19,13 @@ let usersController = (function() {
 
             this.data.register(newUser)
                 .then((response) => {
-                    console.log(response);
+                    // console.log(response);
 
                     toastr.success("Successfully signed up. Please login!");
-                    window.location = "#/login";
-                    // context.redirect("#/login");
-                }, (error) => {
+                    window.location = "#/home";
+                    //  window.location = "#/login";
+                })
+                .catch((error) => {
                     toastr.error("Sign up was unsuccessfull, please try again!");
                     window.location = "#/register";
                 });
@@ -39,6 +40,7 @@ let usersController = (function() {
 
                     $("#btn-register").on("click", () => {
                         let newUser = {
+                            email: $("#tb-email").val(),
                             firstName: $("#tb-firstName").val(),
                             lastName: $("#tb-lastName").val(),
                             profileImgURL: $("#tb-profileImgURL").val(),
@@ -56,13 +58,13 @@ let usersController = (function() {
                             return;
                         }
                         if (/\W+/.test(newUser.firstName)) {
-                            toastr.error("First contains must contains only letters!");
+                            toastr.error("First name contains invalid symbols!");
                             return;
                         }
 
 
                         if (/\W+/.test(newUser.lastName)) {
-                            toastr.error("LastName contains only letters!");
+                            toastr.error("Last contains invalid symbols!");
                             return;
                         }
 

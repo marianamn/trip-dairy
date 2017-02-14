@@ -17,6 +17,7 @@ class UsersData {
 
     register(newUser) {
         let postBody = {
+            email: newUser.email,
             firstName: newUser.firstName,
             lastName: newUser.lastName,
             profileImgURL: newUser.profileImgURL,
