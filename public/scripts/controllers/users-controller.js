@@ -19,7 +19,6 @@ let usersController = (function() {
 
             this.data.register(newUser)
                 .then((response) => {
-                    // console.log(response);
 
                     toastr.success("Successfully signed up. Please login!");
                     window.location = "#/login";
@@ -79,9 +78,9 @@ let usersController = (function() {
         loginUser(user) {
             this.data.login(user)
                 .then((response) => {
-                    //  $("#nav-btn-logout").removeClass("hidden");
-                    // $("#nav-btn-register").addClass("hidden");
-                    // $("#nav-btn-login").addClass("hidden");
+                    $("#nav-btn-logout").removeClass("hidden");
+                    $("#nav-btn-register").addClass("hidden");
+                    $("#nav-btn-login").addClass("hidden");
 
                     localStorage.setItem("auth_key", response.body.token);
                     localStorage.setItem("auth_email", response.body.email);
@@ -110,6 +109,23 @@ let usersController = (function() {
                     });
                 });
         }
+
+        logoutUser() {
+            this.usersData.logout()
+                .then(() => {
+                    $("#nav-btn-logout").on("click", () => {
+                        $("#nav-btn-logout").addClass("hidden");
+                        $("#nav-btn-login").removeClass("hidden");
+                        $("#nav-btn-register").removeClass("hidden");
+
+                        localStorage.removeItem("auth_key");
+                        localStorage.removeItem("auth_email");
+                        let msg = `${localStorage.getItem("auth_email")} logged out successfuly!`;
+                        toastr.success(msg);
+                    });
+
+                });
+        }
     }
 
     return {
@@ -118,6 +134,9 @@ let usersController = (function() {
         },
         login: function() {
             return new UsersController(usersData, templatesLoader).loadLoginForm();
+        },
+        logout: function() {
+            return new UsersController(usersData, templatesLoader).logoutUser();
         }
     };
 }());

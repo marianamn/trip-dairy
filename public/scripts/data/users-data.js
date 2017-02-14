@@ -48,6 +48,12 @@ class UsersData {
 
         return this.requester.postJSON(url, body, {});
     }
+
+    logout() {
+        return new Promise((resolve) => {
+            resolve();
+        });
+    }
 }
 
 let usersData = new UsersData(UTILS.URLS, requester);

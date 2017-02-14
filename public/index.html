@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Trip diary</title>
-    <base href="./" />
 
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-ico">
     <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -27,12 +26,9 @@
                     <li><a href="#/home" class="navbar-brand">Home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">User<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#/register">Sign up</a></li>
-                            <li><a href="#/login">Sign in</a></li>
-                        </ul>
-                    </li>
+                    <li><a id="nav-btn-login" href="#/register">Sign up</a></li>
+                    <li><a id="nav-btn-register" href="#/login">Sign in</a></li>
+                    <li><a id="nav-btn-logout" class="hidden" href="#/home">Logout</a></li>
                 </ul>
             </div>
         </div>
