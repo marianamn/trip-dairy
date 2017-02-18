@@ -1,7 +1,5 @@
 <section>
     <div>
-        <h3>Trips</h3>
-
          {{#each this}}
             <div>
                 <img src="{{mainImage}}" alt="">
@@ -13,19 +11,9 @@
                 <p>{{comments.length}}</p>
             </div>
          {{/each}}
-    </div>
-
-    
 </section>
 
-<div id="categ">
-        <h3>Categories</h3>
-        <div>
-            {{#each this}}
-            <div>
-                <p>{{this.category}}</p>
-                <p>{{this.tripsGrouped.length}}</p>
-            </div>
-         {{/each}}
-        </div>
-    </div>
+<aside>
+    </div><div id="categories"></div>   
+</aside>
+

@@ -73,11 +73,11 @@ let diariesController = (function() {
                 .then((trips) => {
                     tripsByCategories = tripDiariesByCategory(trips);
 
-                    return this.templates.get("home");
+                    return this.templates.get("home-categories");
                 })
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
-                    $("#categ").html(compiledTemplate(tripsByCategories));
+                    $("#content #categories").html(compiledTemplate(tripsByCategories));
                 });
         }
     }
