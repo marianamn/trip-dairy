@@ -22,8 +22,10 @@ module.exports = modelRegistrator.register("Diary", {
     postDate: {
         type: Date
     },
+    mainImage: String,
     images: [],
     comments: [{
+        author: String,
         body: String,
         postDate: Date
     }],

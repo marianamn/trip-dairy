@@ -1,20 +1,31 @@
 <section>
-    <div>Trips</div>
-         {{#each data}}
-         <div>
-            <p>{{author}}</p>
-            <p>{{category}}</p>
-            <p>{{content}}</p>
-            <p>
-                 {{#each images}}
-                 <img src="{{this}}" alt="">
-                 {{/each}}
-            </p>
-            <p>{{place}}</p>
-            <p>{{title}}</p>
-            <p>{{likes}}</p>
-            <p>{{dislike}}</p>
+    <div>
+        <h3>Trips</h3>
+
+         {{#each this}}
+            <div>
+                <img src="{{mainImage}}" alt="">
+                <p>{{title}}</p>
+                <p>{{postDate}}</p>
+                <p>{{content}}...</p>
+                <p>{{author}}</p>
+                <p>{{likes}}</p>
+                <p>{{comments.length}}</p>
             </div>
          {{/each}}
     </div>
+
+    
 </section>
+
+<div id="categ">
+        <h3>Categories</h3>
+        <div>
+            {{#each this}}
+            <div>
+                <p>{{this.category}}</p>
+                <p>{{this.tripsGrouped.length}}</p>
+            </div>
+         {{/each}}
+        </div>
+    </div>

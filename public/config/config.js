@@ -10,6 +10,7 @@ SystemJS.config({
         "handlebars": "/static/bower_components/handlebars/handlebars.min.js",
         "toastr": "/static/bower_components/toastr/toastr.js",
         "cryptojs": "/libs/crypto-js/crypto-js.js",
+        "underscore": "/static/bower_components/underscore/underscore-min.js",
 
         // helpers
         "templates": "/static/scripts/helpers/template-loader.js",
