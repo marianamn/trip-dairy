@@ -1,31 +1,26 @@
 <section>
-    <div>Trips</div>
-         {{#each this}}
-         <div>
-            <p>{{title}}</p>
-            <p>{{author}}</p>
-            <p>{{postDate}}</p>
-            <p>{{category}}</p>
-            {{!--<p>{{content}}</p>
-            <img src="{{mainImage}}" alt="">
-            <p>
-                 {{#each images}}
-                 <img src="{{this}}" alt="">
-                 {{/each}}
-            </p>
-            <p>{{place}}</p>
-            <p>{{title}}</p>
-            <p>{{likes}}</p>
-            <p>{{dislike}}</p>
-            <p>{{comments.length}}</p>
-            <p>
-                 {{#each comments}}
-                 <p>{{this.author}}</p>
-                 <p>{{this.body}}</p>
-                 <p>{{this.postDate}}</p>
-                 {{/each}}
-            </p>
-            </div>--}}
-         {{/each}}
+    <div>Trip details</div>
+    <div>
+        <p>{{likes}}</p>
+        <p>{{dislike}}</p>
+        <p>{{title}}</p>
+        <p>{{author}}</p>
+        <p>{{postDate}}</p>
+        <p>{{category}}</p>
+        <p>{{content}}</p>
+        <img src="{{mainImage}}" alt="">
+        <p>
+           {{#each images}}
+                <img src="{{this}}" alt="">
+           {{/each}}
+        </p>
+
+        {{#each comments}}
+            <div>
+                <p>{{this.author}}</p>
+                <p>{{this.body}}</p>
+                <p>{{this.postDate}}</p>
+            </div>
+        {{/each}}
     </div>
 </section>

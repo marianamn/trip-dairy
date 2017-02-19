@@ -1,95 +1,40 @@
 import $ from "jquery";
 import Handlebars from "handlebars";
-import _ from "underscore";
 import { templatesLoader } from "templates";
 import toastr from "toastr";
 import { tripsDiariesData } from "diariesData";
-
-
-const TRIPS_BY_PAGE = 6;
-const CHARS_TO_SHOW = 150;
+import { UTILS } from "utils";
 
 let diariesController = (function() {
-    function getRecentTripsDiaries(trips, count, charsCount) {
-        let tripsData,
-            recentTripDiaries;
 
-        recentTripDiaries = trips.data.sort((a, b) => {
-            return new Date(b.postDate) - new Date(a.postDate);
-        });
-
-        tripsData = recentTripDiaries.slice(0, count);
-
-        for (let i = 0; i < tripsData.length; i++) {
-            tripsData[i].content = recentTripDiaries[i].content.substring(0, charsCount);
-        }
-
-        return tripsData;
-    }
-
-    function tripDiariesByCategory(trips) {
-        let tripsData,
-            groupedByCategory;
-
-        groupedByCategory = _.groupBy(trips.data, (trip) => {
-            return trip.category;
-        });
-
-        tripsData = _.map(groupedByCategory, (value, key) => {
-            return {
-                category: key,
-                tripsGrouped: value
-            };
-        });
-
-        return tripsData;
-    }
-
-    class TripsDiariesConroller {
+    class DiariesConroller {
         constructor(data, templates) {
             this.data = data;
             this.templates = templates;
         }
 
-        recentTripsDiaries() {
-            let tripsData;
+        diaryById(params) {
+            let tripDiary;
+            let id = params["id"];
 
-            this.data.getAllTripsDiaries()
-                .then((trips) => {
-                    tripsData = getRecentTripsDiaries(trips, TRIPS_BY_PAGE, CHARS_TO_SHOW);
+            this.data.getTripDiaryById(id)
+                .then((response) => {
+                    tripDiary = response.data;
 
-                    return this.templates.get("home");
+                    return this.templates.get("diary-details");
                 })
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
-                    $("#content").html(compiledTemplate(tripsData));
-                });
-        }
-
-        tripsByCategories() {
-            let tripsByCategories;
-
-            this.data.getAllTripsDiaries()
-                .then((trips) => {
-                    tripsByCategories = tripDiariesByCategory(trips);
-
-                    return this.templates.get("home-categories");
-                })
-                .then((html) => {
-                    let compiledTemplate = Handlebars.compile(html);
-                    $("#content #categories").html(compiledTemplate(tripsByCategories));
+                    $("#content").html(compiledTemplate(tripDiary));
                 });
         }
     }
 
-    let tripsDiariesConroller = new TripsDiariesConroller(tripsDiariesData, templatesLoader);
+    let diariesConroller = new DiariesConroller(tripsDiariesData, templatesLoader);
 
     return {
-        home: function() {
-            return {
-                recentDiaries: tripsDiariesConroller.recentTripsDiaries(),
-                diariesByCategory: tripsDiariesConroller.tripsByCategories()
-            };
+        diaryById: function(params) {
+            return diariesConroller.diaryById(params);
         }
     };
 }());

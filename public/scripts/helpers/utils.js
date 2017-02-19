@@ -10,10 +10,15 @@ function getAllTripsUrl() {
     return "/api/trip-diaries";
 }
 
+function getTripByIdUrl(itemId) {
+    return `/api/trip-diaries/${itemId}`;
+}
+
 let URLS = {
     getRegisterUrl: getRegisterUrl,
     getLoginUrl: getLoginUrl,
-    getAllTripsUrl: getAllTripsUrl
+    getAllTripsUrl: getAllTripsUrl,
+    getTripByIdUrl: getTripByIdUrl
 };
 
 let utils = {

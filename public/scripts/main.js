@@ -1,12 +1,16 @@
+/* globals localStorage*/
+
 import $ from "jquery";
 import Navigo from "navigo";
 import { diariesController } from "diariesController";
+import { homeController } from "homeController";
 import { usersController } from "usersController";
 
 const router = new Navigo(null, true);
 
 router
-    .on("home", diariesController.home)
+    .on("trip-diaries/:id", diariesController.diaryById)
+    .on("home", homeController.home)
     .on("register", usersController.register)
     .on("login", usersController.login)
     .on("logout", usersController.logout)

@@ -25,8 +25,9 @@ SystemJS.config({
         "diariesData": "/static/scripts/data/diaries-data.js",
 
         // controllers
-        "diariesController": "/static/scripts/controllers/diaries-controller.js",
+        "homeController": "/static/scripts/controllers/home-controller.js",
         "usersController": "/static/scripts/controllers/users-controller.js",
+        "diariesController": "/static/scripts/controllers/diaries-controller.js",
 
         // main
         "main": "/static/scripts/main.js"

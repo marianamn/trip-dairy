@@ -13,6 +13,12 @@ class TripsDiariesData {
 
         return this.requester.getJSON(url, {});
     }
+
+    getTripDiaryById(id) {
+        let url = this.urls.getTripByIdUrl(id);
+
+        return this.requester.getJSON(url, {});
+    }
 }
 
 let tripsDiariesData = new TripsDiariesData(UTILS.URLS);
