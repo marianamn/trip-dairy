@@ -54,6 +54,12 @@ class UsersData {
             resolve();
         });
     }
+
+    getAllUsers() {
+        let url = this.urls.getAllUsersURL();
+
+        return this.requester.getJSON(url, {});
+    }
 }
 
 let usersData = new UsersData(UTILS.URLS, requester);

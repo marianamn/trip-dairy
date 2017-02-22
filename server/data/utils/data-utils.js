@@ -35,17 +35,6 @@ module.exports = {
             });
         });
     },
-    getAllByCategory(model, category) {
-        return new Promise((resolve, reject) => {
-            model.find({ category: category }, (err, records) => {
-                if (err) {
-                    return reject(err);
-                }
-
-                return resolve(records);
-            });
-        });
-    },
     getOneById(model, id) {
         return new Promise((resolve, reject) => {
             model.findOne({ _id: id }, (err, singleRecord) => {

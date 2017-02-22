@@ -46,6 +46,20 @@ let diariesController = (function() {
                 });
         }
 
+        diariesByUser() {
+            let tripsData;
+
+            this.data.getAllTripsDiaries()
+                .then((trips) => {
+                    tripsData = UTILS.HELPER_FUNCTIONS.getTripsByAuthor(trips);
+
+                    return this.templates.get("home");
+                })
+                .then((html) => {
+                    let compiledTemplate = Handlebars.compile(html);
+                    $("#content").html(compiledTemplate(tripsData));
+                });
+        }
     }
 
     let diariesConroller = new DiariesConroller(tripsDiariesData, templatesLoader);

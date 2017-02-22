@@ -43,12 +43,26 @@ function tripDiariesByCategory(trips, category) {
     return tripsData;
 }
 
+function getTripsByAuthor(trips) {
+    let tripsData;
+
+    _.sortBy(trips.data, trips.author);
+    _.groupBy(trips.data, (trip) => {
+        return trip.author;
+    });
+    return tripsData;
+}
+
 function getRegisterUrl() {
     return "/auth/register";
 }
 
 function getLoginUrl() {
     return "/auth/login";
+}
+
+function getAllUsersURL() {
+    return "/auth/users";
 }
 
 function getAllTripsUrl() {
@@ -68,6 +82,7 @@ let HELPER_FUNCTIONS = {
 let URLS = {
     getRegisterUrl: getRegisterUrl,
     getLoginUrl: getLoginUrl,
+    getAllUsersURL: getAllUsersURL,
     getAllTripsUrl: getAllTripsUrl,
     getTripByIdUrl: getTripByIdUrl
 };

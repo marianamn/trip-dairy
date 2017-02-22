@@ -10,7 +10,7 @@ module.exports = function({ app, controllers }) {
     router
         .post("/register", controllers.register)
         .post("/login", controllers.login)
-        .get("/user", controllers.getLoggedUser);
+        .get("/users", controllers.getAllUsers);
 
     app.use("/auth", router);
 

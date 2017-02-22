@@ -100,6 +100,16 @@ module.exports = function(params) {
             req.session.destroy();
             req.logout();
             return res.status(200).redirect("/");
+        },
+        getAllUsers(req, res) {
+            data.getAllUsers()
+                .then((users) => {
+                    // console.log(users);
+                    res.json({ data: users });
+                })
+                .catch(err => {
+                    res.json(err);
+                });
         }
     };
 };
