@@ -9,6 +9,7 @@ import { usersController } from "usersController";
 const router = new Navigo(null, true);
 
 router
+    .on("trip-diaries/category/:category", diariesController.diariesByCategory)
     .on("trip-diaries/:id", diariesController.diaryById)
     .on("home", homeController.home)
     .on("register", usersController.register)

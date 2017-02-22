@@ -1,6 +1,6 @@
 {{#each this}}
     <div>
-        <p>{{this.category}}</p>
+        <p><a href="#/trip-diaries/category/{{this.category}}" data-category="{{this.category}}">{{this.category}}</a></p>
         <p>{{this.tripsGrouped.length}}</p>
     </div>
 {{/each}}

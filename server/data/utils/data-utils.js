@@ -35,9 +35,9 @@ module.exports = {
             });
         });
     },
-    getAllByStatus(model, status) {
+    getAllByCategory(model, category) {
         return new Promise((resolve, reject) => {
-            model.find({ status: status }, (err, records) => {
+            model.find({ category: category }, (err, records) => {
                 if (err) {
                     return reject(err);
                 }

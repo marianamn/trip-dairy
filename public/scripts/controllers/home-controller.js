@@ -1,6 +1,6 @@
 import $ from "jquery";
 import Handlebars from "handlebars";
-import _ from "underscore";
+import { UTILS } from "utils";
 import { templatesLoader } from "templates";
 import toastr from "toastr";
 import { tripsDiariesData } from "diariesData";
@@ -10,60 +10,10 @@ const TRIPS_BY_PAGE = 6;
 const CHARS_TO_SHOW = 150;
 
 let homeController = (function() {
-    function getRecentTripsDiaries(trips, count, charsCount) {
-        let tripsData,
-            recentTripDiaries;
-
-        recentTripDiaries = trips.data.sort((a, b) => {
-            return new Date(b.postDate) - new Date(a.postDate);
-        });
-
-        tripsData = recentTripDiaries.slice(0, count);
-
-        for (let i = 0; i < tripsData.length; i++) {
-            tripsData[i].content = recentTripDiaries[i].content.substring(0, charsCount);
-        }
-
-        return tripsData;
-    }
-
-    function tripDiariesByCategory(trips) {
-        let tripsData,
-            groupedByCategory;
-
-        groupedByCategory = _.groupBy(trips.data, (trip) => {
-            return trip.category;
-        });
-
-        tripsData = _.map(groupedByCategory, (value, key) => {
-            return {
-                category: key,
-                tripsGrouped: value
-            };
-        });
-
-        return tripsData;
-    }
-
     class HomeConroller {
         constructor(data, templates) {
             this.data = data;
             this.templates = templates;
-        }
-
-        recentTripsDiaries() {
-            let tripsData;
-
-            this.data.getAllTripsDiaries()
-                .then((trips) => {
-                    tripsData = getRecentTripsDiaries(trips, TRIPS_BY_PAGE, CHARS_TO_SHOW);
-
-                    return this.templates.get("home");
-                })
-                .then((html) => {
-                    let compiledTemplate = Handlebars.compile(html);
-                    $("#content").html(compiledTemplate(tripsData));
-                });
         }
 
         tripsByCategories() {
@@ -71,13 +21,28 @@ let homeController = (function() {
 
             this.data.getAllTripsDiaries()
                 .then((trips) => {
-                    tripsByCategories = tripDiariesByCategory(trips);
+                    tripsByCategories = UTILS.HELPER_FUNCTIONS.getCategories(trips);
 
                     return this.templates.get("home-categories");
                 })
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content #categories").html(compiledTemplate(tripsByCategories));
+                });
+        }
+
+        recentTripsDiaries() {
+            let tripsData;
+
+            this.data.getAllTripsDiaries()
+                .then((trips) => {
+                    tripsData = UTILS.HELPER_FUNCTIONS.getRecentTripsDiaries(trips, TRIPS_BY_PAGE, CHARS_TO_SHOW);
+
+                    return this.templates.get("home");
+                })
+                .then((html) => {
+                    let compiledTemplate = Handlebars.compile(html);
+                    $("#content").html(compiledTemplate(tripsData));
                 });
         }
     }

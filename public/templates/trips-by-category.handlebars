@@ -1,0 +1,14 @@
+<section>
+    <div>
+        <h3>Trips by categogory</h3>
+        {{#each this}}
+            <div>
+                <img src="{{mainImage}}" alt="">
+                <p><a href="#/trip-diaries/{{_id}}" data-id="{{_id}}">{{title}}</a></p>
+                <p>{{postDate}}</p>
+                <p>{{author}}</p>
+                <p>{{likes}}</p>
+                <p>{{comments.length}}</p>
+        {{/each}}
+    </div>
+</section>

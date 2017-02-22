@@ -48,8 +48,6 @@ module.exports = function(params) {
                 });
         },
         login(req, res) {
-            // console.log(req.body);
-
             let postData = req.body["body"];
             let postDataObj = JSON.parse(postData);
             let password = postDataObj.password;
