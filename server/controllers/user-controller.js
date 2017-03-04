@@ -110,6 +110,16 @@ module.exports = function(params) {
                 .catch(err => {
                     res.json(err);
                 });
+        },
+        getUserById(req, res) {
+            data.getUserById(req.params.id)
+                .then((user) => {
+                    // console.log(user);
+                    res.json({ data: user });
+                })
+                .catch(err => {
+                    res.json(err);
+                });
         }
     };
 };

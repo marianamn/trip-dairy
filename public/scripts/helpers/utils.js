@@ -66,6 +66,20 @@ function getTripsByAuthor(trips) {
     return tripsData;
 }
 
+function getUserInfo(users, name) {
+    let foundUser;
+
+    users.forEach((user) => {
+        let fullName = `${user.firstName} ${user.lastName}`;
+
+        if (fullName === name) {
+            foundUser = user;
+        }
+    });
+
+    return foundUser;
+}
+
 function getRegisterUrl() {
     return "/auth/register";
 }
@@ -86,11 +100,17 @@ function getTripByIdUrl(itemId) {
     return `/api/trip-diaries/${itemId}`;
 }
 
+function getUserByIdUrl(userId) {
+    return `/auth/users/${userId}`;
+}
+
+
 let HELPER_FUNCTIONS = {
     getRecentTripsDiaries: getRecentTripsDiaries,
     getCategories: getCategories,
     tripDiariesByCategory: tripDiariesByCategory,
-    getTripsByAuthor: getTripsByAuthor
+    getTripsByAuthor: getTripsByAuthor,
+    getUserInfo: getUserInfo
 };
 
 let URLS = {
@@ -98,7 +118,8 @@ let URLS = {
     getLoginUrl: getLoginUrl,
     getAllUsersURL: getAllUsersURL,
     getAllTripsUrl: getAllTripsUrl,
-    getTripByIdUrl: getTripByIdUrl
+    getTripByIdUrl: getTripByIdUrl,
+    getUserByIdUrl: getUserByIdUrl
 };
 
 let utils = {

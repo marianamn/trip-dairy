@@ -41,16 +41,10 @@ module.exports = function(models) {
             });
         },
         getAllUsers() {
-            return new Promise((resolve, reject) => {
-                User.find()
-                    .exec({}, (err, users) => {
-                        if (err) {
-                            return reject(err);
-                        }
-
-                        return resolve(users);
-                    });
-            });
+            return dataUtils.getAll(User);
+        },
+        getUserById(id) {
+            return dataUtils.getOneById(User, id);
         }
     };
 };

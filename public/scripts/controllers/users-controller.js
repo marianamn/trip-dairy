@@ -126,17 +126,39 @@ let usersController = (function() {
 
                 });
         }
+
+        userById(params) {
+            let user;
+            let id = params["id"];
+
+            this.data.getUserById(id)
+                .then((response) => {
+                    user = response.data;
+
+                    return this.templates.get("diary-author-details");
+                })
+                .then((html) => {
+                    console.log(user);
+                    let compiledTemplate = Handlebars.compile(html);
+                    $("#content").html(compiledTemplate(user));
+                });
+        }
     }
+
+    let userConroller = new UsersController(usersData, templatesLoader);
 
     return {
         register: function() {
-            return new UsersController(usersData, templatesLoader).loadRegisterForm();
+            return userConroller.loadRegisterForm();
         },
         login: function() {
-            return new UsersController(usersData, templatesLoader).loadLoginForm();
+            return userConroller.loadLoginForm();
         },
         logout: function() {
-            return new UsersController(usersData, templatesLoader).logoutUser();
+            return userConroller.logoutUser();
+        },
+        userById: function(params) {
+            return userConroller.userById(params);
         }
     };
 }());

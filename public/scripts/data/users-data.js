@@ -60,6 +60,12 @@ class UsersData {
 
         return this.requester.getJSON(url, {});
     }
+
+    getUserById(id) {
+        let url = this.urls.getUserByIdUrl(id);
+
+        return this.requester.getJSON(url, {});
+    }
 }
 
 let usersData = new UsersData(UTILS.URLS, requester);

@@ -64,6 +64,7 @@ let diariesController = (function() {
                                 user = UTILS.HELPER_FUNCTIONS.getUserInfo(users, trip.author);
 
                                 trip.userInfo = {
+                                    _id: user._id,
                                     fullName: `${user.firstName} ${user.lastName}`,
                                     profileImage: user.profileImgURL,
                                     facebookContact: user.facebookContact,
@@ -79,7 +80,7 @@ let diariesController = (function() {
                     return this.templates.get("diaries-by-author");
                 })
                 .then((html) => {
-                    // sconsole.log(tripsData);
+                    // console.log(tripsData);
 
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(tripsData));
