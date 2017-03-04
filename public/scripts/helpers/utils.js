@@ -44,12 +44,25 @@ function tripDiariesByCategory(trips, category) {
 }
 
 function getTripsByAuthor(trips) {
-    let tripsData;
+    let tripsData,
+        sortByAuthor,
+        groupedByAuthor;
 
-    _.sortBy(trips.data, trips.author);
-    _.groupBy(trips.data, (trip) => {
+    sortByAuthor = _.sortBy(trips.data, (trip) => {
         return trip.author;
     });
+
+    groupedByAuthor = _.groupBy(sortByAuthor, (trip) => {
+        return trip.author;
+    });
+
+    tripsData = _.map(groupedByAuthor, (value, key) => {
+        return {
+            author: key,
+            tripsGrouped: value
+        };
+    });
+
     return tripsData;
 }
 
@@ -76,7 +89,8 @@ function getTripByIdUrl(itemId) {
 let HELPER_FUNCTIONS = {
     getRecentTripsDiaries: getRecentTripsDiaries,
     getCategories: getCategories,
-    tripDiariesByCategory: tripDiariesByCategory
+    tripDiariesByCategory: tripDiariesByCategory,
+    getTripsByAuthor: getTripsByAuthor
 };
 
 let URLS = {

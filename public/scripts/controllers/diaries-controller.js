@@ -4,6 +4,7 @@ import { UTILS } from "utils";
 import { templatesLoader } from "templates";
 import toastr from "toastr";
 import { tripsDiariesData } from "diariesData";
+import { usersData } from "usersData";
 
 let diariesController = (function() {
 
@@ -36,7 +37,7 @@ let diariesController = (function() {
             this.data.getAllTripsDiaries()
                 .then((trips) => {
                     tripDiary = UTILS.HELPER_FUNCTIONS.tripDiariesByCategory(trips, category);
-                    console.log(tripDiary);
+                    // console.log(tripDiary);
 
                     return this.templates.get("trips-by-category");
                 })
@@ -47,19 +48,44 @@ let diariesController = (function() {
         }
 
         diariesByUser() {
-            let tripsData;
+            let tripsData,
+                users,
+                user;
 
             this.data.getAllTripsDiaries()
                 .then((trips) => {
                     tripsData = UTILS.HELPER_FUNCTIONS.getTripsByAuthor(trips);
 
-                    return this.templates.get("home");
+                    usersData.getAllUsers()
+                        .then((response) => {
+                            users = response.data;
+
+                            tripsData.forEach((trip) => {
+                                user = UTILS.HELPER_FUNCTIONS.getUserInfo(users, trip.author);
+
+                                trip.userInfo = {
+                                    fullName: `${user.firstName} ${user.lastName}`,
+                                    profileImage: user.profileImgURL,
+                                    facebookContact: user.facebookContact,
+                                    youTubeContact: user.youTubeContact,
+                                    twitterContact: user.twitterContact,
+                                    googlePlusContact: user.googlePlusContact,
+                                    instagramContact: user.instagramContact,
+                                    rssContact: user.rssContact
+                                };
+                            });
+                        });
+
+                    return this.templates.get("diaries-by-author");
                 })
                 .then((html) => {
+                    // sconsole.log(tripsData);
+
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(tripsData));
                 });
         }
+
     }
 
     let diariesConroller = new DiariesConroller(tripsDiariesData, templatesLoader);
@@ -69,8 +95,10 @@ let diariesController = (function() {
             return diariesConroller.diaryById(params);
         },
         diariesByCategory: function(params) {
-            console.log(params);
             return diariesConroller.diariesByCategory(params);
+        },
+        diariesByUser: function() {
+            return diariesConroller.diariesByUser();
         }
     };
 }());

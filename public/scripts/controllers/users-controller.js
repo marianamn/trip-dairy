@@ -111,7 +111,7 @@ let usersController = (function() {
         }
 
         logoutUser() {
-            this.usersData.logout()
+            this.data.logout()
                 .then(() => {
                     $("#nav-btn-logout").on("click", () => {
                         $("#nav-btn-logout").addClass("hidden");

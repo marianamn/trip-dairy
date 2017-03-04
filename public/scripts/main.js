@@ -12,6 +12,7 @@ router
     .on("trip-diaries/category/:category", diariesController.diariesByCategory)
     .on("trip-diaries/:id", diariesController.diaryById)
     .on("home", homeController.home)
+    .on("trip-diaries-by-author", diariesController.diariesByUser)
     .on("register", usersController.register)
     .on("login", usersController.login)
     .on("logout", usersController.logout)

@@ -1,5 +1,32 @@
 <section>
     <div>
         <h3>By author</h3>
+        
+        {{#each this}}
+            <div>
+                {{#with userInfo}}
+                    <a href="{{fullName}}">{{fullName}}</a>
+                    <img src="{{profileImage}}" alt="profile Image" style="width: 100px; height: 100px;">
+                    <a href="{{facebookContact}}" target="blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="{{youTubeContact}}" target="blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    <a href="{{twitterContact}}" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="{{googlePlusContact}}" target="blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    <a href="{{instagramContact}}" target="blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="{{rssContact}}" target="blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
+                {{/with}}
+            </div>
+           
+            <div>
+                {{#each tripsGrouped}}
+                    <div>
+                        <img src="{{mainImage}}" alt="">
+                        <p><a href="#/trip-diaries/{{_id}}" data-id="{{_id}}">{{title}}</a></p>
+                        <p>{{postDate}}</p>
+                        <p>{{likes}}</p>
+                        <p>{{comments.length}}</p>
+                    </div>
+                {{/each}}
+            </div>
+        {{/each}}
     </div>
 </section>
