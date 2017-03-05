@@ -1,3 +1,5 @@
+/* globals localStorage*/
+
 import _ from "underscore";
 
 function getRecentTripsDiaries(trips, count, charsCount) {

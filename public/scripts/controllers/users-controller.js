@@ -138,7 +138,6 @@ let usersController = (function() {
                     return this.templates.get("diary-author-details");
                 })
                 .then((html) => {
-                    console.log(user);
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(user));
                 });

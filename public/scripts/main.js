@@ -2,6 +2,7 @@
 
 import $ from "jquery";
 import Navigo from "navigo";
+import { UTILS } from "utils";
 import { diariesController } from "diariesController";
 import { homeController } from "homeController";
 import { usersController } from "usersController";
@@ -31,3 +32,11 @@ $("#nav-btn-logout").on("click", () => {
 
     return usersController.logout;
 });
+
+let ls = localStorage.getItem("auth_email");
+if (ls.length !== 0) {
+    console.log("***");
+    $("#nav-btn-logout").removeClass("hidden");
+    $("#nav-btn-login").addClass("hidden");
+    $("#nav-btn-register").addClass("hidden");
+}
