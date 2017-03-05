@@ -107,7 +107,7 @@ let diariesController = (function() {
                                     title: $("#tb-title").val(),
                                     author: fullName,
                                     place: $("#tb-place").val(),
-                                    category: $("#tb-category").val(),
+                                    category: $("#tb-category option:selected").text(),
                                     content: $("#tb-content").val(),
                                     postDate: Date.now(),
                                     mainImage: $("#tb-mainImage").val(),
