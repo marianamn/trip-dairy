@@ -2,9 +2,9 @@
 
 import $ from "jquery";
 import Navigo from "navigo";
-import { UTILS } from "utils";
 import { diariesController } from "diariesController";
 import { homeController } from "homeController";
+import toastr from "toastr";
 import { usersController } from "usersController";
 
 const router = new Navigo(null, true);
@@ -14,6 +14,7 @@ router
     .on("trip-diaries/:id", diariesController.diaryById)
     .on("home", homeController.home)
     .on("trip-diaries-by-author", diariesController.diariesByUser)
+    .on("add-diary", diariesController.addNewDiary)
     .on("users/:id", usersController.userById)
     .on("register", usersController.register)
     .on("login", usersController.login)
@@ -23,20 +24,23 @@ router
     })
     .resolve();
 
+let loggedUserEmail = localStorage.getItem("auth_email");
+
 $("#nav-btn-logout").on("click", () => {
     $("#nav-btn-logout").addClass("hidden");
     $("#nav-btn-login").removeClass("hidden");
     $("#nav-btn-register").removeClass("hidden");
+    $(".add-diary").addClass("hidden");
     localStorage.removeItem("auth_key");
     localStorage.removeItem("auth_email");
+    toastr.success(`${loggedUserEmail} logged out successfuly!`);
 
     return usersController.logout;
 });
 
-let ls = localStorage.getItem("auth_email");
-if (ls.length !== 0) {
-    console.log("***");
+if (loggedUserEmail !== null) {
     $("#nav-btn-logout").removeClass("hidden");
     $("#nav-btn-login").addClass("hidden");
     $("#nav-btn-register").addClass("hidden");
+    $(".add-diary").removeClass("hidden");
 }

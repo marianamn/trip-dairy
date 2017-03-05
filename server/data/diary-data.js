@@ -10,6 +10,25 @@ module.exports = function(models) {
         },
         getDiaryById(id) {
             return dataUtils.getOneById(Diary, id);
+        },
+        createDiary(diary) {
+            return new Promise((resolve) => {
+                    let newDiary = new Diary({
+                        title: diary.title,
+                        author: diary.author,
+                        place: diary.place,
+                        category: diary.category,
+                        content: diary.content,
+                        postDate: diary.postDate,
+                        mainImage: diary.mainImage,
+                        images: diary.images
+                    });
+
+                    resolve(newDiary);
+                })
+                .then((newDiary) => {
+                    return dataUtils.save(newDiary);
+                });
         }
     };
 };

@@ -99,6 +99,7 @@ module.exports = function(params) {
         logout(req, res) {
             req.session.destroy();
             req.logout();
+
             return res.status(200).redirect("/");
         },
         getAllUsers(req, res) {

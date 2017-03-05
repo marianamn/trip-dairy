@@ -1,4 +1,4 @@
-/* globals SystemJS*/
+/* globals SystemJS */
 
 SystemJS.config({
     "transpiler": "plugin-babel",

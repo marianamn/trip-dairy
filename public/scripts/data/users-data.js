@@ -2,6 +2,7 @@ import CryptoJS from "cryptojs";
 import { UTILS } from "utils";
 import { requester } from "requester";
 
+
 // function encryptToSha1(string) {
 //     let toSha1 = CryptoJS.SHA1(string).toString();
 
@@ -49,10 +50,10 @@ class UsersData {
         return this.requester.postJSON(url, body, {});
     }
 
-    logout() {
-        return new Promise((resolve) => {
-            resolve();
-        });
+    logout(user) {
+        let url = this.urls.getLogoutUrl();
+
+        return this.requester.postJSON(url, user, {});
     }
 
     getAllUsers() {

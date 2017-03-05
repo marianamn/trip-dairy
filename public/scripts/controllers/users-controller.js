@@ -79,6 +79,7 @@ let usersController = (function() {
             this.data.login(user)
                 .then((response) => {
                     $("#nav-btn-logout").removeClass("hidden");
+                    $(".add-diary").removeClass("hidden");
                     $("#nav-btn-register").addClass("hidden");
                     $("#nav-btn-login").addClass("hidden");
 
@@ -111,19 +112,20 @@ let usersController = (function() {
         }
 
         logoutUser() {
-            this.data.logout()
+            let user = {};
+            this.data.logout(user)
                 .then(() => {
-                    $("#nav-btn-logout").on("click", () => {
-                        $("#nav-btn-logout").addClass("hidden");
-                        $("#nav-btn-login").removeClass("hidden");
-                        $("#nav-btn-register").removeClass("hidden");
+                    $("#nav-btn-logout").addClass("hidden");
+                    $("#nav-btn-login").removeClass("hidden");
+                    $("#nav-btn-register").removeClass("hidden");
+                    $(".add-diary").addClass("hidden");
 
-                        localStorage.removeItem("auth_key");
-                        localStorage.removeItem("auth_email");
-                        let msg = `${localStorage.getItem("auth_email")} logged out successfuly!`;
-                        toastr.success(msg);
-                    });
+                    localStorage.removeItem("auth_key");
+                    localStorage.removeItem("auth_email");
 
+                    let msg = `${localStorage.getItem("auth_email")} logged out successfuly!`;
+                    toastr.success(msg);
+                    window.location = "#/home";
                 });
         }
 

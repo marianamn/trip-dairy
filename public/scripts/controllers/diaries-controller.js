@@ -1,3 +1,5 @@
+/* globals window localStorage*/
+
 import $ from "jquery";
 import Handlebars from "handlebars";
 import { UTILS } from "utils";
@@ -87,6 +89,47 @@ let diariesController = (function() {
                 });
         }
 
+        addNewDiary() {
+            let users;
+
+            this.templates.get("add-diary")
+                .then((html) => {
+                    let compiledTemplate = Handlebars.compile(html);
+                    $("#content").html(compiledTemplate());
+
+                    $("#btn-add-diary").on("click", () => {
+                        usersData.getAllUsers()
+                            .then((response) => {
+                                users = response.data;
+                                let fullName = UTILS.HELPER_FUNCTIONS.getUserFullName(users, localStorage.getItem("auth_email"));
+
+                                let newDiary = {
+                                    title: $("#tb-title").val(),
+                                    author: fullName,
+                                    place: $("#tb-place").val(),
+                                    category: $("#tb-category").val(),
+                                    content: $("#tb-content").val(),
+                                    postDate: Date.now(),
+                                    mainImage: $("#tb-mainImage").val(),
+                                    images: $("#tb-images").val()
+                                };
+
+                                console.log(newDiary);
+
+                                this.data.addDiary(newDiary)
+                                    .then(() => {
+                                        toastr.success("Diary successfully added!");
+                                        window.location = "#/home";
+                                    })
+                                    .catch((error) => {
+                                        toastr.error(error);
+                                        window.location = "#/add-diary";
+                                    });
+                            });
+                    });
+                });
+        }
+
     }
 
     let diariesConroller = new DiariesConroller(tripsDiariesData, templatesLoader);
@@ -100,6 +143,9 @@ let diariesController = (function() {
         },
         diariesByUser: function() {
             return diariesConroller.diariesByUser();
+        },
+        addNewDiary: function() {
+            return diariesConroller.addNewDiary();
         }
     };
 }());

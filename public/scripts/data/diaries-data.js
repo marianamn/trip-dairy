@@ -19,6 +19,24 @@ class TripsDiariesData {
 
         return this.requester.getJSON(url, {});
     }
+
+    addDiary(diary) {
+        let postBody = {
+            title: diary.title,
+            author: diary.author,
+            place: diary.place,
+            category: diary.category,
+            content: diary.content,
+            postDate: diary.postDate,
+            mainImage: diary.mainImage,
+            images: diary.images
+        };
+
+        let url = this.urls.getDiaryAddUrlUrl();
+        let body = { body: JSON.stringify(postBody) };
+
+        return this.requester.postJSON(url, body, {});
+    }
 }
 
 let tripsDiariesData = new TripsDiariesData(UTILS.URLS);

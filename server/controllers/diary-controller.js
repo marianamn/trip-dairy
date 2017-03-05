@@ -22,6 +22,31 @@ module.exports = function(params) {
                 .catch(err => {
                     res.json(err);
                 });
+        },
+        addDiary(req, res) {
+            let newDiary = {};
+            let propoerties = ["title", "author", "place", "category", "content", "postDate", "mainImage", "images"];
+
+            let postData = req.body["body"];
+            let postDataObj = JSON.parse(postData);
+
+            propoerties.forEach(property => {
+                if (!property || property.length < 0) {
+                    res.status(411).json(`Missing ${property}`);
+                }
+
+                newDiary[property] = postDataObj[property];
+            });
+
+            console.log(newDiary);
+
+            data.createDiary(newDiary)
+                .then(() => {
+                    res.status(200).send({ success: true, data });
+                })
+                .catch(err => {
+                    return res.status(400).send({ success: false, msg: "Diary not created!", err });
+                });
         }
     };
 };
