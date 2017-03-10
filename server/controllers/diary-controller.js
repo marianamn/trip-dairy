@@ -29,6 +29,7 @@ module.exports = function(params) {
 
             let postData = req.body["body"];
             let postDataObj = JSON.parse(postData);
+            //console.log(postDataObj);
 
             propoerties.forEach(property => {
                 if (!property || property.length < 0) {

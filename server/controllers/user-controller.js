@@ -52,7 +52,9 @@ module.exports = function(params) {
             let postDataObj = JSON.parse(postData);
             let password = postDataObj.password;
 
-            // console.log(postDataObj.email);
+            console.log(postData);
+            console.log(postDataObj);
+            console.log(password);
 
             data.getUserByEmail(postDataObj.email)
                 .then((user) => {

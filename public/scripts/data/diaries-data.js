@@ -1,3 +1,5 @@
+/* globals localStorage*/
+
 import { UTILS } from "utils";
 import { requester } from "requester";
 
@@ -35,7 +37,13 @@ class TripsDiariesData {
         let url = this.urls.getDiaryAddUrlUrl();
         let body = { body: JSON.stringify(postBody) };
 
-        return this.requester.postJSON(url, body, {});
+        let options = {
+            headers: {
+                "x-auth-key": localStorage.getItem("auth_key")
+            }
+        };
+
+        return this.requester.postJSON(url, body, options);
     }
 }
 

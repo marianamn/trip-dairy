@@ -102,30 +102,41 @@ let diariesController = (function() {
                             .then((response) => {
                                 users = response.data;
                                 let fullName = UTILS.HELPER_FUNCTIONS.getUserFullName(users, localStorage.getItem("auth_email"));
+                                let images = [];
+                                let items = $("#tb-images").val()
+                                    .split(",");
+
+                                for (let i = 0; i < items.length; i++) {
+                                    images.push(items[i].trim());
+                                }
 
                                 let newDiary = {
                                     title: $("#tb-title").val(),
                                     author: fullName,
                                     place: $("#tb-place").val(),
-                                    category: $("#tb-category option:selected").text(),
+                                    category: $("#tb-category .selected-option").val(),
                                     content: $("#tb-content").val(),
                                     postDate: Date.now(),
                                     mainImage: $("#tb-mainImage").val(),
-                                    images: $("#tb-images").val()
+                                    images: images
                                 };
 
-                                console.log(newDiary);
-
-                                this.data.addDiary(newDiary)
-                                    .then(() => {
+                                return newDiary;
+                            })
+                            .then((diary) => {
+                                this.data.addDiary(diary)
+                                    .then((resp) => {
                                         toastr.success("Diary successfully added!");
-                                        window.location = "#/home";
+                                        window.location = "/";
+
                                     })
                                     .catch((error) => {
-                                        toastr.error(error);
-                                        window.location = "#/add-diary";
+                                        console.log(error);
+                                        return toastr.error(error.statusText, "Error");
                                     });
                             });
+
+                        return false;
                     });
                 });
         }
