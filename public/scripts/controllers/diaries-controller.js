@@ -4,6 +4,7 @@ import $ from "jquery";
 import Handlebars from "handlebars";
 import { UTILS } from "utils";
 import { templatesLoader } from "templates";
+import tinymce from "tinymce";
 import toastr from "toastr";
 import { tripsDiariesData } from "diariesData";
 import { usersData } from "usersData";
@@ -97,6 +98,18 @@ let diariesController = (function() {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate());
 
+                    tinymce.init({
+                        selector: "#tb-content",
+                        height: 300,
+                        menubar: false,
+                        plugins: [
+                            "advlist autolink lists link image charmap print preview anchor",
+                            "searchreplace visualblocks code fullscreen"
+                        ],
+                        toolbar: "undo redo  | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent",
+                        content_css: "https://www.tinymce.com/css/codepen.min.css"
+                    });
+
                     $("#btn-add-diary").on("click", () => {
                         usersData.getAllUsers()
                             .then((response) => {
@@ -115,11 +128,13 @@ let diariesController = (function() {
                                     author: fullName,
                                     place: $("#tb-place").val(),
                                     category: $("#tb-category .selected-option").val(),
-                                    content: $("#tb-content").val(),
+                                    content: tinymce.get("tb-content").getContent({ format: "html" }),
                                     postDate: Date.now(),
                                     mainImage: $("#tb-mainImage").val(),
                                     images: images
                                 };
+
+                                // console.log(newDiary.content);
 
                                 return newDiary;
                             })

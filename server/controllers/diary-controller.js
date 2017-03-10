@@ -29,7 +29,7 @@ module.exports = function(params) {
 
             let postData = req.body["body"];
             let postDataObj = JSON.parse(postData);
-            //console.log(postDataObj);
+            // console.log(postDataObj);
 
             propoerties.forEach(property => {
                 if (!property || property.length < 0) {
@@ -39,7 +39,7 @@ module.exports = function(params) {
                 newDiary[property] = postDataObj[property];
             });
 
-            console.log(newDiary);
+            // console.log(newDiary);
 
             data.createDiary(newDiary)
                 .then(() => {

@@ -11,6 +11,7 @@ SystemJS.config({
         "toastr": "/static/bower_components/toastr/toastr.js",
         "cryptojs": "/libs/crypto-js/crypto-js.js",
         "underscore": "/static/bower_components/underscore/underscore-min.js",
+        "tinymce": "/static/bower_components/tinymce/tinymce.min.js",
 
         // helpers
         "templates": "/static/scripts/helpers/template-loader.js",

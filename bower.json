@@ -23,6 +23,7 @@
     "mocha": "^3.1.0",
     "chai": "^3.5.0",
     "navigo": "^3.0.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "tinymce": "^4.5.5"
   }
 }
