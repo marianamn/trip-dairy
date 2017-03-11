@@ -3,35 +3,34 @@
 SystemJS.config({
     "transpiler": "plugin-babel",
     "map": {
-        "plugin-babel": "/libs/systemjs-plugin-babel/plugin-babel.js",
-        "systemjs-babel-build": "/libs/systemjs-plugin-babel/systemjs-babel-browser.js",
-        "jquery": "/static/bower_components/jquery/dist/jquery.js",
-        "navigo": "/static/bower_components/navigo/lib/navigo.js",
-        "handlebars": "/static/bower_components/handlebars/handlebars.min.js",
-        "toastr": "/static/bower_components/toastr/toastr.js",
-        "cryptojs": "/libs/crypto-js/crypto-js.js",
-        "underscore": "/static/bower_components/underscore/underscore-min.js",
-        "tinymce": "/static/bower_components/tinymce/tinymce.min.js",
+        "plugin-babel": "../../node_modules/systemjs-plugin-babel/plugin-babel.js",
+        "systemjs-babel-build": "../../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js",
+        "jquery": "../bower_components/jquery/dist/jquery.js",
+        "navigo": "../bower_components/navigo/lib/navigo.js",
+        "handlebars": "../bower_components/handlebars/handlebars.min.js",
+        "toastr": "../bower_components/toastr/toastr.js",
+        "underscore": "../bower_components/underscore/underscore-min.js",
+        "tinymce": "../bower_components/tinymce/tinymce.min.js",
 
         // helpers
-        "templates": "/static/scripts/helpers/template-loader.js",
-        "constants": "/static/scripts/helpers/constants.js",
-        "utils": "/static/scripts/helpers/utils.js",
+        "templates": "../scripts/helpers/template-loader.js",
+        "constants": "../scripts/helpers/constants.js",
+        "utils": "../scripts/helpers/utils.js",
 
         // requester
-        "requester": "/static/scripts/requests/requester.js",
+        "requester": "../scripts/requests/requester.js",
 
         // data
-        "usersData": "/static/scripts/data/users-data.js",
-        "diariesData": "/static/scripts/data/diaries-data.js",
+        "usersData": "../scripts/data/users-data.js",
+        "diariesData": "../scripts/data/diaries-data.js",
 
         // controllers
-        "homeController": "/static/scripts/controllers/home-controller.js",
-        "usersController": "/static/scripts/controllers/users-controller.js",
-        "diariesController": "/static/scripts/controllers/diaries-controller.js",
+        "homeController": "../scripts/controllers/home-controller.js",
+        "usersController": "../scripts/controllers/users-controller.js",
+        "diariesController": "../scripts/controllers/diaries-controller.js",
 
         // main
-        "main": "/static/scripts/main.js"
+        "main": "../scripts/main.js"
     }
 });
 

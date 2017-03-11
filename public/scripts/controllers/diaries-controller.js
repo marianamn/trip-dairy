@@ -104,7 +104,8 @@ let diariesController = (function() {
                         menubar: false,
                         plugins: [
                             "advlist autolink lists link image charmap print preview anchor",
-                            "searchreplace visualblocks code fullscreen"
+                            "searchreplace visualblocks code fullscreen",
+                            "insertdatetime media table contextmenu paste code"
                         ],
                         toolbar: "undo redo  | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent",
                         content_css: "https://www.tinymce.com/css/codepen.min.css"

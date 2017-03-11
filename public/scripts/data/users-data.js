@@ -1,4 +1,3 @@
-import CryptoJS from "cryptojs";
 import { UTILS } from "utils";
 import { requester } from "requester";
 
