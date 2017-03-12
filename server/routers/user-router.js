@@ -4,7 +4,7 @@ const express = require("express");
 
 let Router = express.Router;
 
-module.exports = function({ app, controllers, middlewares }) {
+module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
@@ -12,7 +12,7 @@ module.exports = function({ app, controllers, middlewares }) {
         .get("/users", controllers.getAllUsers)
         .post("/register", controllers.register)
         .post("/login", controllers.login)
-        .post("/logout", middlewares.isAuthenticated, controllers.logout);
+        .post("/logout", controllers.logout);
 
     app.use("/auth", router);
 

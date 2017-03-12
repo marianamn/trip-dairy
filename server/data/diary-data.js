@@ -21,7 +21,9 @@ module.exports = function(models) {
                         content: diary.content,
                         postDate: diary.postDate,
                         mainImage: diary.mainImage,
-                        images: diary.images
+                        images: diary.images,
+                        likes: 0,
+                        dislikes: 0
                     });
 
                     resolve(newDiary);

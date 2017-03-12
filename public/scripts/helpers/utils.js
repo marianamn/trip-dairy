@@ -1,6 +1,7 @@
 /* globals localStorage*/
 
 import _ from "underscore";
+import tinymce from "tinymce";
 
 function getRecentTripsDiaries(trips, count, charsCount) {
     let tripsData,
@@ -15,6 +16,19 @@ function getRecentTripsDiaries(trips, count, charsCount) {
     for (let i = 0; i < tripsData.length; i++) {
         tripsData[i].content = recentTripDiaries[i].content.substring(0, charsCount);
     }
+
+    return tripsData;
+}
+
+function getMostLikedTripsDiaries(trips, count) {
+    let tripsData,
+        mostLikedTripDiaries;
+
+    mostLikedTripDiaries = trips.data.sort((a, b) => {
+        return parseFloat(b.likes) - parseFloat(a.likes);
+    });
+
+    tripsData = mostLikedTripDiaries.slice(0, count);
 
     return tripsData;
 }
@@ -95,6 +109,21 @@ function getUserFullName(users, email) {
     return fullName;
 }
 
+function tinyMceInit() {
+    tinymce.init({
+        selector: "#tb-content",
+        height: 300,
+        menubar: false,
+        plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste code"
+        ],
+        toolbar: "undo redo  | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent",
+        content_css: "https://www.tinymce.com/css/codepen.min.css"
+    });
+}
+
 function getRegisterUrl() {
     return "/auth/register";
 }
@@ -130,11 +159,13 @@ function getDiaryAddUrlUrl() {
 
 let HELPER_FUNCTIONS = {
     getRecentTripsDiaries: getRecentTripsDiaries,
+    getMostLikedTripsDiaries: getMostLikedTripsDiaries,
     getCategories: getCategories,
     tripDiariesByCategory: tripDiariesByCategory,
     getTripsByAuthor: getTripsByAuthor,
     getUserInfo: getUserInfo,
-    getUserFullName: getUserFullName
+    getUserFullName: getUserFullName,
+    tinyMceInit: tinyMceInit
 };
 
 let URLS = {

@@ -1,29 +1,29 @@
 {
-    "name": "tripdiary",
-    "description": "",
-    "authors": [
-        "Mariana"
-    ],
-    "license": "MIT",
-    "homepage": "",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "bootstrap": "^3.3.7",
-        "toastr": "^2.1.3",
-        "bootstrap-social": "^5.1.1",
-        "handlebars": "^4.0.5",
-        "sammy": "^0.7.6",
-        "crypto-js": "^3.1.6",
-        "mocha": "^3.1.0",
-        "chai": "^3.5.0",
-        "navigo": "^3.0.0",
-        "underscore": "^1.8.3",
-        "tinymce": "^4.5.5"
-    }
+  "name": "tripdiary",
+  "description": "",
+  "authors": [
+    "Mariana"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "toastr": "^2.1.3",
+    "bootstrap-social": "^5.1.1",
+    "handlebars": "^4.0.5",
+    "sammy": "^0.7.6",
+    "crypto-js": "^3.1.6",
+    "mocha": "^3.1.0",
+    "chai": "^3.5.0",
+    "navigo": "^3.0.0",
+    "underscore": "^1.8.3",
+    "tinymce": "^4.5.5"
+  }
 }

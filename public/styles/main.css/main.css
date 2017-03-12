@@ -1,0 +1,59 @@
+body,
+ul,
+li,
+a,
+p,
+div,
+section {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 16px;
+  font-family: "Playfair Display", sans-serif; }
+
+.logo-container {
+  margin: 0;
+  padding: 0;
+  height: 120px; }
+  .logo-container .social-links {
+    margin: 0; }
+  .logo-container .social-links a {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: black;
+    padding-right: 30px; }
+  .logo-container .social-links a i:hover {
+    color: #cca335; }
+  .logo-container .logo {
+    height: 80px; }
+
+.navigation {
+  height: 100%;
+  min-height: 50px;
+  background: black;
+  font-family: "Poppins", sans-serif; }
+  .navigation .menu-icon {
+    margin: 5px;
+    font-size: 24px;
+    color: white; }
+  .navigation .menu:focus,
+  .navigation .menu:hover {
+    border: 1px solid #cca335;
+    outline: 0; }
+  .navigation .diary-nav .nav-list a:focus {
+    color: white; }
+  .navigation .diary-nav .nav-list a {
+    color: white;
+    margin: 15px;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 14px; }
+  .navigation .diary-nav .nav-list a:hover {
+    color: white;
+    border-bottom: 4px solid #cca335;
+    margin-bottom: 11px; }
+
+.hidden {
+  display: none; }

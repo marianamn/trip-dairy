@@ -1,0 +1,84 @@
+$app-color-black: black;
+$app-color-white: white;
+$app-color-orange:#cca335;
+$app-font-menu: 'Poppins',
+sans-serif;
+$app-font-diary-text: 'Playfair Display',
+sans-serif;
+$app-font-diary-title: 'Playfair Display',
+sans-serif;
+body,
+ul,
+li,
+a,
+p,
+div,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: $app-font-diary-text;
+}
+
+// logo container
+.logo-container {
+    margin: 0;
+    padding: 0;
+    height: 120px;
+    .social-links {
+        margin: 0;
+    }
+    .social-links a {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        color: $app-color-black;
+        padding-right: 30px
+    }
+    .social-links a i:hover {
+        color: $app-color-orange;
+    }
+    .logo {
+        height: 80px;
+    }
+}
+
+// navigation
+.navigation {
+    height: 100%;
+    min-height: 50px;
+    background: $app-color-black;
+    font-family: $app-font-menu;
+    .menu-icon {
+        margin: 5px;
+        font-size: 24px;
+        color: $app-color-white;
+    }
+    .menu:focus,
+    .menu:hover {
+        border: 1px solid $app-color-orange;
+        outline: 0;
+    }
+    .diary-nav .nav-list a:focus {
+        color: $app-color-white;
+    }
+    .diary-nav .nav-list a {
+        color: $app-color-white;
+        margin: 15px;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    .diary-nav .nav-list a:hover {
+        color: $app-color-white;
+        border-bottom: 4px solid $app-color-orange;
+        margin-bottom: 11px;
+    }
+}
+
+.hidden {
+    display: none;
+}

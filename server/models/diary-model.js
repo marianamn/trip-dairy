@@ -29,6 +29,12 @@ module.exports = modelRegistrator.register("Diary", {
         body: String,
         postDate: Date
     }],
-    likes: Number,
-    dislikes: Number
+    likes: {
+        type: Number,
+        default: 0
+    },
+    dislikes: {
+        type: Number,
+        default: 0
+    }
 });

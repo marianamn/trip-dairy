@@ -98,18 +98,7 @@ let diariesController = (function() {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate());
 
-                    tinymce.init({
-                        selector: "#tb-content",
-                        height: 300,
-                        menubar: false,
-                        plugins: [
-                            "advlist autolink lists link image charmap print preview anchor",
-                            "searchreplace visualblocks code fullscreen",
-                            "insertdatetime media table contextmenu paste code"
-                        ],
-                        toolbar: "undo redo  | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent",
-                        content_css: "https://www.tinymce.com/css/codepen.min.css"
-                    });
+                    UTILS.HELPER_FUNCTIONS.tinyMceInit();
 
                     $("#btn-add-diary").on("click", () => {
                         usersData.getAllUsers()
@@ -144,7 +133,6 @@ let diariesController = (function() {
                                     .then((resp) => {
                                         toastr.success("Diary successfully added!");
                                         window.location = "/";
-
                                     })
                                     .catch((error) => {
                                         console.log(error);

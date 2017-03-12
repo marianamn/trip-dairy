@@ -1,16 +1,16 @@
 <section>
-    <div>
-         {{#each this}}
+    </div>
+        {{#each this}}
             <div>
-                <img src="{{mainImage}}" alt="main-image" style="width: 550px; height: 400px;">
-                <p><a href="#/trip-diaries/{{_id}}" data-id="{{_id}}">{{title}}</a></p>
-                <p>{{postDate}}</p>
-                <p>{{{content}}}...</p>
-                <p>{{author}}</p>
-                <p>{{likes}}</p>
-                <p>{{comments.length}}</p>
+                <a href="#/trip-diaries/{{_id}}" data-id="{{_id}}">
+                    <p><img src="{{this.mainImage}}" alt="main-image" style="width: 550px; height: 400px;"></p>
+                    <p>{{this.likes}}</p>
+                </a>
             </div>
-         {{/each}}
+        {{/each}}
+    </div>
+    
+    <div id="most-recent"><div>
 </section>
 
 <aside>

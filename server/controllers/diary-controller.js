@@ -40,6 +40,8 @@ module.exports = function(params) {
             });
 
             // console.log(newDiary);
+            newDiary.likes = 0;
+            newDiary.dislikes = 0;
 
             data.createDiary(newDiary)
                 .then(() => {
