@@ -1,12 +1,18 @@
+// variables
 $app-color-black: black;
 $app-color-white: white;
 $app-color-orange:#cca335;
+$app-color-gray:#838383;
 $app-font-menu: 'Poppins',
 sans-serif;
 $app-font-diary-text: 'Playfair Display',
 sans-serif;
-$app-font-diary-title: 'Playfair Display',
-sans-serif;
+// extends
+.clear-spacing {
+    margin: 0;
+    padding: 0;
+}
+
 body,
 ul,
 li,
@@ -14,8 +20,7 @@ a,
 p,
 div,
 section {
-    margin: 0;
-    padding: 0;
+    @extend .clear-spacing
 }
 
 body {
@@ -25,16 +30,13 @@ body {
 
 // logo container
 .logo-container {
-    margin: 0;
-    padding: 0;
+    @extend .clear-spacing;
     height: 120px;
     .social-links {
         margin: 0;
     }
     .social-links a {
-        margin: 0;
-        padding: 0;
-        font-size: 15px;
+        @extend .clear-spacing;
         color: $app-color-black;
         padding-right: 30px
     }
@@ -53,8 +55,7 @@ body {
     background: $app-color-black;
     font-family: $app-font-menu;
     .menu-icon {
-        margin: 5px;
-        font-size: 24px;
+        font-size: 1.5rem;
         color: $app-color-white;
     }
     .menu:focus,
@@ -70,7 +71,7 @@ body {
         margin: 15px;
         padding: 0;
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 0.875rem;
     }
     .diary-nav .nav-list a:hover {
         color: $app-color-white;
@@ -81,4 +82,111 @@ body {
 
 .hidden {
     display: none;
+}
+
+// home-carousel
+.carousel-container {
+    .slide-count {
+        font-style: italic;
+        font-weight: bold;
+        padding-left: 8%;
+        .current {
+            font-size: 3.125rem;
+        }
+        .line {
+            font-size: 3.125rem;
+            margin-top: -46px;
+            margin-left: 15px;
+        }
+        .total {
+            font-size: 1.5rem;
+            margin-top: -40px;
+            margin-left: 34px;
+        }
+    }
+    .slide-data {
+        bottom: 20px;
+        .slide-title {
+            font-size: 2.25rem;
+            font-style: italic;
+            font-weight: bold;
+            a {
+                color: $app-color-white;
+            }
+            a:hover {
+                text-decoration: none;
+                color: $app-color-orange;
+            }
+        }
+        .slide-info-up {
+            color: $app-color-gray;
+            font-size: 0.75rem;
+            font-family: $app-font-menu;
+            padding-top: 20px;
+        }
+        .slide-info-down {
+            font-size: 0.75rem;
+            font-family: $app-font-menu;
+            padding-top: 20px;
+            padding-bottom: 15px;
+        }
+        .text-right,
+        .text-left {
+            @extend .clear-spacing;
+        }
+        .left {
+            padding-right: 20px;
+        }
+        .left-border {
+            border-right: 1px solid $app-color-gray;
+        }
+        .right {
+            padding-left: 20px;
+        }
+        .icon-spacing-right {
+            padding-right: 5px;
+        }
+        .icon-spacing-left {
+            padding-left: 5px;
+        }
+        .icon-color {
+            color: $app-color-orange;
+        }
+        .like,
+        .dislike,
+        .author,
+        .comment {
+            font-size: 0.875rem;
+        }
+        .dot {
+            font-size: 0.25rem;
+        }
+    }
+    .carousel-image {
+        height: 600px;
+        width: 100%;
+    }
+    .carousel-data {
+        margin-left: -100%;
+        width: 100%;
+        height: 600px;
+        padding-top: 400px;
+        color: $app-color-white;
+        background: -moz-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+}
+
+.prev-carousel {
+    margin-left: 78%;
+    margin-top: 350px;
+}
+
+.next-carousel {
+    margin-right: 4%;
+    margin-top: 350px;
 }

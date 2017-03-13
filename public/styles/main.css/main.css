@@ -1,10 +1,11 @@
-body,
+.clear-spacing, body,
 ul,
 li,
 a,
 p,
 div,
-section {
+section, .logo-container, .logo-container .social-links a, .carousel-container .slide-data .text-right,
+.carousel-container .slide-data .text-left {
   margin: 0;
   padding: 0; }
 
@@ -13,15 +14,10 @@ body {
   font-family: "Playfair Display", sans-serif; }
 
 .logo-container {
-  margin: 0;
-  padding: 0;
   height: 120px; }
   .logo-container .social-links {
     margin: 0; }
   .logo-container .social-links a {
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
     color: black;
     padding-right: 30px; }
   .logo-container .social-links a i:hover {
@@ -35,8 +31,7 @@ body {
   background: black;
   font-family: "Poppins", sans-serif; }
   .navigation .menu-icon {
-    margin: 5px;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: white; }
   .navigation .menu:focus,
   .navigation .menu:hover {
@@ -49,7 +44,7 @@ body {
     margin: 15px;
     padding: 0;
     text-transform: uppercase;
-    font-size: 14px; }
+    font-size: 0.875rem; }
   .navigation .diary-nav .nav-list a:hover {
     color: white;
     border-bottom: 4px solid #cca335;
@@ -57,3 +52,84 @@ body {
 
 .hidden {
   display: none; }
+
+.carousel-container .slide-count {
+  font-style: italic;
+  font-weight: bold;
+  padding-left: 8%; }
+  .carousel-container .slide-count .current {
+    font-size: 3.125rem; }
+  .carousel-container .slide-count .line {
+    font-size: 3.125rem;
+    margin-top: -46px;
+    margin-left: 15px; }
+  .carousel-container .slide-count .total {
+    font-size: 1.5rem;
+    margin-top: -40px;
+    margin-left: 34px; }
+
+.carousel-container .slide-data {
+  bottom: 20px; }
+  .carousel-container .slide-data .slide-title {
+    font-size: 2.25rem;
+    font-style: italic;
+    font-weight: bold; }
+    .carousel-container .slide-data .slide-title a {
+      color: white; }
+    .carousel-container .slide-data .slide-title a:hover {
+      text-decoration: none;
+      color: #cca335; }
+  .carousel-container .slide-data .slide-info-up {
+    color: #838383;
+    font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    padding-top: 20px; }
+  .carousel-container .slide-data .slide-info-down {
+    font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    padding-top: 20px;
+    padding-bottom: 15px; }
+  .carousel-container .slide-data .left {
+    padding-right: 20px; }
+  .carousel-container .slide-data .left-border {
+    border-right: 1px solid #838383; }
+  .carousel-container .slide-data .right {
+    padding-left: 20px; }
+  .carousel-container .slide-data .icon-spacing-right {
+    padding-right: 5px; }
+  .carousel-container .slide-data .icon-spacing-left {
+    padding-left: 5px; }
+  .carousel-container .slide-data .icon-color {
+    color: #cca335; }
+  .carousel-container .slide-data .like,
+  .carousel-container .slide-data .dislike,
+  .carousel-container .slide-data .author,
+  .carousel-container .slide-data .comment {
+    font-size: 0.875rem; }
+  .carousel-container .slide-data .dot {
+    font-size: 0.25rem; }
+
+.carousel-container .carousel-image {
+  height: 600px;
+  width: 100%; }
+
+.carousel-container .carousel-data {
+  margin-left: -100%;
+  width: 100%;
+  height: 600px;
+  padding-top: 400px;
+  color: white;
+  background: -moz-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, #050505 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, #050505 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, #050505 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+
+.prev-carousel {
+  margin-left: 78%;
+  margin-top: 350px; }
+
+.next-carousel {
+  margin-right: 4%;
+  margin-top: 350px; }

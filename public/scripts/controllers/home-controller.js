@@ -27,6 +27,9 @@ let homeController = (function() {
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(tripsData));
+
+                    $(".carousel-item").first()
+                        .addClass("active");
                 });
         }
 

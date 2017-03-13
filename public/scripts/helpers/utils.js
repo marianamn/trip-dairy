@@ -22,13 +22,22 @@ function getRecentTripsDiaries(trips, count, charsCount) {
 
 function getMostLikedTripsDiaries(trips, count) {
     let tripsData,
-        mostLikedTripDiaries;
+        mostLikedTripDiaries,
+        topLikedDieries,
+        num = 0;
 
     mostLikedTripDiaries = trips.data.sort((a, b) => {
         return parseFloat(b.likes) - parseFloat(a.likes);
     });
 
-    tripsData = mostLikedTripDiaries.slice(0, count);
+    topLikedDieries = mostLikedTripDiaries.slice(0, count);
+
+    tripsData = _.map(topLikedDieries, (value) => {
+        return {
+            number: ++num,
+            tripsGrouped: value
+        };
+    });
 
     return tripsData;
 }
