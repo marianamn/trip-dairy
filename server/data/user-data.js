@@ -15,6 +15,7 @@ module.exports = function(models) {
                         profileImgURL: user.profileImgURL,
                         salt: user.salt,
                         hashPass: user.hashPass,
+                        userInfo: user.userInfo,
                         facebookContact: user.facebookContact,
                         youTubeContact: user.youTubeContact,
                         twitterContact: user.twitterContact,

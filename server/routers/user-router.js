@@ -11,8 +11,8 @@ module.exports = function({ app, controllers }) {
         .get("/users/:id", controllers.getUserById)
         .get("/users", controllers.getAllUsers)
         .post("/register", controllers.register)
-        .post("/login", controllers.login)
-        .post("/logout", controllers.logout);
+        .post("/login", controllers.login);
+    // .post("/logout", controllers.logout);
 
     app.use("/auth", router);
 

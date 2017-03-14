@@ -26,18 +26,6 @@ router
 
 let loggedUserEmail = localStorage.getItem("auth_email");
 
-$("#nav-btn-logout").on("click", () => {
-    $("#nav-btn-logout").addClass("hidden");
-    $("#nav-btn-login").removeClass("hidden");
-    $("#nav-btn-register").removeClass("hidden");
-    $(".add-diary").addClass("hidden");
-    localStorage.removeItem("auth_key");
-    localStorage.removeItem("auth_email");
-    toastr.success(`${loggedUserEmail} logged out successfuly!`);
-
-    return usersController.logout;
-});
-
 if (loggedUserEmail !== null) {
     $("#nav-btn-logout").removeClass("hidden");
     $("#nav-btn-login").addClass("hidden");

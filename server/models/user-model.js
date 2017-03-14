@@ -12,6 +12,7 @@ module.exports = modelRegistrator.register("User", {
     profileImgURL: String,
     salt: String,
     hashPass: String,
+    userInfo: String,
     facebookContact: String,
     youTubeContact: String,
     twitterContact: String,

@@ -9,7 +9,7 @@ module.exports = function(params) {
     return {
         register(req, res) {
             let newUser = {};
-            let propoerties = ["email", "firstName", "lastName", "profileImgURL", "facebookContact", "youTubeContact", "twitterContact", "googlePlusContact", "instagramContact", "rssContact"];
+            let propoerties = ["email", "firstName", "lastName", "profileImgURL", "userInfo", "facebookContact", "youTubeContact", "twitterContact", "googlePlusContact", "instagramContact", "rssContact"];
 
             let postData = req.body["body"];
             let postDataObj = JSON.parse(postData);
@@ -51,10 +51,6 @@ module.exports = function(params) {
             let postData = req.body["body"];
             let postDataObj = JSON.parse(postData);
             let password = postDataObj.password;
-
-            console.log(postData);
-            console.log(postDataObj);
-            console.log(password);
 
             data.getUserByEmail(postDataObj.email)
                 .then((user) => {
@@ -98,12 +94,12 @@ module.exports = function(params) {
                 });
             }
         },
-        logout(req, res) {
-            req.session.destroy();
-            req.logout();
+        // logout(req, res) {
+        //     req.session.destroy();
+        //     req.logout();
 
-            return res.status(200).redirect("/");
-        },
+        //     return res.status(200).redirect("/");
+        // },
         getAllUsers(req, res) {
             data.getAllUsers()
                 .then((users) => {

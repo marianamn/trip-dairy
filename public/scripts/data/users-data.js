@@ -22,6 +22,7 @@ class UsersData {
             lastName: newUser.lastName,
             profileImgURL: newUser.profileImgURL,
             password: newUser.password,
+            userInfo: newUser.userInfo,
             facebookContact: newUser.facebookContact,
             youTubeContact: newUser.youTubeContact,
             twitterContact: newUser.twitterContact,
@@ -50,9 +51,9 @@ class UsersData {
     }
 
     logout(user) {
-        let url = this.urls.getLogoutUrl();
-
-        return this.requester.postJSON(url, user, {});
+        return new Promise(function(resolve) {
+            resolve();
+        });
     }
 
     getAllUsers() {

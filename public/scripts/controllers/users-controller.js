@@ -42,6 +42,7 @@ let usersController = (function() {
                             lastName: $("#tb-lastName").val(),
                             profileImgURL: $("#tb-profileImgURL").val(),
                             password: $("#tb-newPassword").val(),
+                            userInfo: $("#tb-userInfo").val(),
                             facebookContact: $("#tb-facebookContact").val(),
                             youTubeContact: $("#tb-youTubeContact").val(),
                             twitterContact: $("#tb-twitterContact").val(),
@@ -86,7 +87,7 @@ let usersController = (function() {
                     localStorage.setItem("auth_key", response.body.token);
                     localStorage.setItem("auth_email", response.body.email);
 
-                    toastr.success("Login successful!");
+                    toastr.success("Sign in successfully!");
                     window.location = "#/home";
                 }, (error) => {
                     toastr.error("Invalid email or password!");
@@ -115,17 +116,18 @@ let usersController = (function() {
             let user = {};
             this.data.logout(user)
                 .then(() => {
-                    $("#nav-btn-logout").addClass("hidden");
-                    $("#nav-btn-login").removeClass("hidden");
-                    $("#nav-btn-register").removeClass("hidden");
-                    $(".add-diary").addClass("hidden");
+                    $("#nav-btn-logout").on("click", () => {
+                        $("#nav-btn-logout").addClass("hidden");
+                        $("#nav-btn-login").removeClass("hidden");
+                        $("#nav-btn-register").removeClass("hidden");
+                        $(".add-diary").addClass("hidden");
 
-                    localStorage.removeItem("auth_key");
-                    localStorage.removeItem("auth_email");
+                        localStorage.removeItem("auth_key");
+                        localStorage.removeItem("auth_email");
 
-                    let msg = `${localStorage.getItem("auth_email")} logged out successfuly!`;
-                    toastr.success(msg);
-                    window.location = "#/home";
+                        toastr.success("Sign out successfully!");
+                        window.location = "#/home";
+                    });
                 });
         }
 
