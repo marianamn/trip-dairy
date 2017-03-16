@@ -7,7 +7,7 @@ function getRecentTripsDiaries(trips, count, charsCount) {
     let tripsData,
         recentTripDiaries;
 
-    recentTripDiaries = trips.data.sort((a, b) => {
+    recentTripDiaries = trips.sort((a, b) => {
         return new Date(b.postDate) - new Date(a.postDate);
     });
 
@@ -26,7 +26,7 @@ function getMostLikedTripsDiaries(trips, count) {
         topLikedDieries,
         num = 0;
 
-    mostLikedTripDiaries = trips.data.sort((a, b) => {
+    mostLikedTripDiaries = trips.sort((a, b) => {
         return parseFloat(b.likes) - parseFloat(a.likes);
     });
 
@@ -46,7 +46,7 @@ function getCategories(trips) {
     let tripsData,
         groupedByCategory;
 
-    groupedByCategory = _.groupBy(trips.data, (trip) => {
+    groupedByCategory = _.groupBy(trips, (trip) => {
         return trip.category;
     });
 

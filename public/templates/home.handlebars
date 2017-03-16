@@ -2,7 +2,7 @@
     <div>
         <div id="mostLikedDiariesControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox" data-interval="2000">
-                {{#each this}}
+                {{#each this.mostLikedDieries}}
                     <div class="carousel-item carousel-container">
                         <img class="d-block img-fluid carousel-image" src="{{this.tripsGrouped.mainImage}}" alt="First slide">
 
@@ -61,14 +61,31 @@
                 </a>
             </div>
         </div>
-            
-       
     </div>
-    
-    <div id="most-recent"><div>
 </section>
 
-<aside>
-    </div><div id="categories"></div>   
+<section class="container" id="most-recent">
+    <div class="row justify-content-center">
+        {{#each this.recentDieries}}
+            <div class="col-sm-5">
+                <img src="{{mainImage}}" alt="main-image" style="width: 385px; height: 275px;">
+                <p><a href="#/trip-diaries/{{_id}}" data-id="{{_id}}">{{title}}</a></p>
+                <p>{{postDate}}</p>
+                <div>{{{content}}}...</div>
+                <p>{{author}}</p>
+                <p>{{likes}}</p>
+                <p>{{comments.length}}</p>
+            </div>
+        {{/each}}
+    </div>
+</section>
+
+<aside id="categories" class="justify-content-center">
+    {{#each this.diariesByCategories}}
+        <div >
+            <p class="d-inline"><a href="#/trip-diaries/category/{{this.category}}" data-category="{{this.category}}">{{this.category}}</a></p>
+            <p class="d-inline">{{this.tripsGrouped.length}}</p>
+        </div>
+    {{/each}} 
 </aside>
 

@@ -117,7 +117,7 @@ let diariesController = (function() {
                                     title: $("#tb-title").val(),
                                     author: fullName,
                                     place: $("#tb-place").val(),
-                                    category: $("#tb-category .selected-option").val(),
+                                    category: $("#tb-category :selected").val(),
                                     content: tinymce.get("tb-content").getContent({ format: "html" }),
                                     postDate: Date.now(),
                                     mainImage: $("#tb-mainImage").val(),

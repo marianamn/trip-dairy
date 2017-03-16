@@ -127,9 +127,21 @@ body {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
 
 .prev-carousel {
-  margin-left: 78%;
+  width: 20px;
+  margin-left: 88%;
   margin-top: 350px; }
 
 .next-carousel {
-  margin-right: 4%;
+  width: 20px;
+  margin-right: 5%;
   margin-top: 350px; }
+
+#most-recent {
+  margin-top: 100px;
+  float: left;
+  width: 70%; }
+
+#categories {
+  float: right;
+  width: 23%;
+  padding-top: 100px; }

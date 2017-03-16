@@ -14,22 +14,7 @@ let usersController = (function() {
             this.templates = templates;
         }
 
-        registerUser(newUser) {
-            // console.log(newUser);
-
-            this.data.register(newUser)
-                .then((response) => {
-
-                    toastr.success("Successfully signed up. Please login!");
-                    window.location = "#/login";
-                })
-                .catch((error) => {
-                    toastr.error("Sign up was unsuccessfull, please try again!");
-                    window.location = "#/register";
-                });
-        }
-
-        loadRegisterForm() {
+        register() {
             this.templates.get("register")
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
@@ -51,51 +36,41 @@ let usersController = (function() {
                             rssContact: $("#tb-rssContact").val()
                         };
 
-                        if (newUser.password.length < CONSTANTS.PASSWORD_MIN_LENGTH || newUser.password.length > CONSTANTS.PASSWORD_MAX_LENGTH) {
-                            toastr.error("Password must be between 3 and 20 symbols long!");
-                            return;
-                        }
-                        if (/\W+/.test(newUser.firstName)) {
-                            toastr.error("First name contains invalid symbols!");
-                            return;
-                        }
+                        // if (newUser.password.length < CONSTANTS.PASSWORD_MIN_LENGTH || newUser.password.length > CONSTANTS.PASSWORD_MAX_LENGTH) {
+                        //     toastr.error("Password must be between 3 and 20 symbols long!");
+                        //     return;
+                        // }
+                        // if (/\W+/.test(newUser.firstName)) {
+                        //     toastr.error("First name contains invalid symbols!");
+                        //     return;
+                        // }
 
 
-                        if (/\W+/.test(newUser.lastName)) {
-                            toastr.error("Last contains invalid symbols!");
-                            return;
-                        }
+                        // if (/\W+/.test(newUser.lastName)) {
+                        //     toastr.error("Last contains invalid symbols!");
+                        //     return;
+                        // }
 
-                        if (/\W+/.test(newUser.password)) {
-                            toastr.error("Password contains invalid symbols!");
-                            return;
-                        }
+                        // if (/\W+/.test(newUser.password)) {
+                        //     toastr.error("Password contains invalid symbols!");
+                        //     return;
+                        // }
 
-                        this.registerUser(newUser);
+                        this.data.register(newUser)
+                            .then((response) => {
+
+                                toastr.success("Successfully signed up. Please login!");
+                                window.location = "#/login";
+                            })
+                            .catch((error) => {
+                                toastr.error("Sign up was unsuccessfull, please try again!");
+                                window.location = "#/register";
+                            });
                     });
                 });
         }
 
-        loginUser(user) {
-            this.data.login(user)
-                .then((response) => {
-                    $("#nav-btn-logout").removeClass("hidden");
-                    $(".add-diary").removeClass("hidden");
-                    $("#nav-btn-register").addClass("hidden");
-                    $("#nav-btn-login").addClass("hidden");
-
-                    localStorage.setItem("auth_key", response.body.token);
-                    localStorage.setItem("auth_email", response.body.email);
-
-                    toastr.success("Sign in successfully!");
-                    window.location = "#/home";
-                }, (error) => {
-                    toastr.error("Invalid email or password!");
-                    window.location = "#/login";
-                });
-        }
-
-        loadLoginForm() {
+        login() {
             this.templates.get("login")
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
@@ -107,12 +82,27 @@ let usersController = (function() {
                             password: $("#tb-password").val()
                         };
 
-                        this.loginUser(user);
+                        this.data.login(user)
+                            .then((response) => {
+                                $("#nav-btn-logout").removeClass("hidden");
+                                $(".add-diary").removeClass("hidden");
+                                $("#nav-btn-register").addClass("hidden");
+                                $("#nav-btn-login").addClass("hidden");
+
+                                localStorage.setItem("auth_key", response.body.token);
+                                localStorage.setItem("auth_email", response.body.email);
+
+                                toastr.success("Sign in successfully!");
+                                window.location = "#/home";
+                            }, (error) => {
+                                toastr.error("Invalid email or password!");
+                                window.location = "#/login";
+                            });
                     });
                 });
         }
 
-        logoutUser() {
+        logout() {
             let user = {};
             this.data.logout(user)
                 .then(() => {
@@ -152,13 +142,13 @@ let usersController = (function() {
 
     return {
         register: function() {
-            return userConroller.loadRegisterForm();
+            return userConroller.register();
         },
         login: function() {
-            return userConroller.loadLoginForm();
+            return userConroller.login();
         },
         logout: function() {
-            return userConroller.logoutUser();
+            return userConroller.logout();
         },
         userById: function(params) {
             return userConroller.userById(params);
