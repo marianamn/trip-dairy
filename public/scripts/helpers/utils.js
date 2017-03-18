@@ -133,6 +133,32 @@ function tinyMceInit() {
     });
 }
 
+function getDate(date) {
+    let months = [];
+
+    months[0] = "January";
+    months[1] = "February";
+    months[2] = "March";
+    months[3] = "April";
+    months[4] = "May";
+    months[5] = "June";
+    months[6] = "July";
+    months[7] = "August";
+    months[8] = "September";
+    months[9] = "October";
+    months[10] = "November";
+    months[11] = "December";
+
+    let month = date.getMonth();
+    let m = months[month];
+    let d = date.getDate();
+    let y = date.getFullYear();
+
+    let day = m + ' ' + d + ', ' + y;
+
+    return day;
+}
+
 function getRegisterUrl() {
     return "/auth/register";
 }
@@ -174,7 +200,8 @@ let HELPER_FUNCTIONS = {
     getTripsByAuthor: getTripsByAuthor,
     getUserInfo: getUserInfo,
     getUserFullName: getUserFullName,
-    tinyMceInit: tinyMceInit
+    tinyMceInit: tinyMceInit,
+    getDate: getDate
 };
 
 let URLS = {

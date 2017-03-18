@@ -5,7 +5,7 @@ import { templatesLoader } from "templates";
 import { tripsDiariesData } from "diariesData";
 
 const TRIPS_BY_PAGE = 6;
-const CHARS_TO_SHOW = 150;
+const CHARS_TO_SHOW = 90;
 const MOST_LIKED_DIARIES = 7;
 
 let homeController = (function() {

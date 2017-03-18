@@ -34,11 +34,12 @@ body {
     height: 120px;
     .social-links {
         margin: 0;
+        padding-left: 5%;
     }
     .social-links a {
         @extend .clear-spacing;
         color: $app-color-black;
-        padding-right: 30px
+        padding-right: 5%;
     }
     .social-links a i:hover {
         color: $app-color-orange;
@@ -84,7 +85,7 @@ body {
     display: none;
 }
 
-// home page  -carousel
+// home page - carousel
 .carousel-container {
     .slide-count {
         font-style: italic;
@@ -195,13 +196,52 @@ body {
 
 // home page - most recent diaries
 #most-recent {
-    margin-top: 100px;
-    float: left;
-    width: 70%;
+    margin-top: 10%;
+    .recent-header {
+        margin-bottom: 10%;
+    }
+    .img-separator-left {
+        margin-right: 30px;
+    }
+    .img-separator-right {
+        margin-left: 30px;
+    }
+    .recent-diaries-title {
+        font-style: italic;
+        font-size: 1.875rem;
+    }
+    .recent-title {
+        padding-top: 5%;
+        font-style: italic;
+        font-size: 1.875rem;
+        a {
+            color: $app-color-black;
+        }
+        a:hover {
+            color: $app-color-orange;
+            text-decoration: none;
+        }
+    }
 }
 
 #categories {
-    float: right;
     width: 23%;
-    padding-top: 100px;
+    padding-top: 120px;
+    .btn-search {
+        margin: -5px;
+        width: 80px;
+        height: 60px;
+        border: none;
+        background: #cccccc;
+        font-size: 0.875rem;
+        padding: 15px;
+    }
+    .input-search {
+        background: #f5f5f5;
+        border: none;
+        height: 60px;
+        width: 230px;
+        font-size: 0.875rem;
+        padding: 15px;
+    }
 }
