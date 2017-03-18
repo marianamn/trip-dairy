@@ -31,5 +31,8 @@
         "systemjs": "^0.19.38",
         "systemjs-plugin-babel": "0.0.15"
     },
-    "repository": {}
+    "repository": {},
+    "engines": {
+        "node": "7.2.1"
+    }
 }
