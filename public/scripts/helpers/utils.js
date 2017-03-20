@@ -172,6 +172,18 @@ function getDate(date) {
     return day;
 }
 
+function filterByName(array, searchWord) {
+    var len = array.length;
+    for (var i = 0; i < len; i += 1) {
+        var $currentItem = $(array[i]);
+        if ($currentItem.html().toLowerCase().indexOf(searchWord.toLowerCase()) < 0) {
+            $currentItem.parent().parent().addClass('filter');
+        } else {
+            $currentItem.parent().parent().removeClass('filter');
+        }
+    }
+}
+
 function getRegisterUrl() {
     return "/auth/register";
 }
@@ -214,7 +226,8 @@ let HELPER_FUNCTIONS = {
     getUserInfo: getUserInfo,
     getUserFullName: getUserFullName,
     tinyMceInit: tinyMceInit,
-    getDate: getDate
+    getDate: getDate,
+    filterByName: filterByName
 };
 
 let URLS = {

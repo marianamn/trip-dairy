@@ -146,7 +146,6 @@ let diariesController = (function() {
                     });
                 });
         }
-
     }
 
     let diariesConroller = new DiariesConroller(tripsDiariesData, templatesLoader);
