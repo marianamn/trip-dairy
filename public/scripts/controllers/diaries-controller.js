@@ -58,6 +58,7 @@ let diariesController = (function() {
             this.data.getAllTripsDiaries()
                 .then((trips) => {
                     tripsData = UTILS.HELPER_FUNCTIONS.getTripsByAuthor(trips);
+                    //console.log(tripsData);
 
                     usersData.getAllUsers()
                         .then((response) => {
@@ -70,6 +71,7 @@ let diariesController = (function() {
                                     _id: user._id,
                                     fullName: `${user.firstName} ${user.lastName}`,
                                     profileImage: user.profileImgURL,
+                                    userInfo: user.userInfo,
                                     facebookContact: user.facebookContact,
                                     youTubeContact: user.youTubeContact,
                                     twitterContact: user.twitterContact,
@@ -83,10 +85,10 @@ let diariesController = (function() {
                     return this.templates.get("diaries-by-author");
                 })
                 .then((html) => {
-                    // console.log(tripsData);
-
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(tripsData));
+
+                    $(".author-container:odd").addClass("flex-last");
                 });
         }
 

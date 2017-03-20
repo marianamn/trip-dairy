@@ -3,14 +3,27 @@ $app-color-black: black;
 $app-color-white: white;
 $app-color-orange:#cca335;
 $app-color-gray:#838383;
+$app-color-lite-gray:#bdbdbd;
+$btn-search-background:#cccccc;
+$btn-input-background:#f5f5f5;
 $app-font-menu: 'Poppins',
 sans-serif;
 $app-font-diary-text: 'Playfair Display',
 sans-serif;
+$app-font-author: 'Mr De Haviland',
+cursive;
+$img-background-gradient-1: -moz-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+$img-background-gradient-1:-webkit-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+$img-background-gradient-1:linear-gradient(to bottom, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
 // extends
 .clear-spacing {
     margin: 0;
     padding: 0;
+}
+
+.placeholders {
+    color: $app-color-lite-gray;
+    padding-left: 92%
 }
 
 body,
@@ -26,6 +39,10 @@ section {
 body {
     font-size: 16px;
     font-family: $app-font-diary-text;
+}
+
+input:focus {
+    outline: none;
 }
 
 // logo container
@@ -197,14 +214,20 @@ body {
 // home page - most recent diaries
 #most-recent {
     margin-top: 10%;
+    margin-bottom: 15%;
     .recent-header {
-        margin-bottom: 10%;
+        margin-bottom: 7%;
     }
     .img-separator-left {
-        margin-right: 30px;
+        margin-right: 5%;
     }
     .img-separator-right {
-        margin-left: 30px;
+        margin-left: 5%;
+    }
+    .recent-img {
+        padding-top: 5%;
+        width: 385px;
+        height: 275px;
     }
     .recent-diaries-title {
         font-style: italic;
@@ -214,6 +237,7 @@ body {
         padding-top: 5%;
         font-style: italic;
         font-size: 1.875rem;
+        padding-bottom: 10px;
         a {
             color: $app-color-black;
         }
@@ -222,26 +246,386 @@ body {
             text-decoration: none;
         }
     }
+    .recent-date {
+        margin-bottom: 30px;
+        color: $app-color-orange;
+    }
+    .recent-text {
+        padding-bottom: 40px;
+        text-align: justify;
+    }
+    .recent-icons {
+        padding-bottom: 15px;
+        color: $app-color-gray;
+        font-size: 0.75rem;
+        font-family: $app-font-menu;
+        i {
+            margin-right: 2%;
+        }
+        .dot {
+            font-size: 0.25rem;
+            color: $app-color-orange;
+            padding-left: 10px;
+            padding-right: 5px;
+        }
+    }
 }
 
 #categories {
-    width: 23%;
-    padding-top: 120px;
+    width: 21%;
+    margin-top: 10%;
     .btn-search {
         margin: -5px;
         width: 80px;
         height: 60px;
         border: none;
-        background: #cccccc;
+        background: $btn-search-background;
         font-size: 0.875rem;
         padding: 15px;
     }
     .input-search {
-        background: #f5f5f5;
+        background: $btn-input-background;
         border: none;
         height: 60px;
         width: 230px;
         font-size: 0.875rem;
         padding: 15px;
+    }
+    .btn-search:focus,
+    .input-search:focus {
+        outline: none;
+    }
+    .categories-title {
+        font-size: 1.5rem;
+        font-style: italic;
+        padding-top: 35%;
+        padding-bottom: 3%;
+    }
+    .categories-container {
+        margin-top: 5%;
+        padding-left: 5%;
+        .category-container {
+            padding: 5%;
+            font-family: $app-font-menu;
+            font-size: 0.875rem;
+            border-left: 1px solid #e9e9e9;
+            .category {
+                color: $app-color-black;
+                font-weight: bold;
+            }
+            .category-count {
+                color: $app-color-lite-gray;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            .category-container {
+                border-left: 1px solid $app-color-black;
+            }
+            .category-container>.category {
+                color: $app-color-orange;
+            }
+            .category-container>.category-count {
+                color: $app-color-black;
+            }
+        }
+    }
+    .fb-page {
+        padding-top: 30%;
+    }
+}
+
+// footer
+footer {
+    @extend .clear-spacing;
+    width: 100%;
+    height: 100%;
+    color: $app-color-white;
+    background: url('https://wallpaperscraft.com/image/glade_mountains_summer_green_landscape_day_53131_1920x1080.jpg');
+    background-size: 100% 100%;
+    #footer-container {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        .footer-container-body {
+            width: 70%;
+            .footer-padding {
+                padding: 5%;
+            }
+        }
+    }
+    .footer-content {
+        border-right: 1px solid $app-color-gray;
+        hr {
+            width: 5px;
+            color: $app-color-white;
+        }
+    }
+    .footer-container-socials {
+        color: $app-color-white;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        border-top: 1px solid $app-color-gray;
+        a {
+            text-decoration: none;
+            color: $app-color-gray;
+            margin-right: 5%;
+        }
+        a:hover {
+            color: $app-color-white;
+        }
+    }
+    .footer-title {
+        font-size: 1.5rem;
+        font-style: italic;
+        padding-bottom: 5px;
+    }
+    .footer-text {
+        font-size: 0.875rem;
+        text-align: justify;
+        font-family: $app-font-menu;
+    }
+}
+
+// breadcrups
+.my-breadcrumb {
+    background-color: $app-color-white;
+    font-size: 0.875rem;
+    font-family: $app-font-menu;
+    color: $app-color-black;
+    margin-bottom: 0;
+    padding-bottom: 2%;
+    .my-breadcrumb-item {
+        float: left;
+        list-style: none;
+        padding-right: 2%;
+        a {
+            color: $app-color-black;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        .my-breadcrumb-arrow {
+            color: #c6c6c6;
+            margin-left: 20px;
+        }
+    }
+    .my-breadcrumb-item.active {
+        color: $app-color-black;
+        list-style: none;
+    }
+}
+
+// trip-diaries page
+#trip-diaries-list {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    @extend .clear-spacing;
+    .title-container {
+        padding-bottom: 2%;
+        .diaries-title {
+            font-size: 2.25rem;
+            font-style: italic;
+        }
+        .diaries-sub-title {
+            font-style: italic;
+            padding-bottom: 1%;
+        }
+    }
+    .diaries {
+        @extend .clear-spacing;
+        width: 75%;
+        margin: auto;
+        .diaries-list {
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        .author-container {
+            .author-name {
+                padding: 0;
+                margin: 0;
+                color: $app-color-orange;
+                padding-top: 85%;
+                -ms-transform: rotate(-35deg);
+                -webkit-transform: rotate(-35deg);
+                transform: rotate(-35deg);
+                font-family: $app-font-author;
+                font-size: 1.875rem;
+            }
+            .user-info {
+                clear: both;
+                font-family: $app-font-menu;
+                padding-top: 5%;
+                padding-bottom: 5%;
+                text-align: justify;
+            }
+            .user-socials a {
+                color: $app-color-gray;
+                .user-socials-icons {
+                    padding-right: 15px;
+                }
+            }
+            .user-socials a:hover {
+                color: $app-color-orange;
+            }
+        }
+        .diaries-container {
+            .diary-img {
+                width: 370px;
+                height: 500px;
+                background-size: 480px 500px;
+                @extend .clear-spacing;
+                margin: auto;
+                .diary-img-container {
+                    @extend .clear-spacing;
+                    height: 100%;
+                    background: -moz-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+                    background: -webkit-linear-gradient(top, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+                    background: linear-gradient(to bottom, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.02) 2%, rgba(5, 5, 5, 1) 100%);
+                }
+                .diary-img-container-name {
+                    height: 85%;
+                    a {
+                        color: $app-color-white;
+                        font-weight: bold;
+                        font-style: italic;
+                        font-size: 1.5rem;
+                        height: 100%;
+                    }
+                    a:hover {
+                        text-decoration: none;
+                    }
+                }
+                .diary-img-container-date {
+                    color: $app-color-orange;
+                    font-size: 0.75rem;
+                }
+                .diary-img-container:hover {
+                    background: rgba(0, 0, 0, 0.7);
+                    .diary-img-container-name {
+                        height: 50%;
+                    }
+                }
+            }
+            .diry-icons {
+                padding-top: 5%;
+                padding-bottom: 2%;
+                width: 80%;
+                margin: auto;
+                font-family: $app-font-menu;
+                font-size: 0.875rem;
+                color: $app-color-lite-gray;
+                .diry-comments {
+                    padding-bottom: 4%;
+                }
+                .clear {
+                    clear: both;
+                }
+                .diry-like-icon,
+                .diry-comment-icon {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .hexagon {
+            overflow: hidden;
+            visibility: hidden;
+            -webkit-transform: rotate(120deg);
+            -moz-transform: rotate(120deg);
+            -ms-transform: rotate(120deg);
+            -o-transform: rotate(120deg);
+            transform: rotate(120deg);
+            cursor: pointer;
+        }
+        .hexagon-in1 {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: rotate(-60deg);
+            -moz-transform: rotate(-60deg);
+            -ms-transform: rotate(-60deg);
+            -o-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+        }
+        #hexagon-in2 {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: 250px 290px;
+            visibility: visible;
+            -webkit-transform: rotate(-60deg);
+            -moz-transform: rotate(-60deg);
+            -ms-transform: rotate(-60deg);
+            -o-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+        }
+        .hexagon2 {
+            width: 250px;
+            height: 290px;
+        }
+        .img-over-div {
+            margin-top: -66.5%;
+        }
+    }
+    .separator:last-of-type {
+        display: none;
+    }
+}
+
+// add-diary page
+#add-diary {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    @extend .clear-spacing;
+    width: 80%;
+    margin: auto;
+    .add-title {
+        font-size: 2.26rem;
+        font-style: italic;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .form-add-diary {
+        border-radius: 0;
+    }
+    .form-add-diary:focus {
+        outline: none;
+        border: 1px solid $app-color-lite-gray;
+    }
+    .add-diary-input {
+        padding: 0;
+    }
+    .asterisk {
+        color: $app-color-orange;
+    }
+    .add-label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $app-font-menu;
+        font-size: 0.75rem;
+    }
+    .form-add-diary::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: $app-color-lite-gray;
+        padding-left: 92%
+    }
+    .form-add-diary:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $app-color-lite-gray;
+        padding-left: 92%
+    }
+    .form-add-diary::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $app-color-lite-gray;
+        padding-left: 92%
+    }
+    .form-add-diary:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $app-color-lite-gray;
+        padding-left: 92%
     }
 }

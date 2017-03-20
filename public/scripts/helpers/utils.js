@@ -17,7 +17,14 @@ function getRecentTripsDiaries(trips, count, charsCount) {
         tripsData[i].content = recentTripDiaries[i].content.substring(0, charsCount);
     }
 
-    return tripsData;
+    let tripsData1 = _.map(tripsData, (value) => {
+        return {
+            tripsData: value,
+            date: getDate(new Date(value.createdAt))
+        };
+    });
+
+    return tripsData1;
 }
 
 function getMostLikedTripsDiaries(trips, count) {
@@ -81,11 +88,17 @@ function getTripsByAuthor(trips) {
         return trip.author;
     });
 
+
     tripsData = _.map(groupedByAuthor, (value, key) => {
         return {
             author: key,
-            tripsGrouped: value
-        };
+            tripsGrouped: _.map(value, (trip) => {
+                return {
+                    tripsData: trip,
+                    date: getDate(new Date(trip.createdAt))
+                };
+            })
+        }
     });
 
     return tripsData;
@@ -154,7 +167,7 @@ function getDate(date) {
     let d = date.getDate();
     let y = date.getFullYear();
 
-    let day = m + ' ' + d + ', ' + y;
+    let day = m + ' ' + d + '. ' + y;
 
     return day;
 }
