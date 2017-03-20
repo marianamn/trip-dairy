@@ -20,7 +20,7 @@ function getRecentTripsDiaries(trips, count, charsCount) {
     let tripsData1 = _.map(tripsData, (value) => {
         return {
             tripsData: value,
-            date: getDate(new Date(value.createdAt))
+            date: getDate(new Date(value.postDate))
         };
     });
 
@@ -95,7 +95,7 @@ function getTripsByAuthor(trips) {
             tripsGrouped: _.map(value, (trip) => {
                 return {
                     tripsData: trip,
-                    date: getDate(new Date(trip.createdAt))
+                    date: getDate(new Date(trip.postDate))
                 };
             })
         }

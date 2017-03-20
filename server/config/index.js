@@ -3,11 +3,12 @@
 let port = process.env.PORT || 3000;
 let connection = process.env.MONGODB_URI || "mongodb://localhost/tripdiary";
 let url = process.env.NODE_ENV || "http://localhost:3000";
-// let herokuConnectionString = "mongodb://heroku_sff40t7w:ueu3fo3si6q62tb4q0ko45gvjr@ds141328.mlab.com:41328/heroku_sff40t7w";
+let herokuConnectionString = "mongodb://heroku_6r43n0qc:7pfudg378llot76ghptp54i1cj@ds137540.mlab.com:37540/heroku_6r43n0qc";
+// "mongodb://heroku_sff40t7w:ueu3fo3si6q62tb4q0ko45gvjr@ds141328.mlab.com:41328/heroku_sff40t7w";
 
 module.exports = {
     rootUrl: url,
     connectionString: connection,
-    port: port
-        // herokuConnectionString: herokuConnectionString
+    port: port,
+    herokuConnectionString: herokuConnectionString
 };
