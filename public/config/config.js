@@ -3,8 +3,8 @@
 SystemJS.config({
     "transpiler": "plugin-babel",
     "map": {
-        "plugin-babel": "../libs/plugin-babel.js",
-        "systemjs-babel-build": "../libs/systemjs-babel-browser.js",
+        "plugin-babel": "../libs/systemjs-plugin-babel/plugin-babel.js",
+        "systemjs-babel-build": "../libs/systemjs-plugin-babel/systemjs-babel-browser.js",
         "jquery": "../bower_components/jquery/dist/jquery.js",
         "navigo": "../bower_components/navigo/lib/navigo.js",
         "handlebars": "../bower_components/handlebars/handlebars.min.js",
