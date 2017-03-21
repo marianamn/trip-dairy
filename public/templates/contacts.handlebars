@@ -1,0 +1,49 @@
+<section id="contacts">
+   <ol class="my-breadcrumb d-flex align-items-center justify-content-center">
+        <li class="my-breadcrumb-item">
+            <a href="#">Home</a>
+            <i class="fa fa-angle-double-right my-breadcrumb-arrow" aria-hidden="true"></i>
+        </li>
+        
+        <li class="my-breadcrumb-item active">
+            Contacts
+            <i class="fa fa-angle-double-right my-breadcrumb-arrow" aria-hidden="true"></i>
+        </li>
+    </ol>
+
+     <div class="contacts-img">
+        <img src="../images/contacts-main-img.jpg" class="img-fluid">
+    </div>
+    
+    <div class="contacts-container">
+         <div class="d-flex align-items-center justify-content-center title-container">
+            <img src="../images/left-separator.png" class="img-fluid">
+            <h1 class="contacts-title">Contacts</h1>
+            <img src="../images/right-separator.png" class="img-fluid">
+        </div>
+
+    <div id="map" style="height: 370px; width: 74.2%" class="img-fluid justify-content-center contacts-map"></div>
+
+    <div class="contacts-details">
+        <p class="d-flex align-items-center justify-content-center"><strong class="detailes">Adress:</strong> Bulgaria, Sofia, Bul. "Aleksandar Malinov" 31</p>
+        <p class="d-flex align-items-center justify-content-center"><strong class="detailes">Phone:</strong> +359 88866333</p>
+        <p class="d-flex align-items-center justify-content-center"><strong class="detailes">Email:</strong> javascript@gmail.com</p>
+    </div>
+    </div>
+</section>
+
+
+<script>
+    function initMap() {
+        var uluru = {lat: 42.65069574370378, lng: 23.379858362830095};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+                center: uluru
+            });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeueDs6m5tBxkDesCOY9U4Fc7V7xx7_IA&callback=initMap" async defer></script>

@@ -1,22 +1,34 @@
-<section>
-    <form action="post" class="form-horizontal">
+<section id="sign-in">
+     <ol class="my-breadcrumb d-flex align-items-center justify-content-center">
+        <li class="my-breadcrumb-item">
+            <a href="#">Home</a>
+            <i class="fa fa-angle-double-right my-breadcrumb-arrow" aria-hidden="true"></i>
+        </li>
+        
+        <li class="my-breadcrumb-item active">
+            Sign-in
+            <i class="fa fa-angle-double-right my-breadcrumb-arrow" aria-hidden="true"></i>
+        </li>
+    </ol>
+
+    <form action="post" class="form-horizontal sign-in-form">
         <fieldset>
             <div class="form-group">
-                <label for="email" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-8">
-                    <input placeholder="Email" type="email" class="form-login form-control" id="tb-email" >
+                <label for="email" class="col-lg-12 control-label sign-in-label">Email <strong class="asterisk">*</strong></label>
+                <div class="col-lg-12">
+                    <input type="email" class="form-login form-control form-sign-in" id="tb-email" placeholder="&#xf003;" style="font-family:Arial, FontAwesome">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="password" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-8">
-                    <input placeholder="Password" type="password" class="form-login form-control" id="tb-password" >
+                <label for="password" class="col-lg-12 control-label sign-in-label">Password <strong class="asterisk">*</strong></label>
+                <div class="col-lg-12">
+                    <input type="password" class="form-login form-control form-sign-in" id="tb-password" placeholder="&#xf023;" style="font-family:Arial, FontAwesome">
                 </div>
             </div>
 
             <div class="form-group">
-               <div class="col-lg-10 col-lg-offset-2">
+               <div class="col-lg-12 col-lg-offset-2">
                    <button id="btn-login" class="form-login btn">Sign in</button>
                </div>
             </div>

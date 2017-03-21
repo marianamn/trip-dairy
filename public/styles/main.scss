@@ -516,8 +516,9 @@ footer {
                 width: 80%;
                 margin: auto;
                 font-family: $app-font-menu;
-                font-size: 0.875rem;
+                font-size: 0.75rem;
                 color: $app-color-lite-gray;
+                color: #838383;
                 .diry-comments {
                     padding-bottom: 4%;
                 }
@@ -582,7 +583,7 @@ footer {
     padding-bottom: 10%;
     @extend .clear-spacing;
     width: 80%;
-    margin: auto;
+    margin: 0px auto;
     .add-title {
         font-size: 2.26rem;
         font-style: italic;
@@ -599,6 +600,9 @@ footer {
     .add-diary-input {
         padding: 0;
     }
+    .category {
+        padding-top: 5%;
+    }
     .asterisk {
         color: $app-color-orange;
     }
@@ -611,21 +615,177 @@ footer {
     .form-add-diary::-webkit-input-placeholder {
         /* WebKit, Blink, Edge */
         color: $app-color-lite-gray;
-        padding-left: 92%
+        padding-left: 93%
     }
     .form-add-diary:-moz-placeholder {
         /* Mozilla Firefox 4 to 18 */
         color: $app-color-lite-gray;
-        padding-left: 92%
+        padding-left: 93%
     }
     .form-add-diary::-moz-placeholder {
         /* Mozilla Firefox 19+ */
         color: $app-color-lite-gray;
-        padding-left: 92%
+        padding-left: 93%
     }
     .form-add-diary:-ms-input-placeholder {
         /* Internet Explorer 10-11 */
         color: $app-color-lite-gray;
-        padding-left: 92%
+        padding-left: 93%
+    }
+    select:focus {
+        outline: 0;
+    }
+    #btn-add-diary {
+        border-radius: 0;
+        background: $app-color-orange;
+        text-transform: uppercase;
+        color: $app-color-white;
+        font-size: 0.75rem;
+        margin-top: 35%;
+        width: 130%;
+        border: 0;
+    }
+    button#btn-add-diary.form-add-diary btn:focus {
+        outline: 0 !important;
+    }
+}
+
+// about page
+#about {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 80%;
+    margin: 0px auto;
+    .about-img {
+        @extend .clear-spacing;
+        img {
+            width: 100%;
+            height: 600px;
+        }
+    }
+    .about-container {
+        width: 80%;
+        margin: 0px auto;
+        @extend .clear-spacing;
+        border: 1px solid $app-color-lite-gray;
+        position: relative;
+        margin-top: -15%;
+        background: $app-color-white;
+        padding: 5% 2%;
+        .title-container {
+            padding-bottom: 5%;
+            .about-title {
+                font-size: 2.4375rem;
+                font-style: italic;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+        }
+        .about-sub-img {
+            max-width: 386px;
+            max-height: 525px;
+        }
+    }
+}
+
+//contacts page
+#contacts {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 80%;
+    margin: 0px auto;
+    .contacts-img {
+        @extend .clear-spacing;
+        img {
+            width: 100%;
+            height: 600px;
+        }
+    }
+    .contacts-container {
+        width: 80%;
+        margin: 0px auto;
+        @extend .clear-spacing;
+        border: 1px solid $app-color-lite-gray;
+        position: relative;
+        margin-top: -15%;
+        background: $app-color-white;
+        padding: 5% 2%;
+        .title-container {
+            padding-bottom: 5%;
+            .contacts-title {
+                font-size: 2.4375rem;
+                font-style: italic;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+        }
+        .contacts-map {
+            margin: 0px auto;
+        }
+        .contacts-details {
+            padding-top: 5%;
+            font-family: $app-font-menu;
+            font-size: 0.875rem;
+            .detailes {
+                padding-right: 1%;
+            }
+        }
+    }
+}
+
+// sign-in page
+#sign-in {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 80%;
+    margin: 0px auto;
+    .sign-in-form {
+        width: 70%;
+        margin: 0px auto;
+        @extend .clear-spacing;
+    }
+    .asterisk {
+        color: $app-color-orange;
+    }
+    .sign-in-label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $app-font-menu;
+        font-size: 0.75rem;
+    }
+    .form-sign-in::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form--sign-in:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-sign-in::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-sign-in:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-sign-in {
+        border-radius: 0;
+    }
+    .form-sign-in:focus {
+        outline: none;
+        border: 1px solid $app-color-lite-gray;
+    }
+    #btn-login {
+        border-radius: 0;
+        background: $app-color-orange;
+        text-transform: uppercase;
+        color: $app-color-white;
+        font-size: 0.75rem;
+        border: 0;
     }
 }

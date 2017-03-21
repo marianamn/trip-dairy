@@ -5,7 +5,7 @@ a,
 p,
 div,
 section, .logo-container, .logo-container .social-links a, .carousel-container .slide-data .text-right,
-.carousel-container .slide-data .text-left, footer, #trip-diaries-list, #trip-diaries-list .diaries, #trip-diaries-list .diaries .diaries-container .diary-img, #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container, #add-diary {
+.carousel-container .slide-data .text-left, footer, #trip-diaries-list, #trip-diaries-list .diaries, #trip-diaries-list .diaries .diaries-container .diary-img, #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container, #add-diary, #about .about-img, #about .about-container, #contacts .contacts-img, #contacts .contacts-container, #sign-in .sign-in-form {
   margin: 0;
   padding: 0; }
 
@@ -373,8 +373,9 @@ footer {
       width: 80%;
       margin: auto;
       font-family: "Poppins", sans-serif;
-      font-size: 0.875rem;
-      color: #bdbdbd; }
+      font-size: 0.75rem;
+      color: #bdbdbd;
+      color: #838383; }
       #trip-diaries-list .diaries .diaries-container .diry-icons .diry-comments {
         padding-bottom: 4%; }
       #trip-diaries-list .diaries .diaries-container .diry-icons .clear {
@@ -424,7 +425,7 @@ footer {
   padding-top: 3%;
   padding-bottom: 10%;
   width: 80%;
-  margin: auto; }
+  margin: 0px auto; }
   #add-diary .add-title {
     font-size: 2.26rem;
     font-style: italic;
@@ -437,6 +438,8 @@ footer {
     border: 1px solid #bdbdbd; }
   #add-diary .add-diary-input {
     padding: 0; }
+  #add-diary .category {
+    padding-top: 5%; }
   #add-diary .asterisk {
     color: #cca335; }
   #add-diary .add-label {
@@ -447,16 +450,132 @@ footer {
   #add-diary .form-add-diary::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
     color: #bdbdbd;
-    padding-left: 92%; }
+    padding-left: 93%; }
   #add-diary .form-add-diary:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     color: #bdbdbd;
-    padding-left: 92%; }
+    padding-left: 93%; }
   #add-diary .form-add-diary::-moz-placeholder {
     /* Mozilla Firefox 19+ */
     color: #bdbdbd;
-    padding-left: 92%; }
+    padding-left: 93%; }
   #add-diary .form-add-diary:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: #bdbdbd;
-    padding-left: 92%; }
+    padding-left: 93%; }
+  #add-diary select:focus {
+    outline: 0; }
+  #add-diary #btn-add-diary {
+    border-radius: 0;
+    background: #cca335;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.75rem;
+    margin-top: 35%;
+    width: 130%;
+    border: 0; }
+  #add-diary button#btn-add-diary.form-add-diary btn:focus {
+    outline: 0 !important; }
+
+#about {
+  padding-top: 3%;
+  padding-bottom: 10%;
+  width: 80%;
+  margin: 0px auto; }
+  #about .about-img img {
+    width: 100%;
+    height: 600px; }
+  #about .about-container {
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid #bdbdbd;
+    position: relative;
+    margin-top: -15%;
+    background: white;
+    padding: 5% 2%; }
+    #about .about-container .title-container {
+      padding-bottom: 5%; }
+      #about .about-container .title-container .about-title {
+        font-size: 2.4375rem;
+        font-style: italic;
+        padding-left: 2%;
+        padding-right: 2%; }
+    #about .about-container .about-sub-img {
+      max-width: 386px;
+      max-height: 525px; }
+
+#contacts {
+  padding-top: 3%;
+  padding-bottom: 10%;
+  width: 80%;
+  margin: 0px auto; }
+  #contacts .contacts-img img {
+    width: 100%;
+    height: 600px; }
+  #contacts .contacts-container {
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid #bdbdbd;
+    position: relative;
+    margin-top: -15%;
+    background: white;
+    padding: 5% 2%; }
+    #contacts .contacts-container .title-container {
+      padding-bottom: 5%; }
+      #contacts .contacts-container .title-container .contacts-title {
+        font-size: 2.4375rem;
+        font-style: italic;
+        padding-left: 2%;
+        padding-right: 2%; }
+    #contacts .contacts-container .contacts-map {
+      margin: 0px auto; }
+    #contacts .contacts-container .contacts-details {
+      padding-top: 5%;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.875rem; }
+      #contacts .contacts-container .contacts-details .detailes {
+        padding-right: 1%; }
+
+#sign-in {
+  padding-top: 3%;
+  padding-bottom: 10%;
+  width: 80%;
+  margin: 0px auto; }
+  #sign-in .sign-in-form {
+    width: 70%;
+    margin: 0px auto; }
+  #sign-in .asterisk {
+    color: #cca335; }
+  #sign-in .sign-in-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem; }
+  #sign-in .form-sign-in::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-in .form--sign-in:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-in .form-sign-in::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-in .form-sign-in:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-in .form-sign-in {
+    border-radius: 0; }
+  #sign-in .form-sign-in:focus {
+    outline: none;
+    border: 1px solid #bdbdbd; }
+  #sign-in #btn-login {
+    border-radius: 0;
+    background: #cca335;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.75rem;
+    border: 0; }

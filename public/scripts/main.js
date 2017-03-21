@@ -2,6 +2,8 @@
 
 import $ from "jquery";
 import Navigo from "navigo";
+import { aboutController } from "aboutController";
+import { contactsController } from "contactsController";
 import { diariesController } from "diariesController";
 import { homeController } from "homeController";
 import toastr from "toastr";
@@ -16,6 +18,8 @@ router
     .on("trip-diaries-by-author", diariesController.diariesByUser)
     .on("add-diary", diariesController.addNewDiary)
     .on("users/:id", usersController.userById)
+    .on("about", aboutController.about)
+    .on("contacts", contactsController.contacts)
     .on("register", usersController.register)
     .on("login", usersController.login)
     .on("logout", usersController.logout)
