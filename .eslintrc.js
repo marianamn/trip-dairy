@@ -66,8 +66,7 @@ module.exports = {
             }
         ],
         "eol-last": [
-            "error",
-            "never"
+            "error"
         ],
         "eqeqeq": "error",
         "func-call-spacing": "off",

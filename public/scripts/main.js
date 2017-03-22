@@ -22,7 +22,6 @@ router
     .on("contacts", contactsController.contacts)
     .on("register", usersController.register)
     .on("login", usersController.login)
-    .on("logout", usersController.logout)
     .on(() => {
         router.navigate("/home");
     })
@@ -36,3 +35,18 @@ if (loggedUserEmail !== null) {
     $("#nav-btn-register").addClass("hidden");
     $(".add-diary").removeClass("hidden");
 }
+
+$("#nav-btn-logout").on("click", (evt) => {
+
+    $("#nav-btn-logout").addClass("hidden");
+    $("#nav-btn-login").removeClass("hidden");
+    $("#nav-btn-register").removeClass("hidden");
+    $(".add-diary").addClass("hidden");
+
+    localStorage.removeItem("auth_key");
+    localStorage.removeItem("auth_email");
+    console.log(11);
+    toastr.success("Sign out successfully!");
+    // window.location = "#/home";
+
+});

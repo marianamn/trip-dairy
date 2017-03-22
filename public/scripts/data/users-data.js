@@ -50,12 +50,6 @@ class UsersData {
         return this.requester.postJSON(url, body, {});
     }
 
-    logout(user) {
-        return new Promise(function(resolve) {
-            resolve();
-        });
-    }
-
     getAllUsers() {
         let url = this.urls.getAllUsersURL();
 

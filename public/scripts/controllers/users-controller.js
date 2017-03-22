@@ -20,7 +20,9 @@ let usersController = (function() {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate());
 
-                    $("#btn-register").on("click", () => {
+                    $("#btn-register").on("click", (evt) => {
+                        evt.preventDefault();
+
                         let newUser = {
                             email: $("#tb-email").val(),
                             firstName: $("#tb-firstName").val(),
@@ -66,6 +68,8 @@ let usersController = (function() {
                                 toastr.error("Sign up was unsuccessfull, please try again!");
                                 window.location = "#/register";
                             });
+
+                        return false;
                     });
                 });
         }
@@ -76,7 +80,8 @@ let usersController = (function() {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate());
 
-                    $("#btn-login").on("click", () => {
+                    $("#btn-login").on("click", (evt) => {
+                        evt.preventDefault();
                         let user = {
                             email: $("#tb-email").val(),
                             password: $("#tb-password").val()
@@ -98,25 +103,7 @@ let usersController = (function() {
                                 toastr.error("Invalid email or password!");
                                 window.location = "#/login";
                             });
-                    });
-                });
-        }
-
-        logout() {
-            let user = {};
-            this.data.logout(user)
-                .then(() => {
-                    $("#nav-btn-logout").on("click", () => {
-                        $("#nav-btn-logout").addClass("hidden");
-                        $("#nav-btn-login").removeClass("hidden");
-                        $("#nav-btn-register").removeClass("hidden");
-                        $(".add-diary").addClass("hidden");
-
-                        localStorage.removeItem("auth_key");
-                        localStorage.removeItem("auth_email");
-
-                        toastr.success("Sign out successfully!");
-                        window.location = "#/home";
+                        return false;
                     });
                 });
         }
@@ -146,9 +133,6 @@ let usersController = (function() {
         },
         login: function() {
             return userConroller.login();
-        },
-        logout: function() {
-            return userConroller.logout();
         },
         userById: function(params) {
             return userConroller.userById(params);
