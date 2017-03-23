@@ -5,7 +5,7 @@ a,
 p,
 div,
 section, .logo-container, .logo-container .social-links a, .carousel-container .slide-data .text-right,
-.carousel-container .slide-data .text-left, footer, #trip-diaries-list, #trip-diaries-list .diaries, #trip-diaries-list .diaries .diaries-container .diary-img, #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container, #add-diary, #about .about-img, #about .about-container, #contacts .contacts-img, #contacts .contacts-container, #sign-in .sign-in-form {
+.carousel-container .slide-data .text-left, footer, #trip-diaries-list, #trip-diaries-list .diaries, #trip-diaries-list .diaries .diaries-container .diary-img, #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container, #about .about-img, #about .about-container, #contacts .contacts-img, #contacts .contacts-container, #add-diary, #sign-in .sign-in-form, #sign-up .sign-up-form, #trip-details .date-container {
   margin: 0;
   padding: 0; }
 
@@ -115,7 +115,7 @@ input:focus {
   .carousel-container .slide-data .comment {
     font-size: 0.875rem; }
   .carousel-container .slide-data .dot {
-    font-size: 0.25rem; }
+    font-size: 0.5rem; }
 
 .carousel-container .carousel-image {
   height: 600px;
@@ -184,7 +184,7 @@ input:focus {
     #most-recent .recent-icons i {
       margin-right: 2%; }
     #most-recent .recent-icons .dot {
-      font-size: 0.25rem;
+      font-size: 0.5rem;
       color: #cca335;
       padding-left: 10px;
       padding-right: 5px; }
@@ -421,62 +421,6 @@ footer {
   #trip-diaries-list .separator:last-of-type {
     display: none; }
 
-#add-diary {
-  padding-top: 3%;
-  padding-bottom: 10%;
-  width: 80%;
-  margin: 0px auto; }
-  #add-diary .add-title {
-    font-size: 2.26rem;
-    font-style: italic;
-    padding-top: 2%;
-    padding-bottom: 2%; }
-  #add-diary .form-add-diary {
-    border-radius: 0; }
-  #add-diary .form-add-diary:focus {
-    outline: none;
-    border: 1px solid #bdbdbd; }
-  #add-diary .add-diary-input {
-    padding: 0; }
-  #add-diary .category {
-    padding-top: 5%; }
-  #add-diary .asterisk {
-    color: #cca335; }
-  #add-diary .add-label {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
-    font-size: 0.75rem; }
-  #add-diary .form-add-diary::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: #bdbdbd;
-    padding-left: 93%; }
-  #add-diary .form-add-diary:-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #bdbdbd;
-    padding-left: 93%; }
-  #add-diary .form-add-diary::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #bdbdbd;
-    padding-left: 93%; }
-  #add-diary .form-add-diary:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #bdbdbd;
-    padding-left: 93%; }
-  #add-diary select:focus {
-    outline: 0; }
-  #add-diary #btn-add-diary {
-    border-radius: 0;
-    background: #cca335;
-    text-transform: uppercase;
-    color: white;
-    font-size: 0.75rem;
-    margin-top: 35%;
-    width: 130%;
-    border: 0; }
-  #add-diary button#btn-add-diary.form-add-diary btn:focus {
-    outline: 0 !important; }
-
 #about {
   padding-top: 3%;
   padding-bottom: 10%;
@@ -536,6 +480,62 @@ footer {
       #contacts .contacts-container .contacts-details .detailes {
         padding-right: 1%; }
 
+#add-diary {
+  padding-top: 3%;
+  padding-bottom: 10%;
+  width: 80%;
+  margin: 0px auto; }
+  #add-diary .add-title {
+    font-size: 2.26rem;
+    font-style: italic;
+    padding-top: 2%;
+    padding-bottom: 2%; }
+  #add-diary .form-add-diary {
+    border-radius: 0; }
+  #add-diary .form-add-diary:focus {
+    outline: none;
+    border: 1px solid #bdbdbd; }
+  #add-diary .add-diary-input {
+    padding: 0; }
+  #add-diary .category {
+    padding-top: 5%; }
+  #add-diary .asterisk {
+    color: #cca335; }
+  #add-diary .add-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem; }
+  #add-diary .form-add-diary::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #add-diary .form-add-diary:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #add-diary .form-add-diary::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #add-diary .form-add-diary:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #add-diary select:focus {
+    outline: 0; }
+  #add-diary #btn-add-diary {
+    border-radius: 0;
+    background: #cca335;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.75rem;
+    margin-top: 35%;
+    width: 130%;
+    border: 0; }
+  #add-diary button#btn-add-diary.form-add-diary btn:focus {
+    outline: 0 !important; }
+
 #sign-in {
   padding-top: 3%;
   padding-bottom: 10%;
@@ -555,7 +555,7 @@ footer {
     /* WebKit, Blink, Edge */
     color: #bdbdbd;
     padding-left: 93%; }
-  #sign-in .form--sign-in:-moz-placeholder {
+  #sign-in .form-sign-in:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     color: #bdbdbd;
     padding-left: 93%; }
@@ -579,3 +579,99 @@ footer {
     color: white;
     font-size: 0.75rem;
     border: 0; }
+
+#sign-up {
+  padding-top: 3%;
+  padding-bottom: 10%;
+  width: 80%;
+  margin: 0px auto; }
+  #sign-up .sign-up-form {
+    width: 70%;
+    margin: 0px auto; }
+  #sign-up .asterisk {
+    color: #cca335; }
+  #sign-up .sign-up-input {
+    padding: 0; }
+  #sign-up .sign-up-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem; }
+  #sign-up .form-sign-up::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-up .form-sign-up:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-up .form-sign-up::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-up .form-sign-up:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #bdbdbd;
+    padding-left: 93%; }
+  #sign-up .form-sign-up {
+    border-radius: 0; }
+  #sign-up .form-sign-up:focus {
+    outline: none;
+    border: 1px solid #bdbdbd; }
+  #sign-up #btn-register {
+    border-radius: 0;
+    background: #cca335;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.75rem;
+    border: 0; }
+
+#trip-details {
+  padding-top: 3%;
+  padding-bottom: 10%;
+  width: 80%;
+  margin: 0px auto; }
+  #trip-details .details-icons {
+    height: 20px;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal; }
+    #trip-details .details-icons .icon-spacing-right {
+      padding-right: 10px; }
+    #trip-details .details-icons .dot {
+      color: #cca335;
+      padding-right: 10px;
+      padding-left: 10px;
+      font-size: 0.5rem; }
+    #trip-details .details-icons .like:hover,
+    #trip-details .details-icons .dislike:hover,
+    #trip-details .details-icons .comment:hover,
+    #trip-details .details-icons .author:hover {
+      color: #cca335; }
+  #trip-details .date-container {
+    height: 25px;
+    font-style: italic;
+    margin-bottom: 50px; }
+    #trip-details .date-container .line-separator {
+      width: 100%; }
+    #trip-details .date-container .separator {
+      padding: 0;
+      width: 100%;
+      border-bottom: 1px solid #bdbdbd; }
+    #trip-details .date-container .date {
+      font-size: 1.875rem; }
+    #trip-details .date-container .month {
+      font-size: 1.875rem; }
+  #trip-details .diary-title {
+    margin-bottom: 30px; }
+  #trip-details .diary-content {
+    text-align: justify;
+    margin-bottom: 40px; }
+    #trip-details .diary-content p {
+      line-height: 1.7rem; }
+  #trip-details .diary-img-container .diary-img {
+    margin-top: 20px; }
+  #trip-details .diary-img-container img {
+    width: 500px;
+    height: 360px; }

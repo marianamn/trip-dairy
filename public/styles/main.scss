@@ -177,7 +177,7 @@ input:focus {
             font-size: 0.875rem;
         }
         .dot {
-            font-size: 0.25rem;
+            font-size: 0.5rem;
         }
     }
     .carousel-image {
@@ -263,7 +263,7 @@ input:focus {
             margin-right: 2%;
         }
         .dot {
-            font-size: 0.25rem;
+            font-size: 0.5rem;
             color: $app-color-orange;
             padding-left: 10px;
             padding-right: 5px;
@@ -577,79 +577,6 @@ footer {
     }
 }
 
-// add-diary page
-#add-diary {
-    padding-top: 3%;
-    padding-bottom: 10%;
-    @extend .clear-spacing;
-    width: 80%;
-    margin: 0px auto;
-    .add-title {
-        font-size: 2.26rem;
-        font-style: italic;
-        padding-top: 2%;
-        padding-bottom: 2%;
-    }
-    .form-add-diary {
-        border-radius: 0;
-    }
-    .form-add-diary:focus {
-        outline: none;
-        border: 1px solid $app-color-lite-gray;
-    }
-    .add-diary-input {
-        padding: 0;
-    }
-    .category {
-        padding-top: 5%;
-    }
-    .asterisk {
-        color: $app-color-orange;
-    }
-    .add-label {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-family: $app-font-menu;
-        font-size: 0.75rem;
-    }
-    .form-add-diary::-webkit-input-placeholder {
-        /* WebKit, Blink, Edge */
-        color: $app-color-lite-gray;
-        padding-left: 93%
-    }
-    .form-add-diary:-moz-placeholder {
-        /* Mozilla Firefox 4 to 18 */
-        color: $app-color-lite-gray;
-        padding-left: 93%
-    }
-    .form-add-diary::-moz-placeholder {
-        /* Mozilla Firefox 19+ */
-        color: $app-color-lite-gray;
-        padding-left: 93%
-    }
-    .form-add-diary:-ms-input-placeholder {
-        /* Internet Explorer 10-11 */
-        color: $app-color-lite-gray;
-        padding-left: 93%
-    }
-    select:focus {
-        outline: 0;
-    }
-    #btn-add-diary {
-        border-radius: 0;
-        background: $app-color-orange;
-        text-transform: uppercase;
-        color: $app-color-white;
-        font-size: 0.75rem;
-        margin-top: 35%;
-        width: 130%;
-        border: 0;
-    }
-    button#btn-add-diary.form-add-diary btn:focus {
-        outline: 0 !important;
-    }
-}
-
 // about page
 #about {
     padding-top: 3%;
@@ -733,6 +660,79 @@ footer {
     }
 }
 
+// add-diary page
+#add-diary {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    @extend .clear-spacing;
+    width: 80%;
+    margin: 0px auto;
+    .add-title {
+        font-size: 2.26rem;
+        font-style: italic;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .form-add-diary {
+        border-radius: 0;
+    }
+    .form-add-diary:focus {
+        outline: none;
+        border: 1px solid $app-color-lite-gray;
+    }
+    .add-diary-input {
+        padding: 0;
+    }
+    .category {
+        padding-top: 5%;
+    }
+    .asterisk {
+        color: $app-color-orange;
+    }
+    .add-label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $app-font-menu;
+        font-size: 0.75rem;
+    }
+    .form-add-diary::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-add-diary:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-add-diary::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-add-diary:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    select:focus {
+        outline: 0;
+    }
+    #btn-add-diary {
+        border-radius: 0;
+        background: $app-color-orange;
+        text-transform: uppercase;
+        color: $app-color-white;
+        font-size: 0.75rem;
+        margin-top: 35%;
+        width: 130%;
+        border: 0;
+    }
+    button#btn-add-diary.form-add-diary btn:focus {
+        outline: 0 !important;
+    }
+}
+
 // sign-in page
 #sign-in {
     padding-top: 3%;
@@ -758,7 +758,7 @@ footer {
         color: $app-color-lite-gray;
         padding-left: 93%
     }
-    .form--sign-in:-moz-placeholder {
+    .form-sign-in:-moz-placeholder {
         /* Mozilla Firefox 4 to 18 */
         color: $app-color-lite-gray;
         padding-left: 93%
@@ -787,5 +787,134 @@ footer {
         color: $app-color-white;
         font-size: 0.75rem;
         border: 0;
+    }
+}
+
+// sign-up page
+#sign-up {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 80%;
+    margin: 0px auto;
+    .sign-up-form {
+        width: 70%;
+        margin: 0px auto;
+        @extend .clear-spacing;
+    }
+    .asterisk {
+        color: $app-color-orange;
+    }
+    .sign-up-input {
+        padding: 0;
+    }
+    .sign-up-label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $app-font-menu;
+        font-size: 0.75rem;
+    }
+    .form-sign-up::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-sign-up:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-sign-up::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-sign-up:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $app-color-lite-gray;
+        padding-left: 93%
+    }
+    .form-sign-up {
+        border-radius: 0;
+    }
+    .form-sign-up:focus {
+        outline: none;
+        border: 1px solid $app-color-lite-gray;
+    }
+    #btn-register {
+        border-radius: 0;
+        background: $app-color-orange;
+        text-transform: uppercase;
+        color: $app-color-white;
+        font-size: 0.75rem;
+        border: 0;
+    }
+}
+
+//trip-details page
+#trip-details {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 80%;
+    margin: 0px auto;
+    .details-icons {
+        height: 20px;
+        color: #a0a0a0;
+        font-size: 0.75rem;
+        font-family: $app-font-menu;
+        font-weight: normal;
+        .icon-spacing-right {
+            padding-right: 10px;
+        }
+        .dot {
+            color: $app-color-orange;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-size: 0.5rem;
+        }
+        .like:hover,
+        .dislike:hover,
+        .comment:hover,
+        .author:hover {
+            color: $app-color-orange;
+        }
+    }
+    .date-container {
+        height: 25px;
+        @extend .clear-spacing;
+        font-style: italic;
+        margin-bottom: 50px;
+        .line-separator {
+            width: 100%;
+        }
+        .separator {
+            padding: 0;
+            width: 100%;
+            border-bottom: 1px solid $app-color-lite-gray;
+        }
+        .date {
+            font-size: 1.875rem;
+        }
+        .month {
+            font-size: 1.875rem;
+        }
+    }
+    .diary-title {
+        margin-bottom: 30px;
+    }
+    .diary-content {
+        text-align: justify;
+        margin-bottom: 40px;
+        p {
+            line-height: 1.7rem;
+        }
+    }
+    .diary-img-container {
+        .diary-img {
+            margin-top: 20px;
+        }
+        img {
+            width: 500px;
+            height: 360px;
+        }
     }
 }

@@ -1,4 +1,4 @@
-<section id="trip-detais">
+<section id="trip-details">
      <ol class="my-breadcrumb d-flex align-items-center justify-content-center">
         <li class="my-breadcrumb-item">
             <a href="#">Home</a>
@@ -16,28 +16,64 @@
         </li>
     </ol>
 
-    <div>Trip details</div>
     <div>
-        <p>{{likes}}</p>
-        <p>{{dislikes}}</p>
-        <p>{{title}}</p>
-        <p>{{author}}</p>
-        <p>{{postDate}}</p>
-        <p>{{category}}</p>
-        <p>{{{content}}}</p>
-        <img src="{{mainImage}}" alt="">
-        <p>
-           {{#each images}}
-                <img src="{{this}}" alt="">
-           {{/each}}
-        </p>
+        <div class="details-icons">
+            <p class="float-left">
+                <i class="fa fa-thumbs-up icon-spacing-right icon-color like" aria-hidden="true"></i>{{likes}}
+                <i class="fa fa-circle icon-color dot" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-down icon-spacing-right icon-color dislike" aria-hidden="true"></i>{{dislikes}}
+            </p>
 
-        {{#each comments}}
-            <div>
-                <p>{{this.author}}</p>
-                <p>{{this.body}}</p>
-                <p>{{this.postDate}}</p>
+            <p class="float-right">
+                <i class="fa fa-comment-o icon-spacing-right comment" aria-hidden="true"></i>{{comments.length}} Comments
+                <i class="fa fa-circle icon-color dot" aria-hidden="true"></i>
+                <i class="fa fa-user-o icon-spacing-right author" aria-hidden="true"></i>By {{author}}
+            </p>
+        </div>
+       
+        <div class="date-container d-flex align-items-center justify-content-center">
+            <p class="d-inline separator"></p>
+
+            <div class="d-inline text-center">
+                <p class="d-inline date">{{date.date}}</p>
+                <p class="d-inlinemonth">{{date.month}}</p>
             </div>
-        {{/each}}
+            
+            <p class="d-inline separator"></p>
+        </div>
+        
+        <h1 class="diary-title">{{title}}</h1>
+        <div class="diary-content">{{{content}}}</div>
+
+        <div class="container diary-img-container">
+            <div class="row">
+                <div class="col-sm-6 diary-img">            
+                    <img class="d-block img-fluid" src="{{mainImage}}" alt="First slide">
+                </div>
+                {{#each images}}    
+                    <div class="col-sm-6 diary-img">            
+                        <img class="d-block img-fluid" src="{{this}}" alt="Second slide">
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div>
+           <p>
+               <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftrip-diaries.herokuapp.com%2F%23%2Ftrip-diaries%2F{{_id}}%2F&amp;src=sdkpreparse" target="_blank">
+                    <i class="fa fa-facebook "></i>
+                </a>
+            </p>
+        </div>
+
+        <div>
+            {{#each comments}}
+                <div>
+                    <p>{{this.author}}</p>
+                    <p>{{this.body}}</p>
+                    <p>{{this.postDate}}</p>
+                </div>
+            {{/each}}
+        </div>
     </div>
 </section>

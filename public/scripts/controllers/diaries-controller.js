@@ -24,6 +24,13 @@ let diariesController = (function() {
             this.data.getTripDiaryById(id)
                 .then((response) => {
                     tripDiary = response.data;
+                    let date = UTILS.HELPER_FUNCTIONS.getDate(new Date(tripDiary.postDate));
+                    let month = UTILS.HELPER_FUNCTIONS.getMonth(new Date(tripDiary.postDate));
+
+                    tripDiary.date = {
+                        date: date,
+                        month: month
+                    };
 
                     return this.templates.get("diary-details");
                 })
@@ -58,7 +65,7 @@ let diariesController = (function() {
             this.data.getAllTripsDiaries()
                 .then((trips) => {
                     tripsData = UTILS.HELPER_FUNCTIONS.getTripsByAuthor(trips);
-                    //console.log(tripsData);
+                    // console.log(tripsData);
 
                     usersData.getAllUsers()
                         .then((response) => {

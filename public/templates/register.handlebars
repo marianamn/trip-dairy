@@ -11,98 +11,105 @@
         </li>
     </ol>
 
-    <form class="form-horizontal">
+    <form class="form-horizontal sign-up-form">
         <fieldset>
-          <div class="form-group">
-            <label for="email" class="col-lg-2 control-label">Email</label>
-            <div class="col-lg-8">
-              <input placeholder="Email" type="email" class="form-register form-control" id="tb-email"/>
-            </div>
-          </div>
+          <div class="container">
+            <div  class="row">
+              <div class="col-lg-6">
+                   <div class="form-group">
+                      <label for="email" class="control-label sign-up-label">Email <strong class="asterisk">*</strong></label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input type="email" class="form-register form-control form-sign-up" id="tb-email" placeholder="&#xf1fa;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
-            <div class="col-lg-8">
-              <input placeholder="First Name" type="text" class="form-register form-control" id="tb-firstName"/>
-            </div>
-          </div>
+                   <div class="form-group">
+                      <label for="inputFirstName" class="control-label sign-up-label">First Name <strong class="asterisk">*</strong></label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input type="text" class="form-register form-control form-sign-up" id="tb-firstName" placeholder="&#xf2bc;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
-            <div class="col-lg-8">
-              <input placeholder="Last Name" type="text" class="form-register form-control" id="tb-lastName"/>
-            </div>
-          </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="control-label sign-up-label">Password <strong class="asterisk">*</strong></label>
+                    <div class="col-lg-12 sign-up-input">
+                      <input type="password" class="form-register form-control form-sign-up" id="tb-newPassword" placeholder="&#xf023;" style="font-family:Arial, FontAwesome"/>
+                    </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="inputProfileImagURL" class="col-lg-2 control-label">Profile image URL</label>
-            <div class="col-lg-8">
-              <input placeholder="Profile image  URL" type="text" class="form-register form-control" id="tb-profileImgURL"/>
-            </div>
-          </div>
-        
-          <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-8">
-              <input placeholder="Password" type="password" class="form-register form-control" id="tb-newPassword"/>
-            </div>
-          </div>
+                  <div class="form-group">
+                        <label for="inputFacebookContact" class="control-label sign-up-label">Facebook URL</label>
+                        <div class="col-lg-12 sign-up-input">
+                          <input class="form-register form-control form-sign-up" id="tb-facebookContact" placeholder="&#xf09a;" style="font-family:Arial, FontAwesome"/>
+                        </div>
+                    </div>
 
-          <div class="form-group">
-            <label for="inputUserInfo" class="col-lg-2 control-label">About me</label>
-            <div class="col-lg-8">
-              <input placeholder="Type some words for you" type="text" class="form-register form-control" id="tb-userInfo"/>
-            </div>
-          </div>
+                  <div class="form-group">
+                      <label for="inputTwitterContactContact" class="control-label sign-up-label">Twitter URL</label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input class="form-register form-control form-sign-up" id="tb-twitterContact" placeholder="&#xf099;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="inputFacebookContact" class="col-lg-2 control-label">Facebook URL</label>
-            <div class="col-lg-8">
-              <input placeholder="Facebook URL" class="form-register form-control" id="tb-facebookContact"/>
-            </div>
-          </div>
+                    <div class="form-group">
+                      <label for="inputInstagramContact" class="control-label sign-up-label">Instagram URL</label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input class="form-register form-control form-sign-up" id="tb-instagramContact" placeholder="&#xf16d;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
+              </div>
 
-          <div class="form-group">
-            <label for="inputYouTubeContact" class="col-lg-2 control-label">youTube URL</label>
-            <div class="col-lg-8">
-              <input placeholder="youTube URL" class="form-register form-control" id="tb-youTubeContact"/>
-            </div>
-          </div>
+              <div class="col-lg-6">
+                  <div class="form-group">
+                      <label for="inputProfileImagURL" class="control-label sign-up-label">Profile image URL <strong class="asterisk">*</strong></label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input type="text" class="form-register form-control form-sign-up" id="tb-profileImgURL" placeholder="&#xf03e;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="inputTwitterContactContact" class="col-lg-2 control-label">Twitter URL</label>
-            <div class="col-lg-8">
-              <input placeholder="Twitter URL" class="form-register form-control" id="tb-twitterContact"/>
-            </div>
-          </div>
+                   <div class="form-group">
+                      <label for="inputLastName" class="control-label sign-up-label">Last Name  <strong class="asterisk">*</strong></label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input type="text" class="form-register form-control form-sign-up" id="tb-lastName" placeholder="&#xf2bc;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="inputGooglePlusContactContact" class="col-lg-2 control-label">Goog++ URL</label>
-            <div class="col-lg-8">
-              <input placeholder="Google++ URL" class="form-register form-control" id="tb-googlePlusContact"/>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="inputInstagramContact" class="col-lg-2 control-label">Instagram URL</label>
-            <div class="col-lg-8">
-              <input placeholder="Instagram URL" class="form-register form-control" id="tb-instagramContact"/>
-            </div>
-          </div>
+                   <div class="form-group">
+                      <label for="inputUserInfo" class="control-label sign-up-label">About me  <strong class="asterisk">*</strong></label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input type="text" class="form-register form-control form-sign-up" id="tb-userInfo" placeholder="&#xf129;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="inputRSSContact" class="col-lg-2 control-label">RSS URL</label>
-            <div class="col-lg-8">
-              <input placeholder="RSS URL" class="form-register form-control" id="tb-rssContact"/>
-            </div>
-          </div>
+                   <div class="form-group">
+                      <label for="inputYouTubeContact" class="control-label sign-up-label">youTube URL</label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input class="form-register form-control form-sign-up" id="tb-youTubeContact" placeholder="&#xf167;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
+                  
+                   <div class="form-group">
+                      <label for="inputGooglePlusContactContact" class="control-label sign-up-label">Goog++ URL</label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input class="form-register form-control form-sign-up" id="tb-googlePlusContact" placeholder="&#xf0d5;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
 
-          <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-              <button id="btn-register" class="form-register btn">Sign up</button>
+                  <div class="form-group">
+                      <label for="inputRSSContact" class="control-label sign-up-label">RSS URL</label>
+                      <div class="col-lg-12 sign-up-input">
+                        <input class="form-register form-control form-sign-up" id="tb-rssContact" placeholder="&#xf09e;" style="font-family:Arial, FontAwesome"/>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-12 col-lg-offset-2">
+                  <button id="btn-register" class="form-register btn">Sign up</button>
+                </div>
+              </div>
             </div>
-          </div>
-          
+          </div>   
       </fieldset>
   </form>
 </section>

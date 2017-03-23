@@ -3,6 +3,61 @@
 import _ from "underscore";
 import tinymce from "tinymce";
 
+function transformDate(date) {
+    let months = [];
+
+    months[0] = "January";
+    months[1] = "February";
+    months[2] = "March";
+    months[3] = "April";
+    months[4] = "May";
+    months[5] = "June";
+    months[6] = "July";
+    months[7] = "August";
+    months[8] = "September";
+    months[9] = "October";
+    months[10] = "November";
+    months[11] = "December";
+
+    let month = date.getMonth();
+    let m = months[month];
+    let d = date.getDate();
+    let y = date.getFullYear();
+
+    let day = `${m} ${d} ${y}`;
+
+    return day;
+}
+
+function getDate(date) {
+    let day = date.getDate();
+
+    return day;
+}
+
+
+function getMonth(date) {
+    let months = [];
+
+    months[0] = "January";
+    months[1] = "February";
+    months[2] = "March";
+    months[3] = "April";
+    months[4] = "May";
+    months[5] = "June";
+    months[6] = "July";
+    months[7] = "August";
+    months[8] = "September";
+    months[9] = "October";
+    months[10] = "November";
+    months[11] = "December";
+
+    let m = date.getMonth();
+    let month = months[m];
+
+    return month;
+}
+
 function getRecentTripsDiaries(trips, count, charsCount) {
     let tripsData,
         recentTripDiaries;
@@ -20,7 +75,7 @@ function getRecentTripsDiaries(trips, count, charsCount) {
     let tripsData1 = _.map(tripsData, (value) => {
         return {
             tripsData: value,
-            date: getDate(new Date(value.postDate))
+            date: transformDate(new Date(value.postDate))
         };
     });
 
@@ -95,10 +150,10 @@ function getTripsByAuthor(trips) {
             tripsGrouped: _.map(value, (trip) => {
                 return {
                     tripsData: trip,
-                    date: getDate(new Date(trip.postDate))
+                    date: transformDate(new Date(trip.postDate))
                 };
             })
-        }
+        };
     });
 
     return tripsData;
@@ -144,32 +199,6 @@ function tinyMceInit() {
         toolbar: "undo redo  | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent",
         content_css: "https://www.tinymce.com/css/codepen.min.css"
     });
-}
-
-function getDate(date) {
-    let months = [];
-
-    months[0] = "January";
-    months[1] = "February";
-    months[2] = "March";
-    months[3] = "April";
-    months[4] = "May";
-    months[5] = "June";
-    months[6] = "July";
-    months[7] = "August";
-    months[8] = "September";
-    months[9] = "October";
-    months[10] = "November";
-    months[11] = "December";
-
-    let month = date.getMonth();
-    let m = months[month];
-    let d = date.getDate();
-    let y = date.getFullYear();
-
-    let day = m + ' ' + d + '. ' + y;
-
-    return day;
 }
 
 function filterByName(array, searchWord) {
@@ -226,7 +255,9 @@ let HELPER_FUNCTIONS = {
     getUserInfo: getUserInfo,
     getUserFullName: getUserFullName,
     tinyMceInit: tinyMceInit,
+    transformDate: transformDate,
     getDate: getDate,
+    getMonth: getMonth,
     filterByName: filterByName
 };
 
