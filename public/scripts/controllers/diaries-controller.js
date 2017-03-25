@@ -33,6 +33,14 @@ let diariesController = (function() {
                         month: month
                     };
 
+                    tripDiary.comments.forEach((comment) => {
+                        let commentPostDate = UTILS.HELPER_FUNCTIONS.transformDate(new Date(comment.postDate));
+
+                        comment.date = {
+                            date: commentPostDate
+                        };
+                    });
+
                     return this.data.getAllTripsDiaries();
                 })
                 .then((res) => {
@@ -43,13 +51,15 @@ let diariesController = (function() {
                     tripDiary.previous = {
                         _id: prevAndNext.prev._id,
                         title: prevAndNext.prev.title,
-                        mainImage: prevAndNext.prev.mainImage
+                        mainImage: prevAndNext.prev.mainImage,
+                        author: prevAndNext.prev.author
                     };
 
                     tripDiary.next = {
                         _id: prevAndNext.next._id,
                         title: prevAndNext.next.title,
-                        mainImage: prevAndNext.next.mainImage
+                        mainImage: prevAndNext.next.mainImage,
+                        author: prevAndNext.next.author
                     };
 
                     return this.templates.get("diary-details");

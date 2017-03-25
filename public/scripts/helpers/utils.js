@@ -22,7 +22,7 @@ function transformDate(date) {
     let d = date.getDate();
     let y = date.getFullYear();
 
-    let day = `${m} ${d} ${y}`;
+    let day = `${m} ${d}, ${y}`;
 
     return day;
 }

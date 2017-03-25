@@ -22,7 +22,9 @@
             <img src="../images/right-separator.png" class="img-fluid">
         </div>
 
-    <div id="map" style="height: 370px; width: 74.2%" class="img-fluid justify-content-center contacts-map"></div>
+    <div class="img-fluid justify-content-center contacts-map">
+        <iframe width="100%" height="370" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ23lQII6GqkAR3qrqjRHUwMg&key=AIzaSyBhZ6ck8uOdRH7LDlCN43zTSYC8AB8jhsw" allowfullscreen></iframe>
+    </div>
 
     <div class="contacts-details">
         <p class="d-flex align-items-center justify-content-center"><strong class="detailes">Adress:</strong> Bulgaria, Sofia, Bul. "Aleksandar Malinov" 31</p>
@@ -31,19 +33,3 @@
     </div>
     </div>
 </section>
-
-
-<script>
-    function initMap() {
-        var uluru = {lat: 42.65069574370378, lng: 23.379858362830095};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-                center: uluru
-            });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeueDs6m5tBxkDesCOY9U4Fc7V7xx7_IA&callback=initMap" async defer></script>

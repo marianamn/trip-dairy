@@ -5,7 +5,8 @@
     "scripts": {
         "start": "node ./server/app.js",
         "development": "node ./server/app.js",
-        "postinstall": "./node_modules/.bin/bower install"
+        "postinstall": "./node_modules/.bin/bower install",
+        "install": "cd public && npm install"
     },
     "keywords": [],
     "author": "Mariana",
