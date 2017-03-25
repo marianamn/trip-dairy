@@ -1,5 +1,3 @@
-/* globals localStorage*/
-
 import _ from "underscore";
 import tinymce from "tinymce";
 
@@ -186,6 +184,40 @@ function getUserFullName(users, email) {
     return fullName;
 }
 
+function getNextAndPreviousDiary(diaries, id) {
+    let sorted = _.sortBy(diaries, (trip) => {
+        return trip._id;
+    });
+
+    let sortedById = _.toArray(sorted);
+
+    let prev,
+        next;
+
+    for (let i = 0; i < sortedById.length; i++) {
+        if (sortedById[i]._id === id) {
+            if (i - 1 >= 0) {
+                prev = sortedById[i - 1];
+            } else {
+                prev = sortedById[sortedById.length - 1];
+            }
+
+            if (i + 1 < sortedById.length) {
+                next = sortedById[i + 1];
+            } else {
+                prev = sortedById[0];
+            }
+        }
+    }
+
+    let tripsPrevAndNext = {
+        prev: prev,
+        next: next
+    };
+
+    return tripsPrevAndNext;
+}
+
 function tinyMceInit() {
     tinymce.init({
         selector: "#tb-content",
@@ -221,10 +253,6 @@ function getLoginUrl() {
     return "/auth/login";
 }
 
-function getLogoutUrl() {
-    return "/auth/logout";
-}
-
 function getAllUsersURL() {
     return "/auth/users";
 }
@@ -258,7 +286,8 @@ let HELPER_FUNCTIONS = {
     transformDate: transformDate,
     getDate: getDate,
     getMonth: getMonth,
-    filterByName: filterByName
+    filterByName: filterByName,
+    getNextAndPreviousDiary: getNextAndPreviousDiary
 };
 
 let URLS = {
@@ -268,7 +297,6 @@ let URLS = {
     getAllTripsUrl: getAllTripsUrl,
     getTripByIdUrl: getTripByIdUrl,
     getUserByIdUrl: getUserByIdUrl,
-    getLogoutUrl: getLogoutUrl,
     getDiaryAddUrlUrl: getDiaryAddUrlUrl
 };
 

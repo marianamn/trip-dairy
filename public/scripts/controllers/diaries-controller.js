@@ -18,7 +18,8 @@ let diariesController = (function() {
         }
 
         diaryById(params) {
-            let tripDiary;
+            let tripDiary,
+                trips;
             let id = params["id"];
 
             this.data.getTripDiaryById(id)
@@ -30,6 +31,25 @@ let diariesController = (function() {
                     tripDiary.date = {
                         date: date,
                         month: month
+                    };
+
+                    return this.data.getAllTripsDiaries();
+                })
+                .then((res) => {
+                    trips = res.data;
+
+                    let prevAndNext = UTILS.HELPER_FUNCTIONS.getNextAndPreviousDiary(trips, tripDiary._id);
+
+                    tripDiary.previous = {
+                        _id: prevAndNext.prev._id,
+                        title: prevAndNext.prev.title,
+                        mainImage: prevAndNext.prev.mainImage
+                    };
+
+                    tripDiary.next = {
+                        _id: prevAndNext.next._id,
+                        title: prevAndNext.next.title,
+                        mainImage: prevAndNext.next.mainImage
                     };
 
                     return this.templates.get("diary-details");

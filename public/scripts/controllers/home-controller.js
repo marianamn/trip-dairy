@@ -33,7 +33,7 @@ let homeController = (function() {
                         mostLikedDieries: mostLikedDieries,
                         recentDieries: recentDieries,
                         diariesByCategories: diariesByCategories
-                    }
+                    };
 
                     // console.log(tripsData);
                     return this.templates.get("home");

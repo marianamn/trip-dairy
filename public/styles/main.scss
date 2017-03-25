@@ -396,7 +396,7 @@ footer {
     font-family: $app-font-menu;
     color: $app-color-black;
     margin-bottom: 0;
-    padding-bottom: 2%;
+    padding-bottom: 35px;
     .my-breadcrumb-item {
         float: left;
         list-style: none;
@@ -909,12 +909,47 @@ footer {
         }
     }
     .diary-img-container {
+        margin-bottom: 70px;
         .diary-img {
             margin-top: 20px;
         }
         img {
             width: 500px;
             height: 360px;
+        }
+    }
+    .share-buttons {
+        .share-button {
+            border: 1px solid $app-color-lite-gray;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            i {
+                color: $app-color-lite-gray;
+            }
+        }
+        .share-button:hover {
+            border-bottom: 2px solid $app-color-orange;
+        }
+    }
+    .other-diaries-container {
+        @extend .clear-spacing;
+        width: 100%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        .prev {
+            background: url(../../images/prev.png) no-repeat;
+            background-size: 100% 100%;
+            height: 160px;
+        }
+        .next {
+            background: url('../../images/next.png') no-repeat;
+            background-size: 100% 100%;
+            height: 160px;
+        }
+        img {
+            width: 70px;
+            height: 70px;
         }
     }
 }

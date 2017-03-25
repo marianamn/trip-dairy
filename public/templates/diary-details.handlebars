@@ -58,12 +58,56 @@
             </div>
         </div>
 
-        <div>
-           <p>
-               <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftrip-diaries.herokuapp.com%2F%23%2Ftrip-diaries%2F{{_id}}%2F&amp;src=sdkpreparse" target="_blank">
-                    <i class="fa fa-facebook "></i>
-                </a>
+        <div class="share-buttons d-inline clearfix">
+            <p class="share-button d-flex align-items-center justify-content-center float-right">
+               <a href="#" target="_blank"><i class="fa fa-rss"></i></a>
             </p>
+
+            <p class="share-button d-flex align-items-center justify-content-center float-right">
+               <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            </p>
+
+            <p class="share-button d-flex align-items-center justify-content-center float-right">
+               <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+            </p>
+
+            <p class="share-button d-flex align-items-center justify-content-center float-right">
+               <a href="#" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+            </p>
+
+            <p class="share-button d-flex align-items-center justify-content-center float-right">
+               <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+            </p>
+
+            <p class="share-button d-flex align-items-center justify-content-center float-right">
+               <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+            </p>
+
+            <p class="share-button d-flex align-items-center justify-content-center float-right">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftrip-diaries.herokuapp.com%2F%23%2Ftrip-diaries%2F{{_id}}%2F&amp;src=sdkpreparse" target="_blank">
+                        <i class="fa fa-facebook "></i>
+                    </a>
+                </p>
+        </div>
+
+        <div class="container other-diaries-container">
+            <div class="row">
+                <div class="prev col-sm-6 d-flex align-items-center">
+                    <img class="ing-fluid" src={{previous.mainImage}}>
+                    <div>
+                        <p class="prev-next-title">Previous diary</p>
+                        <p><a href="#/trip-diaries/{{previous._id}}">{{previous.title}}</a></p>
+                    </div>
+                </div>
+
+                <div class="next col-sm-6 d-flex align-items-center">
+                    <img class="ing-fluid" src={{next.mainImage}}>
+                    <div>
+                        <p class="prev-next-title">Next diary</p>
+                        <p><a href="#/trip-diaries/{{next._id}}">{{next.title}}</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div>
