@@ -813,11 +813,26 @@ footer {
       margin-top: 60px;
       margin-bottom: 10px;
       color: #bdbdbd;
-      font-weight: bold; }
+      font-weight: bold;
+      text-align: center; }
     #trip-details .comments-container .replay #replay-area {
       width: 100%;
       margin: 0 auto;
       border: 1px solid #bdbdbd; }
+    #trip-details .comments-container .replay textarea:focus {
+      outline: 0; }
+    #trip-details .comments-container .replay .center {
+      text-align: center; }
+      #trip-details .comments-container .replay .center .btn-post-comment {
+        color: white;
+        background: #cca335;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 10px;
+        border: none; }
+      #trip-details .comments-container .replay .center .btn-post-comment:focus {
+        outline: 0; }
 
 #trips-by-category,
 #trips-by-search-word {

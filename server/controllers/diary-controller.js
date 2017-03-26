@@ -50,6 +50,18 @@ module.exports = function(params) {
                 .catch(err => {
                     return res.status(400).send({ success: false, msg: "Diary not created!", err });
                 });
+        },
+        addCommentInDiary(req, res) {
+            let comment = req.body["body"];
+            let commentAsJSON = JSON.parse(comment);
+
+            data.addComment(commentAsJSON)
+                .then((resData) => {
+                    res.status(200).send({ success: true, resData });
+                })
+                .catch(err => {
+                    return res.status(400).send({ success: false, msg: "Comment not created!", err });
+                });
         }
     };
 };

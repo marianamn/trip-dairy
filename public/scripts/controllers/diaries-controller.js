@@ -68,8 +68,35 @@ let diariesController = (function() {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(tripDiary));
 
+                    let loggedUserEmail = localStorage.getItem("auth_email");
+                    if (loggedUserEmail !== null) {
+                        $(".post-comment").removeClass("hidden");
+                        $(".btn-replay").removeClass("hidden");
+                    }
+
                     $(".horizontal-separator").last()
                         .addClass("hidden");
+
+                    $(".btn-post-comment").on("click", (evt) => {
+                        evt.preventDefault();
+                        let comment = {
+                            diaryId: tripDiary._id,
+                            author: localStorage.getItem("fullName"),
+                            profileImgURL: localStorage.getItem("profileImg"),
+                            body: $("#replay-area").val(),
+                            postDate: new Date()
+                        };
+
+                        this.data.addComment(comment)
+                            .then((resp) => {
+                                toastr.success("Comment was added!");
+                            })
+                            .catch((error) => {
+                                toastr.error("Comment adding failed!");
+                            });
+
+                        return false;
+                    });
                 });
         }
 

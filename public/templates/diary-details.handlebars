@@ -134,7 +134,7 @@
                             </div>
                             
                             <p class="comment-body">{{this.body}}</p>
-                            <button class="btn-replay">Replay</button>
+                            <button class="btn-replay hidden">Replay</button>
                         </div>
                         
                     </div>
@@ -142,10 +142,10 @@
                 {{/each}}
             </div>
 
-            <div class="replay">
+            <div class="replay post-comment hidden">
                 <div class="replay-title">Leave a replay</div>
-                <textarea name="replay-area" id="replay-area" cols="30" rows="10"></textarea>
-                <button class="btn-pos-commenty">Post comment</button>
+                <textarea name="replay-area" id="replay-area" cols="30" rows="10" placeholder="Write a message..."></textarea>
+                <p class="center"><button class="btn-post-comment">Post comment</button></p>
             </div>
         </div>
     </div>

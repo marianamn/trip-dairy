@@ -1094,11 +1094,30 @@ footer {
                 margin-bottom: 10px;
                 color: $app-color-lite-gray;
                 font-weight: bold;
+                text-align: center;
             }
             #replay-area {
                 width: 100%;
                 margin: 0 auto;
                 border: 1px solid $app-color-lite-gray;
+            }
+            textarea:focus {
+                outline: 0;
+            }
+            .center {
+                text-align: center;
+                .btn-post-comment {
+                    color: $app-color-white;
+                    background: $app-color-orange;
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    padding: 5px 10px;
+                    border: none;
+                }
+                .btn-post-comment:focus {
+                    outline: 0;
+                }
             }
         }
     }

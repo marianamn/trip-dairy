@@ -3,6 +3,7 @@
 import $ from "jquery";
 import { CONSTANTS } from "constants";
 import Handlebars from "handlebars";
+import { UTILS } from "utils";
 import { templatesLoader } from "templates";
 import toastr from "toastr";
 import { usersData } from "usersData";
@@ -65,6 +66,7 @@ let usersController = (function() {
                                 window.location = "#/login";
                             })
                             .catch((error) => {
+                                console.log(error);
                                 toastr.error("Sign up was unsuccessfull, please try again!");
                                 window.location = "#/register";
                             });
@@ -97,9 +99,19 @@ let usersController = (function() {
                                 localStorage.setItem("auth_key", response.body.token);
                                 localStorage.setItem("auth_email", response.body.email);
 
+                                usersData.getAllUsers()
+                                    .then((res) => {
+                                        let users = res.data;
+                                        let foundUser = UTILS.HELPER_FUNCTIONS.getUserInfoByEmail(users, response.body.email);
+
+                                        localStorage.setItem("profileImg", foundUser.profileImgURL);
+                                        localStorage.setItem("fullName", `${foundUser.firstName} ${foundUser.lastName}`);
+                                    });
+
                                 toastr.success("Sign in successfully!");
                                 window.location = "#/home";
                             }, (error) => {
+                                console.log(error);
                                 toastr.error("Invalid email or password!");
                                 window.location = "#/login";
                             });

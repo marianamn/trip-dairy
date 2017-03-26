@@ -10,6 +10,7 @@ module.exports = function({ app, controllers }) {
     router
         .get("/trip-diaries", controllers.getAllDiaries)
         .get("/trip-diaries/:id", controllers.getDiaryById)
+        .put("/trip-diaries/:id/comment", controllers.addCommentInDiary)
         .post("/add-diary", controllers.addDiary);
 
     app.use("/api", router);

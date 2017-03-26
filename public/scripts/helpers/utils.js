@@ -171,6 +171,18 @@ function getUserInfo(users, name) {
     return foundUser;
 }
 
+function getUserInfoByEmail(users, email) {
+    let foundUser;
+
+    users.forEach((user) => {
+        if (user.email === email) {
+            foundUser = user;
+        }
+    });
+
+    return foundUser;
+}
+
 function getUserFullName(users, email) {
     let fullName;
 
@@ -280,6 +292,9 @@ function getDiaryAddUrlUrl() {
     return "/api/add-diary";
 }
 
+function getAddCommentUrl(itemId) {
+    return `/api/trip-diaries/${itemId}/comment`;
+}
 
 let HELPER_FUNCTIONS = {
     getRecentTripsDiaries: getRecentTripsDiaries,
@@ -288,6 +303,7 @@ let HELPER_FUNCTIONS = {
     tripDiariesByCategory: tripDiariesByCategory,
     getTripsByAuthor: getTripsByAuthor,
     getUserInfo: getUserInfo,
+    getUserInfoByEmail: getUserInfoByEmail,
     getUserFullName: getUserFullName,
     tinyMceInit: tinyMceInit,
     transformDate: transformDate,
@@ -304,7 +320,8 @@ let URLS = {
     getAllTripsUrl: getAllTripsUrl,
     getTripByIdUrl: getTripByIdUrl,
     getUserByIdUrl: getUserByIdUrl,
-    getDiaryAddUrlUrl: getDiaryAddUrlUrl
+    getDiaryAddUrlUrl: getDiaryAddUrlUrl,
+    getAddCommentUrl: getAddCommentUrl
 };
 
 let utils = {

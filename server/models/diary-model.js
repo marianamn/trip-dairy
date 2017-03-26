@@ -27,7 +27,8 @@ module.exports = modelRegistrator.register("Diary", {
     comments: [{
         author: String,
         body: String,
-        postDate: Date
+        postDate: Date,
+        profileImgURL: String
     }],
     likes: {
         type: Number,

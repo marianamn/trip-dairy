@@ -45,6 +45,21 @@ class TripsDiariesData {
 
         return this.requester.postJSON(url, body, options);
     }
+
+    addComment(comment) {
+        let postBody = {
+            diaryId: comment.diaryId,
+            author: comment.author,
+            profileImgURL: comment.profileImgURL,
+            body: comment.body,
+            postDate: comment.postDate
+        };
+
+        let url = this.urls.getAddCommentUrl(comment.diaryId);
+        let body = { body: JSON.stringify(postBody) };
+
+        return this.requester.putJSON(url, body, {});
+    }
 }
 
 let tripsDiariesData = new TripsDiariesData(UTILS.URLS);

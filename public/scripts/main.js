@@ -39,7 +39,6 @@ if (loggedUserEmail !== null) {
 }
 
 $("#nav-btn-logout").on("click", () => {
-
     $("#nav-btn-logout").addClass("hidden");
     $("#nav-btn-login").removeClass("hidden");
     $("#nav-btn-register").removeClass("hidden");
@@ -47,6 +46,8 @@ $("#nav-btn-logout").on("click", () => {
 
     localStorage.removeItem("auth_key");
     localStorage.removeItem("auth_email");
+    localStorage.removeItem("profileImg");
+    localStorage.removeItem("fullName");
 
     toastr.success("Sign out successfully!");
 });

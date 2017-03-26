@@ -31,6 +31,26 @@ module.exports = function(models) {
                 .then((newDiary) => {
                     return dataUtils.save(newDiary);
                 });
+        },
+        addComment(comment) {
+            let id = comment.diaryId;
+            return new Promise((resolve) => {
+                dataUtils.getOneById(Diary, id)
+                    .then((diary) => {
+                        let newComment = {
+                            author: comment.author,
+                            profileImgURL: comment.profileImgURL,
+                            body: comment.body,
+                            postDate: comment.postDate
+                        };
+
+                        diary.comments.push(newComment);
+                        console.log(diary.comments);
+                        dataUtils.update(diary);
+                        return resolve(newComment);
+                    });
+            });
+
         }
     };
 };
