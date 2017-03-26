@@ -411,10 +411,10 @@ footer {
     font-family: $app-font-menu;
     color: $app-color-black;
     margin-bottom: 60px;
-    text-align: center;
     display: block;
     width: 100%;
     padding-left: 0;
+    justify-content: center;
     .my-breadcrumb-item {
         float: left;
         list-style: none;
@@ -889,6 +889,9 @@ footer {
         font-size: 0.75rem;
         font-family: $app-font-menu;
         font-weight: normal;
+        .details-icons-right {
+            justify-content: flex-end;
+        }
         .icon-spacing-right {
             padding-right: 10px;
         }
@@ -1169,6 +1172,7 @@ footer {
 }
 
 @media (max-width: 901px) {
+    // breadcrumps
     .logo-container {
         height: 140px;
         .social-links {
@@ -1179,9 +1183,36 @@ footer {
             margin-top: 44px;
         }
     }
+    // details page
+    #trip-details {
+        .date-container {
+            margin-top: 30px;
+        }
+        .diary-img-container {
+            img {
+                height: 300px;
+            }
+        }
+    }
 }
 
-@media (max-width: 521px) {
+@media (max-width: 750px) {
+    // details page
+    #trip-details {
+        .date-container {
+            margin-top: 50px;
+        }
+        .details-icons {
+            .details-icons-right {
+                justify-content: flex-start;
+                margin-top: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 530px) {
+    // breadcrumps
     .my-breadcrumb {
         .my-breadcrumb-item {
             padding-right: 5px;
@@ -1190,14 +1221,55 @@ footer {
             }
         }
     }
+    // details page
+    #trip-details {
+        .details-icons {
+            .details-icons-right {
+                justify-content: flex-start;
+                margin-top: 12px;
+            }
+        }
+    }
 }
 
-@media (max-width: px) {
+@media (max-width: 440px) {
+    // breadcrumps
     .my-breadcrumb {
-        .my-breadcrumb-item {
-            padding-right: 5px;
-            .my-breadcrumb-arrow {
+        font-size: 0.75rem;
+    }
+    // details page
+    #trip-details {
+        .diary-img-container {
+            img {
+                height: 250px;
+            }
+        }
+        .share-buttons {
+            .share-button {
+                width: 30px;
+                height: 30px;
                 margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    // breadcrumps
+    .my-breadcrumb {
+        visibility: hidden;
+    }
+    // details page
+    #trip-details {
+        .diary-img-container {
+            img {
+                height: 250px;
+            }
+        }
+        .share-buttons {
+            .share-button {
+                width: 25px;
+                height: 25px;
             }
         }
     }

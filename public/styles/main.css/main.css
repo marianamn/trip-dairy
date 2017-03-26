@@ -296,10 +296,10 @@ footer {
   font-family: "Poppins", sans-serif;
   color: black;
   margin-bottom: 60px;
-  text-align: center;
   display: block;
   width: 100%;
-  padding-left: 0; }
+  padding-left: 0;
+  justify-content: center; }
   .my-breadcrumb .my-breadcrumb-item {
     float: left;
     list-style: none;
@@ -659,6 +659,8 @@ footer {
     font-size: 0.75rem;
     font-family: "Poppins", sans-serif;
     font-weight: normal; }
+    #trip-details .details-icons .details-icons-right {
+      justify-content: flex-end; }
     #trip-details .details-icons .icon-spacing-right {
       padding-right: 10px; }
     #trip-details .details-icons .dot {
@@ -884,16 +886,43 @@ footer {
       top: 12px;
       width: 100%; }
     .logo-container .logo-img-container {
-      margin-top: 44px; } }
+      margin-top: 44px; }
+  #trip-details .date-container {
+    margin-top: 30px; }
+  #trip-details .diary-img-container img {
+    height: 300px; } }
 
-@media (max-width: 521px) {
+@media (max-width: 750px) {
+  #trip-details .date-container {
+    margin-top: 50px; }
+  #trip-details .details-icons .details-icons-right {
+    justify-content: flex-start;
+    margin-top: 12px; } }
+
+@media (max-width: 530px) {
   .my-breadcrumb .my-breadcrumb-item {
     padding-right: 5px; }
     .my-breadcrumb .my-breadcrumb-item .my-breadcrumb-arrow {
-      margin-left: 5px; } }
+      margin-left: 5px; }
+  #trip-details .details-icons .details-icons-right {
+    justify-content: flex-start;
+    margin-top: 12px; } }
 
-@media (max-width: px) {
-  .my-breadcrumb .my-breadcrumb-item {
-    padding-right: 5px; }
-    .my-breadcrumb .my-breadcrumb-item .my-breadcrumb-arrow {
-      margin-left: 5px; } }
+@media (max-width: 440px) {
+  .my-breadcrumb {
+    font-size: 0.75rem; }
+  #trip-details .diary-img-container img {
+    height: 250px; }
+  #trip-details .share-buttons .share-button {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px; } }
+
+@media (max-width: 330px) {
+  .my-breadcrumb {
+    visibility: hidden; }
+  #trip-details .diary-img-container img {
+    height: 250px; }
+  #trip-details .share-buttons .share-button {
+    width: 25px;
+    height: 25px; } }
