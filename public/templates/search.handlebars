@@ -1,4 +1,4 @@
-<section id="trips-by-category">
+<section id="trips-by-search-word">
     <ol class="my-breadcrumb d-flex align-items-center justify-content-center">
         <li class="my-breadcrumb-item">
             <a href="#">Home</a>
@@ -6,13 +6,13 @@
         </li>
         
         <li class="my-breadcrumb-item active">
-            Category: {{category}}
+            Search: {{search}}
             <i class="fa fa-angle-double-right my-breadcrumb-arrow" aria-hidden="true"></i>
         </li>
     </ol>
 
     <div>
-        <h3 class="title">Trip dieries from category: "{{category}}"</h3>
+        <h3 class="title">Trip dieries containing: {{search}}</h3>
         <div class="container">
             <div class="row">
                 {{#each this}}

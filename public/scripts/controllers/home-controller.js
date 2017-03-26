@@ -1,3 +1,5 @@
+/* globals window*/
+
 import $ from "jquery";
 import Handlebars from "handlebars";
 import { UTILS } from "utils";
@@ -42,6 +44,16 @@ let homeController = (function() {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(tripsData));
 
+                    $("#btn-search").on("click", (evt) => {
+                        evt.preventDefault();
+
+                        let text = $("#search").val();
+                        window.location = `#/search/${text}`;
+
+                        return false;
+                    });
+
+
                     $(".carousel-item").first()
                         .addClass("active");
                 });
@@ -51,7 +63,7 @@ let homeController = (function() {
     let homeConroller = new HomeConroller(tripsDiariesData, templatesLoader);
 
     return {
-        home: function(params) {
+        home: function() {
             return homeConroller.home();
         }
     };

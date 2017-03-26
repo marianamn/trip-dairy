@@ -10,10 +10,10 @@ let aboutController = (function() {
 
         about() {
             this.templates.get("about")
-                .then(function(html) {
+                .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate());
-                })
+                });
         }
     }
 

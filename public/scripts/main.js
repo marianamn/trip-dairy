@@ -6,6 +6,7 @@ import { aboutController } from "aboutController";
 import { contactsController } from "contactsController";
 import { diariesController } from "diariesController";
 import { homeController } from "homeController";
+import { searchController } from "searchController";
 import toastr from "toastr";
 import { usersController } from "usersController";
 
@@ -14,6 +15,7 @@ const router = new Navigo(null, true);
 router
     .on("trip-diaries/category/:category", diariesController.diariesByCategory)
     .on("trip-diaries/:id", diariesController.diaryById)
+    .on("search/:text", searchController.search)
     .on("home", homeController.home)
     .on("trip-diaries-by-author", diariesController.diariesByUser)
     .on("add-diary", diariesController.addNewDiary)
@@ -36,7 +38,7 @@ if (loggedUserEmail !== null) {
     $(".add-diary").removeClass("hidden");
 }
 
-$("#nav-btn-logout").on("click", (evt) => {
+$("#nav-btn-logout").on("click", () => {
 
     $("#nav-btn-logout").addClass("hidden");
     $("#nav-btn-login").removeClass("hidden");
@@ -45,8 +47,6 @@ $("#nav-btn-logout").on("click", (evt) => {
 
     localStorage.removeItem("auth_key");
     localStorage.removeItem("auth_email");
-    console.log(11);
-    toastr.success("Sign out successfully!");
-    // window.location = "#/home";
 
+    toastr.success("Sign out successfully!");
 });

@@ -30,6 +30,7 @@ SystemJS.config({
         "diariesController": "../scripts/controllers/diaries-controller.js",
         "aboutController": "../scripts/controllers/about-controller.js",
         "contactsController": "../scripts/controllers/contacts-controller.js",
+        "searchController": "../scripts/controllers/search-controller.js",
 
         // main
         "main": "../scripts/main.js"

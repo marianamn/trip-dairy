@@ -62,62 +62,64 @@
 </section>
 
 <!--Recent trip diaries-->
-<div class="d-flex justify-content-center">
-    <section id="most-recent" class="col-sm-8 float-left">
-        <div class="container " >
-            <div class="row justify-content-center">
-                <div class="col-sm-9 recent-header"> 
+<div id="main-container">
+    <div class="container cont">
+        <div class="row">
+            <div id="most-recent" class="col-sm-8">
+                <div class="recent-header d-flex justify-content-center"> 
                     <img class="img-fluid img-separator-left" src="../images/left-separator.png">
-                    <span class="recent-diaries-title">Latest trip dieries</span>
+                    <span class="recent-diaries-title">Latest dieries</span>
                     <img class="img-fluid img-separator-right" src="../images/right-separator.png">
                 </div>
-            
-                {{#each this.recentDieries}}
-                    <div class="col-sm-5">
-                        <img class="img-fluid recent-img" src="{{tripsData.mainImage}}" alt="main-image">
-                        <p class="recent-title"><a href="#/trip-diaries/{{tripsData._id}}" data-id="{{tripsData._id}}">{{tripsData.title}}</a></p>
-                        <p class="recent-date">{{date}}</p>
-                        <div class="recent-text">{{{tripsData.content}}} ...</div>
-                        <p class="recent-icons">
-                            <i class="fa fa-user-o icon-spacing-right author" aria-hidden="true"></i>{{tripsData.author}}
-                            <i class="fa fa-circle icon-spacing-right icon-color dot align-items-center" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o icon-spacing-left icon-color like" aria-hidden="true"></i>{{tripsData.likes}}
-                            <i class="fa fa-circle icon-spacing-right icon-color dot align-items-center" aria-hidden="true"></i>
-                            <i class="fa fa-comment-o icon-spacing-right comment" aria-hidden="true"></i>{{tripsData.comments.length}}
-                        </p>
-                        <hr/>
+
+                <div class="container cont">
+                    <div class="row">
+                        {{#each this.recentDieries}}
+                            <div class="col-sm-6">
+                                <img class="img-fluid recent-img" src="{{tripsData.mainImage}}" alt="main-image">
+                                <p class="recent-title"><a href="#/trip-diaries/{{tripsData._id}}" data-id="{{tripsData._id}}">{{tripsData.title}}</a></p>
+                                <p class="recent-date">{{date}}</p>
+                                <div class="recent-text">{{{tripsData.content}}} ...</div>
+                                <p class="recent-icons">
+                                    <i class="fa fa-user-o icon-spacing-right author" aria-hidden="true"></i>{{tripsData.author}}
+                                    <i class="fa fa-circle icon-spacing-right icon-color dot align-items-center" aria-hidden="true"></i>
+                                    <i class="fa fa-heart-o icon-spacing-left icon-color like" aria-hidden="true"></i>{{tripsData.likes}}
+                                    <i class="fa fa-circle icon-spacing-right icon-color dot align-items-center" aria-hidden="true"></i>
+                                    <i class="fa fa-comment-o icon-spacing-right comment" aria-hidden="true"></i>{{tripsData.comments.length}}
+                                </p>
+                                <hr/>
+                            </div>
+                        {{/each}}
                     </div>
-                {{/each}}
+                </div>
+            </div>
+
+            <div id="categories" class="col-sm-3">
+                <form class="">
+                    <input id="search" class="input-search" type="text" placeholder="Search">
+                    <button id="btn-search" class="btn-search" type="submit">Search</button>
+                </form>
+
+                <div class="categories-title d-flex justify-content-center">
+                    Trips Categories
+                </div>
+                <img class="img-fluid" src="../images/full-separator.png" alt="separator">
+
+                <div class="categories-container">
+                    {{#each this.diariesByCategories}}
+                        <a href="#/trip-diaries/category/{{this.category}}" data-category="{{this.category}}">
+                            <div class="category-container">
+                                <p class="d-inline align-items-left category">{{this.category}}</p>
+                                <p class="d-inline align-items-right float-right category-count">{{this.tripsGrouped.length}}</p>
+                            </div>
+                        </a>
+                    {{/each}}
+                </div>
+
+                <div class="fb-page">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTripDiaryTelerikAcademyProject%2F&tabs=contacts&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!--Trip diaries by categories-->
-    <aside id="categories" class="col-sm-3 float-left">
-        <form class="">
-            <input id="filter" class="input-search" type="text" placeholder="Search">
-            <button id="btn-filter" class="btn-search" type="submit">Search</button>
-        </form>
-
-        <div class="categories-title d-flex justify-content-center">
-            Trips Categories
-        </div>
-        <img class="img-fluid" src="../images/full-separator.png" alt="separator">
-
-        <div class="categories-container">
-            {{#each this.diariesByCategories}}
-                <a href="#/trip-diaries/category/{{this.category}}" data-category="{{this.category}}">
-                    <div class="category-container">
-                        <p class="d-inline align-items-left category">{{this.category}}</p>
-                        <p class="d-inline align-items-right float-right category-count">{{this.tripsGrouped.length}}</p>
-                    </div>
-                </a>
-            {{/each}}
-        </div>
-
-        <div class="fb-page">
-           <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTripDiaryTelerikAcademyProject%2F&tabs=contacts&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-        </div>
-    </aside>
+    </div>
 </div>
-

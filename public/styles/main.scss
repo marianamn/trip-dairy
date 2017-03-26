@@ -61,6 +61,9 @@ input:focus {
         @extend .clear-spacing;
         color: $app-color-black;
     }
+    .social-links a i {
+        padding-right: 15px;
+    }
     .social-links a i:hover {
         color: $app-color-orange;
     }
@@ -215,128 +218,137 @@ input:focus {
 }
 
 // home page - most recent diaries
-#most-recent {
-    margin-top: 10%;
-    margin-bottom: 15%;
-    .recent-header {
-        margin-bottom: 7%;
+#main-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    .cont,
+    .row {
+        margin: 0 auto;
+        width: 100%
     }
-    .img-separator-left {
-        margin-right: 5%;
-    }
-    .img-separator-right {
-        margin-left: 5%;
-    }
-    .recent-img {
-        padding-top: 5%;
-        width: 385px;
-        height: 275px;
-    }
-    .recent-diaries-title {
-        font-style: italic;
-        font-size: 1.875rem;
-    }
-    .recent-title {
-        padding-top: 5%;
-        font-style: italic;
-        font-size: 1.875rem;
-        padding-bottom: 10px;
-        a {
-            color: $app-color-black;
+    #most-recent {
+        .recent-header {
+            padding: 0;
+            margin: 0 auto;
+            width: 100%;
+            padding-bottom: 10px
         }
-        a:hover {
-            color: $app-color-orange;
-            text-decoration: none;
+        .img-separator-left {
+            margin-right: 5%;
         }
-    }
-    .recent-date {
-        margin-bottom: 30px;
-        color: $app-color-orange;
-    }
-    .recent-text {
-        padding-bottom: 40px;
-        text-align: justify;
-    }
-    .recent-icons {
-        padding-bottom: 15px;
-        color: $app-color-gray;
-        font-size: 0.75rem;
-        font-family: $app-font-menu;
-        i {
-            margin-right: 2%;
+        .img-separator-right {
+            margin-left: 5%;
         }
-        .dot {
-            font-size: 0.5rem;
-            color: $app-color-orange;
-            padding-left: 10px;
-            padding-right: 5px;
+        .recent-img {
+            padding-top: 5%;
+            width: 385px;
+            height: 275px;
         }
-    }
-}
-
-#categories {
-    width: 21%;
-    margin-top: 10%;
-    .btn-search {
-        margin: -5px;
-        width: 80px;
-        height: 60px;
-        border: none;
-        background: $btn-search-background;
-        font-size: 0.875rem;
-        padding: 15px;
-    }
-    .input-search {
-        background: $btn-input-background;
-        border: none;
-        height: 60px;
-        width: 230px;
-        font-size: 0.875rem;
-        padding: 15px;
-    }
-    .btn-search:focus,
-    .input-search:focus {
-        outline: none;
-    }
-    .categories-title {
-        font-size: 1.5rem;
-        font-style: italic;
-        padding-top: 35%;
-        padding-bottom: 3%;
-    }
-    .categories-container {
-        margin-top: 5%;
-        padding-left: 5%;
-        .category-container {
-            padding: 5%;
-            font-family: $app-font-menu;
-            font-size: 0.875rem;
-            border-left: 1px solid #e9e9e9;
-            .category {
+        .recent-diaries-title {
+            font-style: italic;
+            font-size: 1.875rem;
+        }
+        .recent-title {
+            padding-top: 5%;
+            font-style: italic;
+            font-size: 1.875rem;
+            padding-bottom: 10px;
+            a {
                 color: $app-color-black;
-                font-weight: bold;
             }
-            .category-count {
-                color: $app-color-lite-gray;
-            }
-        }
-        a {
-            text-decoration: none;
-        }
-        a:hover {
-            .category-container {
-                border-left: 1px solid $app-color-black;
-            }
-            .category-container>.category {
+            a:hover {
                 color: $app-color-orange;
+                text-decoration: none;
             }
-            .category-container>.category-count {
-                color: $app-color-black;
+        }
+        .recent-date {
+            margin-bottom: 30px;
+            color: $app-color-orange;
+        }
+        .recent-text {
+            padding-bottom: 40px;
+            text-align: justify;
+        }
+        .recent-icons {
+            padding-bottom: 15px;
+            color: $app-color-gray;
+            font-size: 0.75rem;
+            font-family: $app-font-menu;
+            i {
+                margin-right: 2%;
+            }
+            .dot {
+                font-size: 0.5rem;
+                color: $app-color-orange;
+                padding-left: 10px;
+                padding-right: 5px;
             }
         }
     }
-    .fb-page {
-        padding-top: 30%;
+    #categories {
+        width: 21%;
+        .btn-search {
+            margin: -5px;
+            width: 70px;
+            height: 60px;
+            border: none;
+            background: $btn-search-background;
+            font-size: 0.875rem;
+        }
+        .input-search {
+            background: $btn-input-background;
+            border: none;
+            height: 60px;
+            width: 230px;
+            font-size: 0.875rem;
+            padding: 15px;
+        }
+        .btn-search:focus,
+        .input-search:focus {
+            outline: none;
+        }
+        .categories-title {
+            font-size: 1.5rem;
+            font-style: italic;
+            padding-top: 35%;
+            padding-bottom: 3%;
+        }
+        .categories-container {
+            margin-top: 5%;
+            padding-left: 5%;
+            .category-container {
+                padding: 5%;
+                font-family: $app-font-menu;
+                font-size: 0.875rem;
+                border-left: 1px solid #e9e9e9;
+                .category {
+                    color: $app-color-black;
+                    font-weight: bold;
+                }
+                .category-count {
+                    color: $app-color-lite-gray;
+                }
+            }
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                .category-container {
+                    border-left: 1px solid $app-color-black;
+                }
+                .category-container>.category {
+                    color: $app-color-orange;
+                }
+                .category-container>.category-count {
+                    color: $app-color-black;
+                }
+            }
+        }
+        .fb-page {
+            padding-top: 30%;
+        }
     }
 }
 
@@ -615,6 +627,13 @@ footer {
         .about-sub-img {
             max-width: 386px;
             max-height: 525px;
+        }
+        .content {
+            text-align: justify;
+            line-height: 1.7rem;
+            h4 {
+                margin-bottom: 20px;
+            }
         }
     }
 }
@@ -1052,12 +1071,78 @@ footer {
                     font-size: 0.75rem;
                     text-transform: uppercase;
                     font-weight: bold;
+                    padding: 5px 10px;
+                    margin-top: 15px;
                 }
                 .btn-replay:focus {
                     outline: 0;
                 }
             }
+            .horizontal-separator {
+                width: 90%;
+            }
         }
+        .replay {
+            width: 80%;
+            padding: 0;
+            margin: 0 auto;
+            .replay-title {
+                text-transform: uppercase;
+                font-family: $app-font-menu;
+                font-size: 0.875rem;
+                margin-top: 60px;
+                margin-bottom: 10px;
+                color: $app-color-lite-gray;
+                font-weight: bold;
+            }
+            #replay-area {
+                width: 100%;
+                margin: 0 auto;
+                border: 1px solid $app-color-lite-gray;
+            }
+        }
+    }
+}
+
+#trips-by-category,
+#trips-by-search-word {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    @extend .clear-spacing;
+    width: 80%;
+    margin: 0px auto;
+    .title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: bold;
+        font-style: italic;
+    }
+    .diary-title {
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $app-font-menu;
+    }
+    .diary-title a {
+        color: $app-color-black;
+    }
+    .diary-title a:hover {
+        text-decoration: none;
+        color: $app-color-orange;
+    }
+    .diary-author {
+        font-size: 0.875rem;
+        text-align: center;
+        font-family: $app-font-menu;
+        color: $app-color-gray;
+        margin-bottom: 10px;
+    }
+    .diary-img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
     }
 }
 

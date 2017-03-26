@@ -67,6 +67,9 @@ let diariesController = (function() {
                 .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate(tripDiary));
+
+                    $(".horizontal-separator").last()
+                        .addClass("hidden");
                 });
         }
 
@@ -77,6 +80,7 @@ let diariesController = (function() {
             this.data.getAllTripsDiaries()
                 .then((trips) => {
                     tripDiary = UTILS.HELPER_FUNCTIONS.tripDiariesByCategory(trips, category);
+                    tripDiary.category = category;
                     // console.log(tripDiary);
 
                     return this.templates.get("trips-by-category");
@@ -170,6 +174,7 @@ let diariesController = (function() {
                             .then((diary) => {
                                 this.data.addDiary(diary)
                                     .then((resp) => {
+                                        console.log(resp);
                                         toastr.success("Diary successfully added!");
                                         window.location = "/";
                                     })

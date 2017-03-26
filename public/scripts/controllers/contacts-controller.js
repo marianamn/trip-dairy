@@ -10,10 +10,10 @@ let contactsController = (function() {
 
         contacts() {
             this.templates.get("contacts")
-                .then(function(html) {
+                .then((html) => {
                     let compiledTemplate = Handlebars.compile(html);
                     $("#content").html(compiledTemplate());
-                })
+                });
         }
     }
 
