@@ -367,22 +367,27 @@ footer {
         .footer-container-body {
             width: 70%;
             .footer-padding {
-                padding: 5%;
+                padding-top: 5%;
             }
         }
     }
     .footer-content {
-        border-right: 1px solid $app-color-gray;
-        hr {
-            width: 5px;
-            color: $app-color-white;
-        }
+        padding: 0;
+        margin: 0;
+        padding-top: 50px;
+    }
+    .footer-line {
+        height: 1px;
+        background: $app-color-orange;
+        width: 55px;
+        margin-bottom: 10px;
+        margin-top: 5px;
     }
     .footer-container-socials {
         color: $app-color-white;
         padding: 20px;
         background: rgba(0, 0, 0, 0.7);
-        border-top: 1px solid $app-color-gray;
+        border-top: 1px solid #444242;
         a {
             text-decoration: none;
             color: $app-color-gray;
@@ -401,6 +406,46 @@ footer {
         font-size: 0.875rem;
         text-align: justify;
         font-family: $app-font-menu;
+        height: 60px;
+        // border-bottom: 1px solid #444242;
+        .inner-footer-text {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .inner-footer-text:hover {
+            border-left: 2px solid $app-color-orange;
+            padding-left: 20px;
+        }
+    }
+    .fb-link {
+        font-size: 0.875rem;
+        width: 80%;
+        a {
+            color: $app-color-orange;
+            word-wrap: break-word;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+    .fb-title-post {
+        padding-top: 20px;
+    }
+    .fb-date {
+        color: $app-color-lite-gray;
+        .calendar-icon {
+            margin-right: 10px;
+        }
+    }
+    .contacts {
+        margin-top: 20px;
+        a {
+            color: $app-color-white;
+        }
+        a:hover {
+            text-decoration: none;
+            color: $app-color-orange
+        }
     }
 }
 
@@ -633,7 +678,7 @@ footer {
         }
         .content {
             text-align: justify;
-            line-height: 1.7rem;
+            line-height: 1.875rem;
             h4 {
                 margin-bottom: 20px;
             }
