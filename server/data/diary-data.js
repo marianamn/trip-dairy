@@ -45,7 +45,6 @@ module.exports = function(models) {
                         };
 
                         diary.comments.push(newComment);
-                        console.log(diary.comments);
                         dataUtils.update(diary);
                         return resolve(newComment);
                     });

@@ -13,27 +13,27 @@ SystemJS.config({
         "tinymce": "../bower_components/tinymce/tinymce.min.js",
 
         // helpers
-        "templates": "../scripts/helpers/template-loader.js",
-        "constants": "../scripts/helpers/constants.js",
-        "utils": "../scripts/helpers/utils.js",
+        "templates": "../build/js/helpers/template-loader.min.js",
+        "constants": "../build/js/helpers/constants.min.js",
+        "utils": "../build/js/helpers/utils.min.js",
 
         // requester
-        "requester": "../scripts/requests/requester.js",
+        "requester": "../build/js/requests/requester.min.js",
 
         // data
-        "usersData": "../scripts/data/users-data.js",
-        "diariesData": "../scripts/data/diaries-data.js",
+        "usersData": "../build/js/data/users-data.min.js",
+        "diariesData": "../build/js/data/diaries-data.min.js",
 
         // controllers
-        "homeController": "../scripts/controllers/home-controller.js",
-        "usersController": "../scripts/controllers/users-controller.js",
-        "diariesController": "../scripts/controllers/diaries-controller.js",
-        "aboutController": "../scripts/controllers/about-controller.js",
-        "contactsController": "../scripts/controllers/contacts-controller.js",
-        "searchController": "../scripts/controllers/search-controller.js",
+        "homeController": "../build/js/controllers/home-controller.min.js",
+        "usersController": "../build/js/controllers/users-controller.min.js",
+        "diariesController": "../build/js/controllers/diaries-controller.min.js",
+        "aboutController": "../build/js/controllers/about-controller.min.js",
+        "contactsController": "../build/js/controllers/contacts-controller.min.js",
+        "searchController": "../build/js/controllers/search-controller.min.js",
 
         // main
-        "main": "../scripts/main.js"
+        "main": "../build/js/main.min.js"
     }
 });
 

@@ -410,8 +410,11 @@ footer {
     font-size: 0.875rem;
     font-family: $app-font-menu;
     color: $app-color-black;
-    margin-bottom: 0;
-    padding-bottom: 35px;
+    margin-bottom: 60px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding-left: 0;
     .my-breadcrumb-item {
         float: left;
         list-style: none;
@@ -1174,6 +1177,28 @@ footer {
         }
         .logo-img-container {
             margin-top: 44px;
+        }
+    }
+}
+
+@media (max-width: 521px) {
+    .my-breadcrumb {
+        .my-breadcrumb-item {
+            padding-right: 5px;
+            .my-breadcrumb-arrow {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: px) {
+    .my-breadcrumb {
+        .my-breadcrumb-item {
+            padding-right: 5px;
+            .my-breadcrumb-arrow {
+                margin-left: 5px;
+            }
         }
     }
 }
