@@ -39,25 +39,15 @@ let usersController = (function() {
                             rssContact: $("#tb-rssContact").val()
                         };
 
-                        // if (newUser.password.length < CONSTANTS.PASSWORD_MIN_LENGTH || newUser.password.length > CONSTANTS.PASSWORD_MAX_LENGTH) {
-                        //     toastr.error("Password must be between 3 and 20 symbols long!");
-                        //     return;
-                        // }
-                        // if (/\W+/.test(newUser.firstName)) {
-                        //     toastr.error("First name contains invalid symbols!");
-                        //     return;
-                        // }
+                        if (newUser.password.length < CONSTANTS.PASSWORD_MIN_LENGTH || newUser.password.length > CONSTANTS.PASSWORD_MAX_LENGTH || newUser.password.length === 0) {
+                            toastr.error("Password must be between 3 and 20 symbols long!");
+                            return;
+                        }
 
-
-                        // if (/\W+/.test(newUser.lastName)) {
-                        //     toastr.error("Last contains invalid symbols!");
-                        //     return;
-                        // }
-
-                        // if (/\W+/.test(newUser.password)) {
-                        //     toastr.error("Password contains invalid symbols!");
-                        //     return;
-                        // }
+                        if (/\W+/.test(newUser.password)) {
+                            toastr.error("Password contains invalid symbols!");
+                            return;
+                        }
 
                         this.data.register(newUser)
                             .then((response) => {

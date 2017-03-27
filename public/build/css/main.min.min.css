@@ -21,18 +21,32 @@ input:focus{outline:0}.logo-container{text-align:center;position:relative;displa
 .carousel-container .slide-data .dot{font-size:.5rem}.carousel-container .carousel-image{height:600px;width:100%}
 .carousel-container .carousel-data{margin-left:-100%;width:100%;height:600px;padding-top:400px;color:white;background:-moz-linear-gradient(top,rgba(5,5,5,0) 0,rgba(5,5,5,0.02) 2%,#050505 100%);background:-webkit-linear-gradient(top,rgba(5,5,5,0) 0,rgba(5,5,5,0.02) 2%,#050505 100%);background:linear-gradient(to bottom,rgba(5,5,5,0) 0,rgba(5,5,5,0.02) 2%,#050505 100%)}
 .prev-carousel{width:20px;margin-left:88%;margin-top:350px}.next-carousel{width:20px;margin-right:5%;margin-top:350px}
-#main-container{width:80%;margin:0 auto;padding-top:5%;padding-bottom:10%}#main-container .cont,#main-container .row{margin:0 auto;width:100%}
-#main-container #most-recent .recent-header{padding:0;margin:0 auto;width:100%;padding-bottom:10px}
+#main-container{width:85%;margin:0 auto;padding-top:60px;padding-bottom:10%}#main-container .cont,#main-container .row{margin:0 auto;width:100%}
+#main-container #most-recent .diary-container{margin-bottom:10px}#main-container #most-recent .recent-header{padding:0;margin:0 auto;width:100%;padding-bottom:10px;overflow:hidden}
 #main-container #most-recent .img-separator-left{margin-right:5%}#main-container #most-recent .img-separator-right{margin-left:5%}
-#main-container #most-recent .recent-img{padding-top:5%;width:385px;height:275px}
-#main-container #most-recent .recent-diaries-title{font-style:italic;font-size:1.875rem}
-#main-container #most-recent .recent-title{padding-top:5%;font-style:italic;font-size:1.875rem;padding-bottom:10px}
+#main-container #most-recent .recent-img{padding-top:5%;width:100%;height:275px;object-fit:cover}
+#main-container #most-recent .recent-diaries-title{font-style:italic;font-size:1.75rem}
+#main-container #most-recent .recent-title{padding-top:5%;font-style:italic;font-size:1.75rem;padding-bottom:10px}
 #main-container #most-recent .recent-title a{color:black}#main-container #most-recent .recent-title a:hover{color:#cca335;text-decoration:none}
 #main-container #most-recent .recent-date{margin-bottom:30px;color:#cca335}#main-container #most-recent .recent-text{padding-bottom:40px;text-align:justify}
-#main-container #most-recent .recent-icons{padding-bottom:15px;color:#838383;font-size:.75rem;font-family:"Poppins",sans-serif}
-#main-container #most-recent .recent-icons i{margin-right:2%}#main-container #most-recent .recent-icons .dot{font-size:.5rem;color:#cca335;padding-left:10px;padding-right:5px}
-#main-container #categories{width:21%}#main-container #categories .btn-search{margin:-5px;width:70px;height:60px;border:0;background:#ccc;font-size:.875rem}
-#main-container #categories .input-search{background:#f5f5f5;border:0;height:60px;width:230px;font-size:.875rem;padding:15px}
+#main-container #most-recent .recent-icons{padding-bottom:15px;color:#838383;font-size:.75rem;font-family:"Poppins",sans-serif;left:15px;bottom:0;width:90%;margin:0}
+#main-container #most-recent .recent-icons i{margin-right:5px}#main-container #most-recent .recent-icons .dot{font-size:.5rem;color:#cca335;padding-left:5px;padding-right:5px}
+#main-container #categories-repeat .form-visible{display:none}#main-container #categories-repeat .categories-visible{display:none}
+#main-container #categories-repeat .img-visible{display:none}#main-container #categories-repeat .fb-visible{display:none}
+#main-container #categories-repeat .btn-search{width:60px;height:60px;border:0;background:#ccc;font-size:.875rem;position:absolute}
+#main-container #categories-repeat .input-search{background:#f5f5f5;border:0;height:60px;width:80%;font-size:.875rem;padding:15px;position:relative}
+#main-container #categories-repeat .btn-search:focus,#main-container #categories-repeat .input-search:focus{outline:0}
+#main-container #categories-repeat .categories-title{font-size:1.5rem;font-style:italic;padding-top:20px;padding-bottom:3%;display:none}
+#main-container #categories-repeat .categories-container{margin-top:5%;padding-left:5%;width:60%}
+#main-container #categories-repeat .categories-container .category-container{padding:10px;font-family:"Poppins",sans-serif;font-size:.875rem;border-left:1px solid #e9e9e9}
+#main-container #categories-repeat .categories-container .category-container .category{color:black;font-weight:bold}
+#main-container #categories-repeat .categories-container .category-container .category-count{color:#bdbdbd}
+#main-container #categories-repeat .categories-container a{text-decoration:none}#main-container #categories-repeat .categories-container a:hover .category-container{border-left:1px solid black}
+#main-container #categories-repeat .categories-container a:hover .category-container>.category{color:#cca335}
+#main-container #categories-repeat .categories-container a:hover .category-container>.category-count{color:black}
+#main-container #categories-repeat .fb-page{padding-top:50px;padding-bottom:50px;overflow:hidden}
+#main-container #categories .btn-search{width:60px;height:60px;border:0;background:#ccc;font-size:.875rem;position:absolute}
+#main-container #categories .input-search{background:#f5f5f5;border:0;height:60px;width:80%;font-size:.875rem;padding:15px;position:relative}
 #main-container #categories .btn-search:focus,#main-container #categories .input-search:focus{outline:0}
 #main-container #categories .categories-title{font-size:1.5rem;font-style:italic;padding-top:35%;padding-bottom:3%}
 #main-container #categories .categories-container{margin-top:5%;padding-left:5%}#main-container #categories .categories-container .category-container{padding:5%;font-family:"Poppins",sans-serif;font-size:.875rem;border-left:1px solid #e9e9e9}
@@ -41,27 +55,33 @@ input:focus{outline:0}.logo-container{text-align:center;position:relative;displa
 #main-container #categories .categories-container a{text-decoration:none}#main-container #categories .categories-container a:hover .category-container{border-left:1px solid black}
 #main-container #categories .categories-container a:hover .category-container>.category{color:#cca335}
 #main-container #categories .categories-container a:hover .category-container>.category-count{color:black}
-#main-container #categories .fb-page{padding-top:30%}footer{width:100%;height:100%;color:white;background:url("https://wallpaperscraft.com/image/glade_mountains_summer_green_landscape_day_53131_1920x1080.jpg");background-size:100% 100%}
+#main-container #categories .fb-page{padding-top:30%;width:100%;overflow:hidden}footer{width:100%;height:100%;color:white;background:url("https://wallpaperscraft.com/image/glade_mountains_summer_green_landscape_day_53131_1920x1080.jpg");background-size:100% 100%}
 footer #footer-container{width:100%;height:100%;background:rgba(0,0,0,0.7)}footer #footer-container .footer-container-body{width:70%}
-footer #footer-container .footer-container-body .footer-padding{padding:5%}footer .footer-content{border-right:1px solid #838383}
-footer .footer-content hr{width:5px;color:white}footer .footer-container-socials{color:white;padding:20px;background:rgba(0,0,0,0.7);border-top:1px solid #838383}
+footer #footer-container .footer-container-body .footer-padding{padding-top:5%}footer .footer-content{padding:0;margin:0;padding-top:50px}
+footer .footer-line{height:1px;background:#cca335;width:55px;margin-bottom:10px;margin-top:5px}
+footer .footer-container-socials{color:white;padding:20px;background:rgba(0,0,0,0.7);border-top:1px solid #444242}
 footer .footer-container-socials a{text-decoration:none;color:#838383;margin-right:5%}
 footer .footer-container-socials a:hover{color:white}footer .footer-title{font-size:1.5rem;font-style:italic;padding-bottom:5px}
-footer .footer-text{font-size:.875rem;text-align:justify;font-family:"Poppins",sans-serif}
-.my-breadcrumb{background-color:white;font-size:.875rem;font-family:"Poppins",sans-serif;color:black;margin-bottom:60px;text-align:center;display:block;width:100%;padding-left:0}
+footer .footer-text{height:60px}footer .footer-text .inner-footer-text{padding-top:15px;padding-bottom:15px}
+footer .footer-text .inner-footer-text:hover{border-left:2px solid #cca335;padding-left:20px}
+footer .fb-link{font-size:.875rem;width:80%}footer .fb-link a{padding-top:5px;color:#cca335;word-wrap:break-word}
+footer .fb-link a:hover{text-decoration:none}footer .fb-title-post{padding-top:20px}
+footer .fb-date{color:#bdbdbd}footer .fb-date .calendar-icon{margin-right:10px;padding-bottom:20px}
+footer .contacts{margin-top:20px}footer .contacts a{color:#cca335}footer .contacts a:hover{text-decoration:none}
+footer .contacts .more-details{padding-left:10px}.my-breadcrumb{background-color:white;font-size:.875rem;font-family:"Poppins",sans-serif;color:black;margin-bottom:60px;display:block;width:100%;padding-left:0;justify-content:center}
 .my-breadcrumb .my-breadcrumb-item{float:left;list-style:none;padding-right:2%}.my-breadcrumb .my-breadcrumb-item a{color:black;font-weight:bold}
 .my-breadcrumb .my-breadcrumb-item a:hover{text-decoration:none}.my-breadcrumb .my-breadcrumb-item .my-breadcrumb-arrow{color:#c6c6c6;margin-left:20px}
 .my-breadcrumb .my-breadcrumb-item.active{color:black;list-style:none}#trip-diaries-list{padding-top:3%;padding-bottom:10%}
 #trip-diaries-list .title-container{padding-bottom:2%}#trip-diaries-list .title-container .diaries-title{font-size:2.25rem;font-style:italic}
 #trip-diaries-list .title-container .diaries-sub-title{font-style:italic;padding-bottom:1%}
 #trip-diaries-list .diaries{width:75%;margin:auto}#trip-diaries-list .diaries .diaries-list{padding-top:5%;padding-bottom:5%}
-#trip-diaries-list .diaries .author-container .author-name{padding:0;margin:0;color:#cca335;padding-top:85%;-ms-transform:rotate(-35deg);-webkit-transform:rotate(-35deg);transform:rotate(-35deg);font-family:"Mr De Haviland",cursive;font-size:1.875rem}
+#trip-diaries-list .diaries .author-container .author-name{padding:0;margin:0;color:#cca335;padding-top:185px;margin-left:10px;-ms-transform:rotate(-35deg);-webkit-transform:rotate(-35deg);transform:rotate(-35deg);font-family:"Mr De Haviland",cursive;font-size:1.875rem}
 #trip-diaries-list .diaries .author-container .user-info{clear:both;font-family:"Poppins",sans-serif;padding-top:5%;padding-bottom:5%;text-align:justify}
 #trip-diaries-list .diaries .author-container .user-socials a{color:#838383}#trip-diaries-list .diaries .author-container .user-socials a .user-socials-icons{padding-right:15px}
 #trip-diaries-list .diaries .author-container .user-socials a:hover{color:#cca335}
 #trip-diaries-list .diaries .diaries-container .diary-img{width:370px;height:500px;background-size:480px 500px;margin:auto}
 #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container{height:100%;background:-moz-linear-gradient(top,rgba(5,5,5,0) 0,rgba(5,5,5,0.02) 2%,#050505 100%);background:-webkit-linear-gradient(top,rgba(5,5,5,0) 0,rgba(5,5,5,0.02) 2%,#050505 100%);background:linear-gradient(to bottom,rgba(5,5,5,0) 0,rgba(5,5,5,0.02) 2%,#050505 100%)}
-#trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container-name{height:85%}
+#trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container-name{height:85%;padding:10px}
 #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container-name a{color:white;font-weight:bold;font-style:italic;font-size:1.5rem;height:100%}
 #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container-name a:hover{text-decoration:none}
 #trip-diaries-list .diaries .diaries-container .diary-img .diary-img-container-date{color:#cca335;font-size:.75rem}
@@ -77,7 +97,7 @@ footer .footer-text{font-size:.875rem;text-align:justify;font-family:"Poppins",s
 #trip-diaries-list .separator:last-of-type{display:none}#about{padding-top:3%;padding-bottom:10%;width:80%;margin:0 auto}
 #about .about-img img{width:100%;height:600px;object-fit:cover}#about .about-container{width:80%;margin:0 auto;border:1px solid #bdbdbd;position:relative;margin-top:-15%;background:white;padding:5% 2%}
 #about .about-container .title-container{padding-bottom:5%}#about .about-container .title-container .about-title{font-size:2.4375rem;font-style:italic;padding-left:2%;padding-right:2%}
-#about .about-container .about-sub-img{max-width:386px;max-height:525px}#about .about-container .content{text-align:justify;line-height:1.7rem}
+#about .about-container .about-sub-img{max-width:386px;max-height:525px}#about .about-container .content{text-align:justify;line-height:1.875rem}
 #about .about-container .content h4{margin-bottom:20px}#contacts{padding-top:3%;padding-bottom:10%;width:80%;margin:0 auto}
 #contacts .contacts-img img{width:100%;height:600px;object-fit:cover}#contacts .contacts-container{width:80%;margin:0 auto;border:1px solid #bdbdbd;position:relative;margin-top:-15%;background:white;padding:5% 2%}
 #contacts .contacts-container .title-container{padding-bottom:5%}#contacts .contacts-container .title-container .contacts-title{font-size:2.4375rem;font-style:italic;padding-left:2%;padding-right:2%}
@@ -104,7 +124,8 @@ footer .footer-text{font-size:.875rem;text-align:justify;font-family:"Poppins",s
 #sign-up .form-sign-up:-ms-input-placeholder{color:#bdbdbd;padding-left:93%}#sign-up .form-sign-up{border-radius:0}
 #sign-up .form-sign-up:focus{outline:0;border:1px solid #bdbdbd}#sign-up #btn-register{border-radius:0;background:#cca335;text-transform:uppercase;color:white;font-size:.75rem;border:0}
 #trip-details{padding-top:3%;padding-bottom:10%;width:80%;margin:0 auto}#trip-details .details-icons{height:20px;color:#a0a0a0;font-size:.75rem;font-family:"Poppins",sans-serif;font-weight:normal}
-#trip-details .details-icons .icon-spacing-right{padding-right:10px}#trip-details .details-icons .dot{color:#cca335;padding-right:10px;padding-left:10px;font-size:.5rem}
+#trip-details .details-icons .details-icons-right{justify-content:flex-end}#trip-details .details-icons .icon-spacing-right{padding-right:10px}
+#trip-details .details-icons .dot{color:#cca335;padding-right:10px;padding-left:10px;font-size:.5rem}
 #trip-details .details-icons .like:hover,#trip-details .details-icons .dislike:hover,#trip-details .details-icons .comment:hover,#trip-details .details-icons .author:hover{color:#cca335}
 #trip-details .date-container{height:25px;font-style:italic;margin-bottom:50px}#trip-details .date-container .line-separator{width:100%}
 #trip-details .date-container .separator{padding:0;width:100%;border-bottom:1px solid #bdbdbd}
@@ -148,7 +169,27 @@ footer .footer-text{font-size:.875rem;text-align:justify;font-family:"Poppins",s
 #trips-by-category .diary-title a:hover,#trips-by-search-word .diary-title a:hover{text-decoration:none;color:#cca335}
 #trips-by-category .diary-author,#trips-by-search-word .diary-author{font-size:.875rem;text-align:center;font-family:"Poppins",sans-serif;color:#838383;margin-bottom:10px}
 #trips-by-category .diary-img,#trips-by-search-word .diary-img{width:100%;height:70%;object-fit:cover}
-@media(max-width:901px){.logo-container{height:140px}.logo-container .social-links{top:12px;width:100%}
-.logo-container .logo-img-container{margin-top:44px}}@media(max-width:521px){.my-breadcrumb .my-breadcrumb-item{padding-right:5px}
-.my-breadcrumb .my-breadcrumb-item .my-breadcrumb-arrow{margin-left:5px}}@media(max-width:px){.my-breadcrumb .my-breadcrumb-item{padding-right:5px}
-.my-breadcrumb .my-breadcrumb-item .my-breadcrumb-arrow{margin-left:5px}}
+@media(max-width:1200px){#main-container #most-recent .recent-title{font-size:1.125rem}
+#main-container #most-recent .recent-img{height:260px}#main-container #most-recent .recent-diaries-title{font-size:1.5rem}
+#trip-diaries-list .diaries .author-container .author-name{-ms-transform:rotate(0);-webkit-transform:rotate(0);transform:rotate(0);padding-top:175px}
+}@media(max-width:980px){#categories .fb-page{display:none}#main-container #categories-repeat .fb-page{padding-top:0;overflow:hidden}
+#main-container #categories-repeat .fb-visible{display:block}#trip-diaries-list .diaries .author-container .author-name{-ms-transform:rotate(0);-webkit-transform:rotate(0);transform:rotate(0);padding-top:165px}
+}@media(max-width:901px){.logo-container{height:140px}.logo-container .social-links{top:12px;width:100%}
+.logo-container .logo-img-container{margin-top:44px}#trip-details .date-container{margin-top:30px}
+#trip-details .diary-img-container img{height:300px}#categories>form{display:none}
+#categories>img{display:none}#main-container #categories .categories-title{visibility:hidden}
+#main-container #categories .categories-container{display:none}#main-container #categories-repeat .form-visible{display:block}
+#main-container #categories-repeat .categories-title{display:block}#main-container #categories-repeat .img-visible{display:block}
+#main-container #categories-repeat .categories-visible{display:block}#main-container #categories-repeat .fb-page{padding-top:20px;overflow:hidden}
+}@media(max-width:750px){#trip-details .date-container{margin-top:50px}#trip-details .details-icons .details-icons-right{justify-content:flex-start;margin-top:12px}
+#trip-diaries-list .diaries .author-container .author-name{display:none}#trip-details .other-diaries-container .prev{margin-bottom:50px;padding-top:15px;padding-bottom:50px}
+#trip-details .other-diaries-container .prev .prev-img{padding-right:15px;margin-top:40px;height:100%}
+}@media(max-width:581px){.next-carousel{width:auto;margin-right:30px;margin-top:auto}
+.prev-carousel{width:auto;margin-left:30px;margin-top:auto}#main-container{width:90%}
+.carousel-container .slide-count{padding-left:45%;margin-bottom:30px;margin-top:-50px}
+.carousel-container .carousel-info{display:-webkit-inline-box}}@media(max-width:576px){#trip-diaries-list .diaries .author-container .author-name{-ms-transform:rotate(-35deg);-webkit-transform:rotate(-35deg);transform:rotate(-35deg);padding-top:185px}
+}@media(max-width:480px){.carousel-container .carousel-info{margin-left:-50px}}@media(max-width:440px){.my-breadcrumb{font-size:.75rem}
+#trip-details .diary-img-container img{height:250px}#trip-details .share-buttons .share-button{width:30px;height:30px;margin-left:5px}
+.carousel-container .carousel-info{display:none}}@media(max-width:330px){.my-breadcrumb{visibility:hidden}
+#trip-details .diary-img-container img{height:250px}#trip-details .share-buttons .share-button{width:25px;height:25px}
+}

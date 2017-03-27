@@ -219,9 +219,9 @@ input:focus {
 
 // home page - most recent diaries
 #main-container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
-    padding-top: 5%;
+    padding-top: 60px;
     padding-bottom: 10%;
     .cont,
     .row {
@@ -229,11 +229,15 @@ input:focus {
         width: 100%
     }
     #most-recent {
+        .diary-container {
+            margin-bottom: 10px;
+        }
         .recent-header {
             padding: 0;
             margin: 0 auto;
             width: 100%;
-            padding-bottom: 10px
+            padding-bottom: 10px;
+            overflow: hidden;
         }
         .img-separator-left {
             margin-right: 5%;
@@ -243,17 +247,18 @@ input:focus {
         }
         .recent-img {
             padding-top: 5%;
-            width: 385px;
+            width: 100%;
             height: 275px;
+            object-fit: cover;
         }
         .recent-diaries-title {
             font-style: italic;
-            font-size: 1.875rem;
+            font-size: 1.75rem;
         }
         .recent-title {
             padding-top: 5%;
             font-style: italic;
-            font-size: 1.875rem;
+            font-size: 1.75rem;
             padding-bottom: 10px;
             a {
                 color: $app-color-black;
@@ -276,34 +281,117 @@ input:focus {
             color: $app-color-gray;
             font-size: 0.75rem;
             font-family: $app-font-menu;
+            left: 15px;
+            bottom: 0;
+            width: 90%;
+            margin: 0;
             i {
-                margin-right: 2%;
+                margin-right: 5px;
             }
             .dot {
                 font-size: 0.5rem;
                 color: $app-color-orange;
-                padding-left: 10px;
+                padding-left: 5px;
                 padding-right: 5px;
             }
         }
     }
-    #categories {
-        width: 21%;
+    #categories-repeat {
+        .form-visible {
+            display: none;
+        }
+        .categories-visible {
+            display: none;
+        }
+        .img-visible {
+            display: none;
+        }
+        .fb-visible {
+            display: none;
+        }
         .btn-search {
-            margin: -5px;
-            width: 70px;
+            width: 60px;
             height: 60px;
             border: none;
             background: $btn-search-background;
             font-size: 0.875rem;
+            position: absolute;
         }
         .input-search {
             background: $btn-input-background;
             border: none;
             height: 60px;
-            width: 230px;
+            width: 80%;
             font-size: 0.875rem;
             padding: 15px;
+            position: relative;
+        }
+        .btn-search:focus,
+        .input-search:focus {
+            outline: none;
+        }
+        .categories-title {
+            font-size: 1.5rem;
+            font-style: italic;
+            padding-top: 20px;
+            padding-bottom: 3%;
+            display: none;
+        }
+        .categories-container {
+            margin-top: 5%;
+            padding-left: 5%;
+            width: 60%;
+            .category-container {
+                padding: 10px;
+                font-family: $app-font-menu;
+                font-size: 0.875rem;
+                border-left: 1px solid #e9e9e9;
+                .category {
+                    color: $app-color-black;
+                    font-weight: bold;
+                }
+                .category-count {
+                    color: $app-color-lite-gray;
+                }
+            }
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                .category-container {
+                    border-left: 1px solid $app-color-black;
+                }
+                .category-container>.category {
+                    color: $app-color-orange;
+                }
+                .category-container>.category-count {
+                    color: $app-color-black;
+                }
+            }
+        }
+        .fb-page {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+    }
+    #categories {
+        .btn-search {
+            width: 60px;
+            height: 60px;
+            border: none;
+            background: $btn-search-background;
+            font-size: 0.875rem;
+            position: absolute;
+        }
+        .input-search {
+            background: $btn-input-background;
+            border: none;
+            height: 60px;
+            width: 80%;
+            font-size: 0.875rem;
+            padding: 15px;
+            position: relative;
         }
         .btn-search:focus,
         .input-search:focus {
@@ -348,6 +436,7 @@ input:focus {
         }
         .fb-page {
             padding-top: 30%;
+            width: 100%;
         }
     }
 }
@@ -403,9 +492,6 @@ footer {
         padding-bottom: 5px;
     }
     .footer-text {
-        font-size: 0.875rem;
-        text-align: justify;
-        font-family: $app-font-menu;
         height: 60px;
         // border-bottom: 1px solid #444242;
         .inner-footer-text {
@@ -421,6 +507,7 @@ footer {
         font-size: 0.875rem;
         width: 80%;
         a {
+            padding-top: 5px;
             color: $app-color-orange;
             word-wrap: break-word;
         }
@@ -435,16 +522,19 @@ footer {
         color: $app-color-lite-gray;
         .calendar-icon {
             margin-right: 10px;
+            padding-bottom: 20px;
         }
     }
     .contacts {
         margin-top: 20px;
         a {
-            color: $app-color-white;
+            color: $app-color-orange
         }
         a:hover {
             text-decoration: none;
-            color: $app-color-orange
+        }
+        .more-details {
+            padding-left: 10px;
         }
     }
 }
@@ -511,7 +601,8 @@ footer {
                 padding: 0;
                 margin: 0;
                 color: $app-color-orange;
-                padding-top: 85%;
+                padding-top: 185px;
+                margin-left: 10px;
                 -ms-transform: rotate(-35deg);
                 -webkit-transform: rotate(-35deg);
                 transform: rotate(-35deg);
@@ -551,6 +642,7 @@ footer {
                 }
                 .diary-img-container-name {
                     height: 85%;
+                    padding: 10px;
                     a {
                         color: $app-color-white;
                         font-weight: bold;
@@ -673,8 +765,9 @@ footer {
             }
         }
         .about-sub-img {
-            max-width: 386px;
-            max-height: 525px;
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
         }
         .content {
             text-align: justify;
@@ -1216,8 +1309,67 @@ footer {
     }
 }
 
+@media (max-width: 1200px) {
+    #main-container {
+        #most-recent {
+            .recent-title {
+                font-size: 1.125rem;
+            }
+            .recent-img {
+                height: 260px;
+            }
+            .recent-diaries-title {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    #trip-diaries-list {
+        .diaries {
+            .author-container {
+                .author-name {
+                    -ms-transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                    padding-top: 175px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    #categories {
+        .fb-page {
+            display: none
+        }
+    }
+    #main-container {
+        #categories-repeat {
+            .fb-page {
+                padding-top: 0;
+                overflow: hidden;
+            }
+            .fb-visible {
+                display: block;
+            }
+        }
+    }
+    #trip-diaries-list {
+        .diaries {
+            .author-container {
+                .author-name {
+                    -ms-transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                    padding-top: 165px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 901px) {
-    // breadcrumps
+    // logo
     .logo-container {
         height: 140px;
         .social-links {
@@ -1239,6 +1391,51 @@ footer {
             }
         }
     }
+    //home
+    #categories>form {
+        display: none;
+    }
+    #categories>img {
+        display: none;
+    }
+    #main-container {
+        #categories-repeat {
+            .fb-page {
+                padding-top: 20px;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #main-container {
+        #categories {
+            .categories-title {
+                visibility: hidden;
+            }
+            .categories-container {
+                display: none;
+            }
+        }
+        #categories-repeat {
+            .input-search {
+                width: 60%;
+            }
+            .form-visible {
+                display: block;
+            }
+            .categories-title {
+                display: block;
+            }
+            .img-visible {
+                display: block;
+            }
+            .categories-visible {
+                display: block;
+            }
+        }
+    }
 }
 
 @media (max-width: 750px) {
@@ -1254,25 +1451,78 @@ footer {
             }
         }
     }
-}
-
-@media (max-width: 530px) {
-    // breadcrumps
-    .my-breadcrumb {
-        .my-breadcrumb-item {
-            padding-right: 5px;
-            .my-breadcrumb-arrow {
-                margin-left: 5px;
+    #trip-diaries-list {
+        .diaries {
+            .author-container {
+                .author-name {
+                    display: none;
+                }
             }
         }
     }
-    // details page
     #trip-details {
-        .details-icons {
-            .details-icons-right {
-                justify-content: flex-start;
-                margin-top: 12px;
+        .other-diaries-container {
+            .prev {
+                margin-bottom: 50px;
+                padding-top: 15px;
+                padding-bottom: 50px;
+                .prev-img {
+                    padding-right: 15px;
+                    margin-top: 40px;
+                    height: 100%;
+                }
             }
+        }
+    }
+}
+
+@media (max-width: 581px) {
+    // home page
+    .next-carousel {
+        width: auto;
+        margin-right: 30px;
+        margin-top: auto;
+    }
+    .prev-carousel {
+        width: auto;
+        margin-left: 30px;
+        margin-top: auto;
+    }
+    #main-container {
+        width: 90%;
+    }
+    .carousel-container {
+        .slide-count {
+            padding-left: 45%;
+            margin-bottom: 30px;
+            margin-top: -50px;
+        }
+        .carousel-info {
+            display: -webkit-inline-box;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    #trip-diaries-list {
+        .diaries {
+            .author-container {
+                .author-name {
+                    -ms-transform: rotate(-35deg);
+                    -webkit-transform: rotate(-35deg);
+                    transform: rotate(-35deg);
+                    padding-top: 185px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    //home
+    .carousel-container {
+        .carousel-info {
+            margin-left: -50px;
         }
     }
 }
@@ -1295,6 +1545,12 @@ footer {
                 height: 30px;
                 margin-left: 5px;
             }
+        }
+    }
+    //home
+    .carousel-container {
+        .carousel-info {
+            display: none;
         }
     }
 }

@@ -19,7 +19,7 @@
                                     <a href="#/trip-diaries/{{this.tripsGrouped._id}}" data-id="{{this.tripsGrouped._id}}">
                                     {{this.tripsGrouped.title}}</a>
                                 </p>
-                                <div class="row">
+                                <div class="row carousel-info">
                                     <div class="col-sm-6 text-right">
                                         <p class="slide-comments slide-info-up left">
                                             <i class="fa fa-comment-o icon-spacing-right comment" aria-hidden="true"></i>
@@ -65,7 +65,34 @@
 <div id="main-container">
     <div class="container cont">
         <div class="row">
-            <div id="most-recent" class="col-sm-8">
+            <div id="categories-repeat" class="col-sm-12">
+                <form class="form-visible">
+                    <input id="search" class="input-search" type="text" placeholder="Search">
+                    <button id="btn-search" class="btn-search" type="submit">Search</button>
+                </form>
+
+                <div class="categories-title title-visible">
+                    Trips Categories
+                </div>
+                <img class="img-fluid img-visible" src="../images/full-separator.png" alt="separator">
+
+                <div class="categories-container categories-visible">
+                    {{#each this.diariesByCategories}}
+                        <a href="#/trip-diaries/category/{{this.category}}" data-category="{{this.category}}">
+                            <div class="category-container">
+                                <p class="d-inline align-items-left category">{{this.category}}</p>
+                                <p class="d-inline align-items-right float-right category-count">{{this.tripsGrouped.length}}</p>
+                            </div>
+                        </a>
+                    {{/each}}
+                </div>
+
+                <div class="fb-page fb-visible">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTripDiaryTelerikAcademyProject%2F&tabs=contacts&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+            </div>
+            
+            <div id="most-recent" class="col-md-8">
                 <div class="recent-header d-flex justify-content-center"> 
                     <img class="img-fluid img-separator-left" src="../images/left-separator.png">
                     <span class="recent-diaries-title">Latest dieries</span>
@@ -75,7 +102,7 @@
                 <div class="container cont">
                     <div class="row">
                         {{#each this.recentDieries}}
-                            <div class="col-sm-6">
+                            <div class="col-md-6 diary-container">
                                 <img class="img-fluid recent-img" src="{{tripsData.mainImage}}" alt="main-image">
                                 <p class="recent-title"><a href="#/trip-diaries/{{tripsData._id}}" data-id="{{tripsData._id}}">{{tripsData.title}}</a></p>
                                 <p class="recent-date">{{date}}</p>
@@ -83,11 +110,11 @@
                                 <p class="recent-icons">
                                     <i class="fa fa-user-o icon-spacing-right author" aria-hidden="true"></i>{{tripsData.author}}
                                     <i class="fa fa-circle icon-spacing-right icon-color dot align-items-center" aria-hidden="true"></i>
-                                    <i class="fa fa-heart-o icon-spacing-left icon-color like" aria-hidden="true"></i>{{tripsData.likes}}
+                                    <i class="fa fa-heart-o icon-spacing-left icon-color like" aria-hidden="true"></i>{{tripsData.likes}} Likes
                                     <i class="fa fa-circle icon-spacing-right icon-color dot align-items-center" aria-hidden="true"></i>
-                                    <i class="fa fa-comment-o icon-spacing-right comment" aria-hidden="true"></i>{{tripsData.comments.length}}
+                                    <i class="fa fa-comment-o icon-spacing-right comment" aria-hidden="true"></i>{{tripsData.comments.length}} Comments
+                                    <hr/>
                                 </p>
-                                <hr/>
                             </div>
                         {{/each}}
                     </div>
@@ -117,7 +144,7 @@
                 </div>
 
                 <div class="fb-page">
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTripDiaryTelerikAcademyProject%2F&tabs=contacts&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTripDiaryTelerikAcademyProject%2F&tabs=contacts&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 </div>
             </div>
         </div>
