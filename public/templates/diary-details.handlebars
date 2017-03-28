@@ -120,24 +120,24 @@
                 <p class="d-inline comments-section-count d-flex align-items-center justify-content-center">{{comments.length}}</p>
             </div>
           
-            <div class="comments">
-                {{#each comments}}
-                    <div class="comment d-flex align-items-center">
-                        <img class="img-fluid" src={{this.profileImgURL}} alt="">
-                        <div class="">
-                            <div class="author-panel">
-                                <p class="d-inline comment-author">{{this.author}}</p>
-                                <i class="fa fa-circle-thin" aria-hidden="true"></i>
-                                <p class="d-inline comment-date">{{this.date.date}}</p>
+            <div class="comments container">
+                    {{#each comments}}
+                        <div class="comment row d-flex align-items-center">
+                            <img class="img-fluid col-sm-4" src={{this.profileImgURL}} alt="">
+                            <div class="col-sm-8">
+                                <div class="author-panel">
+                                    <p class="d-inline comment-author">{{this.author}}</p>
+                                    <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                                    <p class="d-inline comment-date">{{this.date.date}}</p>
+                                </div>
+                                
+                                <p class="comment-body">{{this.body}}</p>
+                                <button class="btn-replay hidden">Replay</button>
                             </div>
                             
-                            <p class="comment-body">{{this.body}}</p>
-                            <button class="btn-replay hidden">Replay</button>
                         </div>
-                        
-                    </div>
-                    <hr class="horizontal-separator"/>
-                {{/each}}
+                        <hr class="horizontal-separator"/>
+                    {{/each}}
             </div>
 
             <div class="replay post-comment hidden">
