@@ -53,6 +53,15 @@ let homeController = (function() {
                         return false;
                     });
 
+                    $("#categories-repeat.btn-search-1").on("click", (evt) => {
+                        evt.preventDefault();
+
+                        let textSmall = $("#search-1").val();
+                        window.location = `#/search/${textSmall}`;
+
+                        return false;
+                    });
+
 
                     $(".carousel-item").first()
                         .addClass("active");

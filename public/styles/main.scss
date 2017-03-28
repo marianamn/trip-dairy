@@ -309,7 +309,7 @@ input:focus {
         .fb-visible {
             display: none;
         }
-        .btn-search {
+        .btn-search-1 {
             width: 60px;
             height: 60px;
             border: none;
@@ -317,7 +317,7 @@ input:focus {
             font-size: 0.875rem;
             position: absolute;
         }
-        .input-search {
+        .input-search-1 {
             background: $btn-input-background;
             border: none;
             height: 60px;
@@ -326,8 +326,8 @@ input:focus {
             padding: 15px;
             position: relative;
         }
-        .btn-search:focus,
-        .input-search:focus {
+        .btn-search-1:focus,
+        .input-search-1:focus {
             outline: none;
         }
         .categories-title {
@@ -1419,7 +1419,7 @@ footer {
             }
         }
         #categories-repeat {
-            .input-search {
+            .input-search-1 {
                 width: 60%;
             }
             .form-visible {
