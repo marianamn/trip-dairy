@@ -1,7 +1,7 @@
 # Trip Diary
 ## Web frond-end course project ##
 
-Trip Diary is a SPA that allows you to capture your travels in a digital diary.
+Trip Diary is a single page application that allows you to capture your travels in a digital diary.
 
 - Add stories and photos.
 
